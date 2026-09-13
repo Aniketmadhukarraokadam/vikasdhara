@@ -1,5 +1,7 @@
+Options -Indexes
+
 <IfModule mod_dir.c>
-  DirectoryIndex index.html index.php
+  DirectoryIndex index.php index.html
 </IfModule>
 
 <IfModule mod_rewrite.c>
@@ -8,7 +10,7 @@
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
 </IfModule>
+
 
