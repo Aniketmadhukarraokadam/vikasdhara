@@ -312,6 +312,10 @@ export function Footer() {
               <Link to="/contact" className="hover:text-white transition-colors">
                 Contact
               </Link>
+              <span className="text-neutral-700">·</span>
+              <Link to="/admin" className="text-primary-400 hover:text-primary-300 font-semibold transition-colors">
+                🔒 Admin Portal
+              </Link>
             </div>
           </div>
         </div>

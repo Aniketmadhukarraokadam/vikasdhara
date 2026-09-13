@@ -8,7 +8,10 @@ import { IconWrapper } from "@/components/ui/IconWrapper";
 import { contact } from "@/content";
 import { SEO } from "@/components/seo/SEO";
 
+import { useApplications } from "@/context/ApplicationsContext";
+
 export function ContactPage() {
+  const { addApplication } = useApplications();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -32,7 +35,32 @@ export function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
-    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    // Determine ATS category
+    let appType: "contact" | "csr_partner" | "volunteer" | "beneficiary_skilling" = "contact";
+    const sub = formData.subject.toLowerCase();
+    if (sub.includes("partner") || sub.includes("corporate") || sub.includes("csr")) {
+      appType = "csr_partner";
+    } else if (sub.includes("volunteer")) {
+      appType = "volunteer";
+    } else if (sub.includes("skill") || sub.includes("train") || sub.includes("education")) {
+      appType = "beneficiary_skilling";
+    }
+
+    addApplication({
+      type: appType,
+      name: formData.name,
+      email: formData.email,
+      mobile: formData.mobile,
+      organization: formData.organisation,
+      location: formData.locationPref,
+      subject: formData.subject,
+      message: formData.message,
+      status: "new",
+      priority: appType === "csr_partner" ? "high" : "medium",
+    });
+
+    await new Promise(resolve => setTimeout(resolve, 600));
     setStatus("success");
     setFormData({ name: "", email: "", mobile: "", organisation: "", subject: "", locationPref: "pune", message: "", consent: false });
     setTimeout(() => setStatus("idle"), 4000);
