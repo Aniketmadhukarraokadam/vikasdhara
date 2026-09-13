@@ -27,7 +27,7 @@ jobs:
       - name: 🔨 Build Production Bundle
         run: npm run build
 
-      - name: 🚀 Sync & Deploy to Hostinger Root (public_html)
+      - name: 🚀 Sync & Deploy to Hostinger Webroot
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER || '82.180.143.14' }}
@@ -35,14 +35,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD || 'Vortex@121' }}
           server-dir: './'
           local-dir: './dist/'
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
 
-      - name: 🚀 Sync & Deploy to Domains public_html
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER || '82.180.143.14' }}
-          username: ${{ secrets.FTP_USERNAME || 'u696371114.Vikasdhara' }}
-          password: ${{ secrets.FTP_PASSWORD || 'Vortex@121' }}
-          server-dir: 'domains/vikasdharafoundation.org/public_html/'
-          local-dir: './dist/'
-          dangerous-clean-slate: false
