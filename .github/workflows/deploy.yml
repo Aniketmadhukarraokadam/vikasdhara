@@ -33,8 +33,9 @@ jobs:
           server: ${{ secrets.FTP_SERVER || '82.180.143.14' }}
           username: ${{ secrets.FTP_USERNAME || 'u696371114.Vikasdhara' }}
           password: ${{ secrets.FTP_PASSWORD || 'Vortex@121' }}
-          server-dir: './'
+          server-dir: 'domains/vikasdharafoundation.org/public_html/'
           local-dir: './dist/'
           dangerous-clean-slate: true
+
 
 
