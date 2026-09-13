@@ -1,12 +1,11 @@
 <?php
-// Auto-delete Hostinger placeholder if present
-if (file_exists(__DIR__ . '/default.php')) {
-    @unlink(__DIR__ . '/default.php');
+// Fallback router for React SPA on LiteSpeed / Apache
+$requested = $_SERVER['REQUEST_URI'];
+$filePath = __DIR__ . parse_url($requested, PHP_URL_PATH);
+
+if (is_file($filePath)) {
+    return false;
 }
 
-// Serve Vite SPA
-if (file_exists(__DIR__ . '/index.html')) {
-    include __DIR__ . '/index.html';
-    exit;
-}
+include __DIR__ . '/index.html';
 ?>
