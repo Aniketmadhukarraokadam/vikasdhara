@@ -35,5 +35,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD || 'Vortex@121' }}
           server-dir: './'
           local-dir: './dist/'
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
+
 
