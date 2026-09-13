@@ -7,72 +7,70 @@ interface SEOProps {
   keywords?: string[];
   image?: string;
   type?: "website" | "article" | "profile";
-  articlePublishedTime?: string;
   breadcrumbs?: Array<{ name: string; item: string }>;
   faqs?: Array<{ question: string; answer: string }>;
-  geoCity?: "Pune" | "Nanded" | "All";
 }
 
 const defaultKeywords = [
-  "Vortexsoft Vikasdhara Foundation",
-  "NGO in Pune",
-  "Top NGO in Pune",
-  "Best NGO in Pune Maharashtra",
-  "NGO in Nanded",
+  "VORTEXSOFT VIKASDHARA FOUNDATION",
+  "Vikasdhara Foundation",
   "Public Charitable Trust Maharashtra",
-  "Pune NGO CSR Partnership",
-  "CSR implementation agency Pune",
-  "Skill development NGO Pune",
-  "Women empowerment NGO Pune",
-  "Education charitable trust India",
-  "Rural development Maharashtra",
-  "Animal welfare NGO Pune",
-  "Gau Shala charitable trust Nanded",
+  "NGO in Nanded",
+  "NGO in Maharashtra",
   "Dharmabad public trust",
-  "80G 12A registered NGO Maharashtra",
-  "Pune non-profit organization",
-  "Indian charitable foundation"
+  "Education charitable trust India",
+  "Skill development NGO Maharashtra",
+  "Women empowerment NGO India",
+  "Youth employability support",
+  "Livelihood development India",
+  "Rural development Maharashtra",
+  "Community development NGO",
+  "Gau Shala charitable trust",
+  "Environmental sustainability India"
 ];
 
 const defaultFaqs = [
   {
-    question: "What is Vortexsoft Vikasdhara Foundation?",
-    answer: "VORTEXSOFT VIKASDHARA FOUNDATION is a registered Indian Public Charitable Trust operating in Maharashtra with headquarters in Nanded and a regional coordination hub in Pune. The foundation focuses on education, youth skill development, employment facilitation, women's empowerment, rural upliftment, healthcare awareness, and animal welfare."
+    question: "What is VORTEXSOFT VIKASDHARA FOUNDATION?",
+    answer: "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, working across India in charitable and social-development areas including education, skill development, employment, livelihood, women’s empowerment, humanitarian support, community development, environment and animal welfare."
   },
   {
-    question: "Does Vortexsoft Vikasdhara Foundation operate in Pune, Maharashtra?",
-    answer: "Yes, Vortexsoft Vikasdhara Foundation maintains a dedicated Regional Coordination and CSR Partnership Hub in Pune, Maharashtra. The Pune centre drives corporate CSR collaborations, digital literacy initiatives, youth career mentoring, and state-wide institutional alliances."
+    question: "Where is Vikasdhara Foundation based?",
+    answer: "The Foundation’s registered office is located at Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot, Taluka Dharmabad, District Nanded – 431808, Maharashtra, India."
   },
   {
-    question: "Where are the official offices of Vortexsoft Vikasdhara Foundation located?",
-    answer: "The Registered Headquarters is at Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot, Taluka Dharmabad, District Nanded – 431808, Maharashtra. The Foundation also operates its Regional Coordination & CSR Liaison Hub in Pune, Maharashtra."
+    question: "What does Vikasdhara Foundation work on?",
+    answer: "Its focus includes education, women’s empowerment, skill development, employment, livelihood, humanitarian support, community development, health awareness, environment and animal welfare."
   },
   {
-    question: "How can corporations in Pune and across India partner for CSR projects?",
-    answer: "Corporations can partner with Vortexsoft Vikasdhara Foundation under their CSR mandate (Schedule VII, Companies Act 2013). The Foundation follows a transparent 5-stage CSR delivery model: Discover, Design, Implement, Measure, and Report. Contact partnerships@vikasdharafoundation.org or call the Pune liaison desk."
+    question: "Does the Foundation work with companies on CSR projects?",
+    answer: "Yes. The Foundation can work with companies, institutions and government bodies on socially beneficial projects involving skill development, vocational training, livelihood development, and community initiatives, subject to applicable law and appropriate agreements."
   },
   {
-    question: "How can I volunteer or support Vikasdhara Foundation in Pune?",
-    answer: "Individuals can join as mentors, tutors, event coordinators, tree plantation volunteers, or animal welfare assistants in Pune and across Maharashtra. Apply through the online Volunteer portal or email volunteer@vikasdharafoundation.org."
+    question: "Does the Foundation provide guaranteed jobs?",
+    answer: "No general guarantee is implied. The Foundation connects skill training with employability preparation, career guidance and placement facilitation. Outcomes depend on candidate eligibility and employer requirements."
+  },
+  {
+    question: "Can people volunteer with the Foundation?",
+    answer: "Volunteer opportunities are offered according to operational programme needs, safeguarding requirements and Foundation policies in education, skills, community outreach, and environment."
   }
 ];
 
 export function SEO({
-  title = "VORTEXSOFT VIKASDHARA FOUNDATION | Top NGO in Pune & Maharashtra",
-  description = "VORTEXSOFT VIKASDHARA FOUNDATION is a registered public charitable trust in Maharashtra (Pune Regional Hub & Nanded HQ). Delivering high-impact programmes in education, youth skill training, women empowerment, CSR execution, and community development.",
+  title = "VORTEXSOFT VIKASDHARA FOUNDATION | Education, Skills, Employment & Community Development",
+  description = "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, working across India in education, skill development, employment, women’s empowerment, livelihood, humanitarian support, community development, environment and animal welfare.",
   keywords = defaultKeywords,
   image = "https://www.vikasdharafoundation.org/logo.png",
   type = "website",
   breadcrumbs,
   faqs = defaultFaqs,
-  geoCity = "All"
 }: SEOProps) {
   const location = useLocation();
   const canonicalUrl = `https://www.vikasdharafoundation.org${location.pathname === "/" ? "" : location.pathname}`;
 
   useEffect(() => {
     // 1. Update Title
-    const formattedTitle = title.includes("VORTEXSOFT")
+    const formattedTitle = title.includes("VORTEXSOFT") || title.includes("Vikasdhara")
       ? title
       : `${title} | VORTEXSOFT VIKASDHARA FOUNDATION`;
     document.title = formattedTitle;
@@ -105,7 +103,7 @@ export function SEO({
     setMeta("name", "robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
     setLink("canonical", canonicalUrl);
 
-    // OpenGraph
+    // OpenGraph (§50)
     setMeta("property", "og:title", formattedTitle);
     setMeta("property", "og:description", description);
     setMeta("property", "og:url", canonicalUrl);
@@ -116,26 +114,18 @@ export function SEO({
 
     // Twitter Card
     setMeta("name", "twitter:card", "summary_large_image");
-    setMeta("name", "twitter:site", "@vvf_india");
     setMeta("name", "twitter:title", formattedTitle);
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", image);
 
-    // GEO Meta (Maharashtra, Pune, Nanded)
+    // GEO Meta (Nanded, Maharashtra, India)
     setMeta("name", "geo.region", "IN-MH");
-    setMeta("name", "geo.placename", geoCity === "Pune" ? "Pune, Maharashtra, India" : geoCity === "Nanded" ? "Nanded, Maharashtra, India" : "Pune, Nanded, Maharashtra, India");
-    setMeta("name", "geo.position", geoCity === "Nanded" ? "18.8977;77.8504" : "18.5204;73.8567");
-    setMeta("name", "ICBM", geoCity === "Nanded" ? "18.8977, 77.8504" : "18.5204, 73.8567");
+    setMeta("name", "geo.placename", "Dharmabad, Nanded, Maharashtra, India");
+    setMeta("name", "geo.position", "18.8977;77.8504");
+    setMeta("name", "ICBM", "18.8977, 77.8504");
     setMeta("name", "author", "VORTEXSOFT VIKASDHARA FOUNDATION");
 
-    // Dublin Core Metadata
-    setMeta("name", "DC.title", formattedTitle);
-    setMeta("name", "DC.creator", "VORTEXSOFT VIKASDHARA FOUNDATION");
-    setMeta("name", "DC.subject", "NGO, Public Charitable Trust, Education, Skill Development, Pune, Maharashtra");
-    setMeta("name", "DC.description", description);
-    setMeta("name", "DC.coverage", "Pune, Nanded, Maharashtra, India");
-
-    // 4. Inject Unified JSON-LD Structured Data
+    // 4. Inject Unified JSON-LD Structured Data (§37)
     const existingScript = document.getElementById("json-ld-structured-data");
     if (existingScript) {
       existingScript.remove();
@@ -144,135 +134,70 @@ export function SEO({
     const structuredData = {
       "@context": "https://schema.org",
       "@graph": [
-        // Organization & NGO Schema
+        // Organization Schema (§37)
         {
-          "@type": ["NonProfitOrganization", "NGO"],
+          "@type": ["Organization", "NGO"],
           "@id": "https://www.vikasdharafoundation.org/#organization",
           "name": "VORTEXSOFT VIKASDHARA FOUNDATION",
           "alternateName": [
             "Vikasdhara Foundation",
-            "VVF Pune",
-            "Vikasdhara Foundation Pune",
-            "व्हॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन"
+            "VVF",
+            "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन"
           ],
-          "url": "https://www.vikasdharafoundation.org",
+          "url": "https://www.vikasdharafoundation.org/",
           "logo": "https://www.vikasdharafoundation.org/logo.png",
           "image": "https://www.vikasdharafoundation.org/images/hero_campus.jpg",
-          "description": description,
+          "description": "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, India, working across India in education, skill development, employment, livelihood, women’s empowerment, humanitarian support, community development, environment and animal welfare.",
           "slogan": "Empowering People. Strengthening Communities. Building a Better India.",
           "email": "info@vikasdharafoundation.org",
-          "telephone": "+91-XXXXXXXXXX",
-          "foundingDate": "2026",
+          "foundingDate": "2026-09-11",
           "founder": {
             "@type": "Person",
             "name": "Anirudh Madhukarrao Kadam",
             "jobTitle": "Settlor / Founder & Managing Trustee"
           },
           "trustee": [
-            { "@type": "Person", "name": "Anirudh Madhukarrao Kadam" },
-            { "@type": "Person", "name": "Dnyaneshvar Taterao Ballod" },
-            { "@type": "Person", "name": "Sumit Balaji Jadhav" }
+            { "@type": "Person", "name": "Anirudh Madhukarrao Kadam", "jobTitle": "Founder & Managing Trustee" },
+            { "@type": "Person", "name": "Dnyaneshvar Taterao Ballod", "jobTitle": "Trustee" },
+            { "@type": "Person", "name": "Sumit Balaji Jadhav", "jobTitle": "Trustee" }
           ],
-          "location": [
-            {
-              "@type": "Place",
-              "@id": "https://www.vikasdharafoundation.org/#pune-hub",
-              "name": "VORTEXSOFT VIKASDHARA FOUNDATION — Pune Regional Coordination & CSR Hub",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Regional Coordination & CSR Liaison Centre",
-                "addressLocality": "Pune",
-                "addressRegion": "Maharashtra",
-                "postalCode": "411001",
-                "addressCountry": "IN"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 18.5204,
-                "longitude": 73.8567
-              }
-            },
-            {
-              "@type": "Place",
-              "@id": "https://www.vikasdharafoundation.org/#nanded-hq",
-              "name": "VORTEXSOFT VIKASDHARA FOUNDATION — Registered Headquarters",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot",
-                "addressLocality": "Dharmabad, District Nanded",
-                "addressRegion": "Maharashtra",
-                "postalCode": "431808",
-                "addressCountry": "IN"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 18.8977,
-                "longitude": 77.8504
-              }
-            }
-          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot",
+            "addressLocality": "Dharmabad",
+            "addressRegion": "Maharashtra",
+            "postalCode": "431808",
+            "addressCountry": "IN"
+          },
           "areaServed": [
-            { "@type": "City", "name": "Pune" },
-            { "@type": "City", "name": "Pimpri-Chinchwad" },
-            { "@type": "City", "name": "Nanded" },
             { "@type": "AdministrativeArea", "name": "Maharashtra" },
             { "@type": "Country", "name": "India" }
           ],
           "knowsAbout": [
-            "NGO in Pune",
-            "Corporate Social Responsibility (CSR) in Maharashtra",
-            "Skill Development and Employability Training",
-            "Women Career Mentorship and Empowerment",
-            "Digital Literacy and Community Education",
-            "Rural Community Infrastructure",
-            "Humanitarian Nutrition & Dharamshala Support",
-            "Elderly Care and Vruddhashram",
-            "Tree Plantation and Eco-Sustainability",
-            "Gau Shala and Animal Welfare"
+            "Education and Learning Support",
+            "Women's Education and Empowerment",
+            "Skill Development and Vocational Training",
+            "Employment and Livelihood Pathways",
+            "Corporate and Institutional Social Projects",
+            "Community and Rural Development",
+            "Food and Humanitarian Support",
+            "Elderly Care",
+            "Health Awareness",
+            "Environmental Sustainability",
+            "Animal Welfare and Gau Shala"
           ],
-          "sameAs": [
-            "https://twitter.com",
-            "https://linkedin.com",
-            "https://facebook.com",
-            "https://instagram.com",
-            "https://youtube.com"
-          ]
-        },
-        // Local Business / Place Schema for Pune Location
-        {
-          "@type": ["LocalBusiness", "NGO"],
-          "@id": "https://www.vikasdharafoundation.org/#pune-office",
-          "name": "VORTEXSOFT VIKASDHARA FOUNDATION — Pune Office",
-          "url": "https://www.vikasdharafoundation.org/pune-ngo",
-          "image": "https://www.vikasdharafoundation.org/logo.png",
-          "priceRange": "₹0 - Non-Profit",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Pune Coordination Hub & CSR Centre",
-            "addressLocality": "Pune",
-            "addressRegion": "Maharashtra",
-            "postalCode": "411001",
-            "addressCountry": "IN"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 18.5204,
-            "longitude": 73.8567
-          },
-          "telephone": "+91-XXXXXXXXXX",
-          "email": "partnerships@vikasdharafoundation.org",
-          "openingHours": "Mo-Sa 09:30-18:30"
+          "sameAs": []
         },
         // WebSite Schema
         {
           "@type": "WebSite",
           "@id": "https://www.vikasdharafoundation.org/#website",
-          "url": "https://www.vikasdharafoundation.org",
+          "url": "https://www.vikasdharafoundation.org/",
           "name": "VORTEXSOFT VIKASDHARA FOUNDATION",
           "publisher": { "@id": "https://www.vikasdharafoundation.org/#organization" },
           "inLanguage": ["en-IN", "mr-IN"]
         },
-        // BreadcrumbList Schema (if provided)
+        // BreadcrumbList Schema
         breadcrumbs && breadcrumbs.length > 0 && {
           "@type": "BreadcrumbList",
           "@id": `${canonicalUrl}#breadcrumb`,
@@ -283,7 +208,7 @@ export function SEO({
             "item": `https://www.vikasdharafoundation.org${crumb.item}`
           }))
         },
-        // FAQ Schema for AEO (Answer Engine Optimization)
+        // FAQPage Schema (§34, §70)
         faqs && faqs.length > 0 && {
           "@type": "FAQPage",
           "@id": `${canonicalUrl}#faq`,
@@ -309,7 +234,7 @@ export function SEO({
       const el = document.getElementById("json-ld-structured-data");
       if (el) el.remove();
     };
-  }, [title, description, keywords, image, type, canonicalUrl, breadcrumbs, faqs, geoCity]);
+  }, [title, description, keywords, image, type, canonicalUrl, breadcrumbs, faqs]);
 
   return null;
 }

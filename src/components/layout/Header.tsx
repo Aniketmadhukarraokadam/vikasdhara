@@ -2,68 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Container } from "./Container";
 import { Button } from "@/components/ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/utils/cn";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  {
-    name: "About",
-    href: "/about",
-    children: [
-      { name: "About Us", href: "/about" },
-      { name: "Vision & Mission", href: "/about#vision-mission" },
-      { name: "Leadership", href: "/about#leadership" },
-      { name: "Values", href: "/about#values" },
-      { name: "Governance", href: "/about#governance" },
-    ],
-  },
-  {
-    name: "What We Do",
-    href: "/what-we-do",
-    children: [
-      { name: "Education & Learning", href: "/what-we-do/education" },
-      { name: "Women's Education & Empowerment", href: "/what-we-do/womens-education" },
-      { name: "Skills for the Future", href: "/what-we-do/skills" },
-      { name: "Employment & Livelihood", href: "/what-we-do/employment" },
-      { name: "Corporate Projects", href: "/what-we-do/corporate-projects" },
-      { name: "Food & Humanitarian Support", href: "/what-we-do/humanitarian" },
-      { name: "Shelter & Dharamshala", href: "/what-we-do/shelter" },
-      { name: "Elderly Care", href: "/what-we-do/elderly-care" },
-      { name: "Health Awareness", href: "/what-we-do/health" },
-      { name: "Rural Development", href: "/what-we-do/rural" },
-      { name: "Disaster Relief", href: "/what-we-do/disaster-relief" },
-      { name: "Environment", href: "/what-we-do/environment" },
-      { name: "Animal Welfare", href: "/what-we-do/animal-welfare" },
-      { name: "Gau Shala", href: "/what-we-do/gau-shala" },
-    ],
-  },
-  { name: "Pune NGO Hub", href: "/pune-ngo" },
-  {
-    name: "Impact",
-    href: "/impact",
-    children: [
-      { name: "Our Impact", href: "/impact" },
-      { name: "Projects", href: "/impact/projects" },
-      { name: "Stories", href: "/impact/stories" },
-      { name: "Reports", href: "/impact/reports" },
-    ],
-  },
-  {
-    name: "Get Involved",
-    href: "/get-involved",
-    children: [
-      { name: "Partner With Us (CSR)", href: "/get-involved/partner" },
-      { name: "Volunteer in Pune & Nanded", href: "/get-involved/volunteer" },
-      { name: "Support the Mission", href: "/get-involved/support" },
-    ],
-  },
-  { name: "Contact", href: "/contact" },
-];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -71,32 +17,89 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navigation = [
+    { name: t("Home", "मुख्यपृष्ठ"), href: "/" },
+    {
+      name: t("About", "संस्थेविषयी"),
+      href: "/about",
+      children: [
+        { name: t("About the Foundation", "संस्थेचा परिचय"), href: "/about" },
+        { name: t("Vision & Mission", "ध्येय व उद्दिष्टे"), href: "/about#vision-mission" },
+        { name: t("Our Values", "मूल्ये"), href: "/about#values" },
+        { name: t("Board of Trustees", "विश्वस्त मंडळ"), href: "/about#leadership" },
+        { name: t("Governance & Transparency", "प्रशासन व पारदर्शकता"), href: "/transparency" },
+      ],
+    },
+    {
+      name: t("What We Do", "आमचे उपक्रम"),
+      href: "/what-we-do",
+      children: [
+        { name: t("Education & Learning", "शिक्षण व अध्ययन"), href: "/what-we-do/education" },
+        { name: t("Women's Education & Empowerment", "महिला शिक्षण व सक्षमीकरण"), href: "/what-we-do/womens-education" },
+        { name: t("Skill Development", "कौशल्यविकास व प्रशिक्षण"), href: "/what-we-do/skills" },
+        { name: t("Employment & Placement Support", "रोजगार व प्लेसमेंट साहाय्य"), href: "/what-we-do/employment" },
+        { name: t("Corporate & Institutional Projects", "कॉर्पोरेट व संस्थात्मक प्रकल्प"), href: "/what-we-do/corporate-projects" },
+        { name: t("Food & Humanitarian Support", "अन्न व मानवतावादी मदत"), href: "/what-we-do/humanitarian" },
+        { name: t("Elderly Care", "ज्येष्ठ नागरिकांची काळजी"), href: "/what-we-do/elderly-care" },
+        { name: t("Health Awareness", "आरोग्य जनजागृती"), href: "/what-we-do/health" },
+        { name: t("Rural & Community Development", "ग्रामीण व समुदाय विकास"), href: "/what-we-do/rural" },
+        { name: t("Environment & Sustainability", "पर्यावरण व संवर्धन"), href: "/what-we-do/environment" },
+        { name: t("Animal Welfare & Gau Shala", "प्राणी कल्याण व गोशाळा"), href: "/what-we-do/gau-shala" },
+      ],
+    },
+    { name: t("Impact", "प्रभाव व अहवाल"), href: "/impact" },
+    { name: t("FAQs", "प्रश्नोत्तरे"), href: "/frequently-asked-questions" },
+    {
+      name: t("Get Involved", "सहभागी व्हा"),
+      href: "/get-involved/partner",
+      children: [
+        { name: t("Partner With Us", "प्रकल्प भागीदारी (CSR)"), href: "/get-involved/partner" },
+        { name: t("Volunteer Opportunities", "स्वयंसेवक बना"), href: "/get-involved/volunteer" },
+        { name: t("Support the Mission", "साहाय्य करा"), href: "/get-involved/support" },
+      ],
+    },
+    { name: t("Contact", "संपर्क"), href: "/contact" },
+  ];
+
   const isActive = (href: string) => location.pathname === href || (href !== "/" && location.pathname.startsWith(href));
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Institutional & Geo Banner */}
+      {/* Top Institutional Banner */}
       <div className="bg-primary-950 text-neutral-300 text-[11px] sm:text-xs py-1.5 border-b border-primary-900/60 hidden md:block">
         <Container>
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <span className="flex items-center gap-1.5 text-neutral-200">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span>Regd. HQ: <strong>Dharmabad, Nanded</strong></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span>Public Charitable Trust • <strong>Nanded, Maharashtra</strong></span>
               </span>
-              <span className="text-primary-600">•</span>
-              <Link to="/pune-ngo" className="flex items-center gap-1.5 text-emerald-300 hover:text-emerald-200 transition-colors font-medium">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-400"></span>
-                <span>Regional Hub: <strong>Pune, Maharashtra</strong> (CSR & Skills)</span>
-              </Link>
+              <span className="text-primary-700">•</span>
+              <span className="text-neutral-300 hidden lg:inline">
+                {language === "mr" ? "समर्थ लोक • सक्षम समाज • समृद्ध भारत" : "Empowering People. Strengthening Communities. Building a Better India."}
+              </span>
             </div>
-            <div className="flex items-center gap-5 text-neutral-300">
-              <a href="mailto:info@vikasdharafoundation.org" className="hover:text-white transition-colors flex items-center gap-1">
-                <span>✉️ info@vikasdharafoundation.org</span>
+            
+            <div className="flex items-center gap-4">
+              <a href="mailto:info@vikasdharafoundation.org" className="hover:text-white transition-colors">
+                ✉️ info@vikasdharafoundation.org
               </a>
-              <Link to="/transparency" className="hover:text-white transition-colors">
-                Public Charitable Trust (Govt. Regd.)
-              </Link>
+
+              {/* Language Switcher */}
+              <div className="flex items-center bg-primary-900/80 rounded-md p-0.5 border border-primary-800 text-[11px] font-bold">
+                <button
+                  onClick={() => setLanguage("en")}
+                  className={cn("px-2 py-0.5 rounded transition-colors", language === "en" ? "bg-white text-primary-950 shadow-xs" : "text-neutral-300 hover:text-white")}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => setLanguage("mr")}
+                  className={cn("px-2 py-0.5 rounded transition-colors", language === "mr" ? "bg-white text-primary-950 shadow-xs" : "text-neutral-300 hover:text-white")}
+                >
+                  मराठी
+                </button>
+              </div>
             </div>
           </div>
         </Container>
@@ -106,12 +109,13 @@ export function Header() {
       <nav
         className={cn(
           "transition-all duration-300",
-          isScrolled ? "bg-white/95 backdrop-blur-sm shadow-soft border-b border-neutral-100" : "bg-white/90 backdrop-blur-xs border-b border-neutral-100/60"
+          isScrolled ? "bg-white/98 backdrop-blur-sm shadow-soft border-b border-neutral-100" : "bg-white/95 backdrop-blur-xs border-b border-neutral-100/60"
         )}
         aria-label="Main navigation"
       >
         <Container>
           <div className="flex h-16 lg:h-18 items-center justify-between">
+            {/* Brand Logo & Name */}
             <Link to="/" className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 group" aria-label="Vortexsoft Vikasdhara Foundation Home">
               <img
                 src="/logo-icon.png"
@@ -128,70 +132,76 @@ export function Header() {
               </div>
             </Link>
 
-            <div className="hidden lg:flex lg:items-center lg:gap-1">
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex lg:items-center lg:gap-0.5">
               {navigation.map((item) => (
-                <DropdownItem key={item.href} item={item} isActive={isActive(item.href)} />
+                <DropdownItem key={item.name} item={item} isActive={isActive(item.href)} />
               ))}
             </div>
 
+            {/* Desktop CTA & Lang Toggle */}
             <div className="hidden lg:flex lg:items-center lg:gap-3">
-              <Link to="/pune-ngo" className="text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80 hover:bg-emerald-100 transition-colors">
-                📍 Pune Hub
-              </Link>
               <Link to="/get-involved/partner">
-                <Button size="sm" className="px-5 py-2">
-                  Partner With Us
+                <Button size="sm" className="px-4 py-2">
+                  {t("Partner With Us", "प्रकल्प भागीदारी")}
                 </Button>
               </Link>
             </div>
 
-            <button
-              className="lg:hidden p-2 rounded-lg text-neutral-700 hover:bg-neutral-100"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-menu"
-              aria-label="Toggle menu"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+            {/* Mobile Menu Button + Lang Toggle */}
+            <div className="flex items-center gap-2 lg:hidden">
+              <button
+                onClick={() => setLanguage(language === "en" ? "mr" : "en")}
+                className="px-2.5 py-1 text-xs font-bold rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-800"
+              >
+                {language === "en" ? "मराठी" : "EN"}
+              </button>
+
+              <button
+                className="p-2 rounded-lg text-neutral-700 hover:bg-neutral-100"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-expanded={mobileMenuOpen}
+                aria-label="Toggle menu"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </Container>
 
+        {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div id="mobile-menu" className="lg:hidden bg-white border-t border-neutral-100 animate-slide-down">
-            <Container className="py-6">
-              <div className="space-y-4">
-                <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-100 text-xs text-emerald-900 flex items-center justify-between">
-                  <span>📍 Pune Coordination & CSR Hub</span>
-                  <Link to="/pune-ngo" className="font-bold underline" onClick={() => setMobileMenuOpen(false)}>
-                    View Hub →
-                  </Link>
-                </div>
+          <div className="lg:hidden bg-white border-t border-neutral-100 animate-slide-down max-h-[85vh] overflow-y-auto">
+            <Container className="py-6 space-y-4">
+              <div className="p-3 bg-primary-50 rounded-xl border border-primary-100 text-xs text-primary-950 font-medium">
+                📍 {t("Regd. Office: Chondi, Dharmabad, Nanded, Maharashtra", "नोंदणीकृत कार्यालय: चोंडी, धर्माबाद, नांदेड, महाराष्ट्र")}
+              </div>
+              <div className="space-y-1">
                 {navigation.map((item) => (
-                  <MobileDropdownItem key={item.href} item={item} isActive={isActive(item.href)} onNavigate={() => setMobileMenuOpen(false)} />
+                  <MobileDropdownItem key={item.name} item={item} isActive={isActive(item.href)} onNavigate={() => setMobileMenuOpen(false)} />
                 ))}
-                <div className="pt-4 border-t border-neutral-100 flex flex-col gap-3">
-                  <Link
-                    to="/get-involved/volunteer"
-                    className="btn btn-outline w-full justify-center"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Volunteer
-                  </Link>
-                  <Link
-                    to="/get-involved/partner"
-                    className="btn btn-primary w-full justify-center"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Partner With Us
-                  </Link>
-                </div>
+              </div>
+              <div className="pt-4 border-t border-neutral-100 flex flex-col gap-2.5">
+                <Link
+                  to="/get-involved/volunteer"
+                  className="btn btn-outline w-full justify-center text-sm"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t("Volunteer Opportunities", "स्वयंसेवक बना")}
+                </Link>
+                <Link
+                  to="/get-involved/partner"
+                  className="btn btn-primary w-full justify-center text-sm"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t("Partner With Us", "प्रकल्प भागीदारी")}
+                </Link>
               </div>
             </Container>
           </div>
@@ -201,7 +211,7 @@ export function Header() {
   );
 }
 
-function DropdownItem({ item, isActive }: { item: typeof navigation[0]; isActive: boolean }) {
+function DropdownItem({ item, isActive }: { item: { name: string; href: string; children?: { name: string; href: string }[] }; isActive: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
 
   if (!item.children) {
@@ -209,7 +219,7 @@ function DropdownItem({ item, isActive }: { item: typeof navigation[0]; isActive
       <Link
         to={item.href}
         className={cn(
-          "px-3.5 py-2 text-sm font-medium rounded-lg transition-colors",
+          "px-3 py-2 text-sm font-medium rounded-lg transition-colors",
           isActive ? "text-primary-700 bg-primary-50 font-bold" : "text-neutral-700 hover:text-primary-700 hover:bg-primary-50"
         )}
       >
@@ -222,25 +232,24 @@ function DropdownItem({ item, isActive }: { item: typeof navigation[0]; isActive
     <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
       <button
         className={cn(
-          "flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors",
+          "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
           isActive ? "text-primary-700 bg-primary-50 font-bold" : "text-neutral-700 hover:text-primary-700 hover:bg-primary-50"
         )}
         aria-expanded={isOpen}
-        aria-haspopup="true"
       >
         {item.name}
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 top-full mt-1.5 w-64 bg-white rounded-xl shadow-elevated border border-neutral-100 py-2 animate-fade-in">
+        <div className="absolute left-0 top-full mt-1.5 w-64 bg-white rounded-xl shadow-elevated border border-neutral-100 py-2 animate-fade-in z-50">
           {item.children.map((child) => (
             <Link
-              key={child.href}
+              key={child.name}
               to={child.href}
-              className="block px-4 py-2.5 text-sm text-neutral-700 hover:text-primary-700 hover:bg-primary-50 transition-colors"
+              className="block px-4 py-2 text-xs sm:text-sm text-neutral-700 hover:text-primary-700 hover:bg-primary-50 transition-colors"
             >
               {child.name}
             </Link>
@@ -251,7 +260,7 @@ function DropdownItem({ item, isActive }: { item: typeof navigation[0]; isActive
   );
 }
 
-function MobileDropdownItem({ item, isActive, onNavigate }: { item: typeof navigation[0]; isActive: boolean; onNavigate: () => void }) {
+function MobileDropdownItem({ item, isActive, onNavigate }: { item: { name: string; href: string; children?: { name: string; href: string }[] }; isActive: boolean; onNavigate: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
 
   if (!item.children) {
@@ -260,8 +269,8 @@ function MobileDropdownItem({ item, isActive, onNavigate }: { item: typeof navig
         to={item.href}
         onClick={onNavigate}
         className={cn(
-          "block px-2 py-2.5 text-base font-medium rounded-lg transition-colors",
-          isActive ? "text-primary-700 bg-primary-50" : "text-neutral-700"
+          "block px-3 py-2 text-sm font-medium rounded-lg transition-colors",
+          isActive ? "text-primary-700 bg-primary-50 font-bold" : "text-neutral-700"
         )}
       >
         {item.name}
@@ -273,25 +282,25 @@ function MobileDropdownItem({ item, isActive, onNavigate }: { item: typeof navig
     <div>
       <button
         className={cn(
-          "flex items-center justify-between w-full px-2 py-2.5 text-base font-medium rounded-lg transition-colors",
-          isActive ? "text-primary-700 bg-primary-50" : "text-neutral-700"
+          "flex items-center justify-between w-full px-3 py-2 text-sm font-medium rounded-lg transition-colors",
+          isActive ? "text-primary-700 bg-primary-50 font-bold" : "text-neutral-700"
         )}
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
         {item.name}
-        <svg className={cn("w-5 h-5 text-neutral-400 transition-transform", isOpen && "rotate-180")} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className={cn("w-4 h-4 text-neutral-400 transition-transform", isOpen && "rotate-180")} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
       {isOpen && (
-        <div className="ml-4 mt-2 space-y-1 animate-slide-down">
+        <div className="ml-3 mt-1 space-y-1 pl-2 border-l border-neutral-200">
           {item.children.map((child) => (
             <Link
-              key={child.href}
+              key={child.name}
               to={child.href}
               onClick={onNavigate}
-              className="block px-2 py-2 text-sm text-neutral-600 hover:text-primary-700 transition-colors"
+              className="block px-2 py-1.5 text-xs text-neutral-600 hover:text-primary-700 transition-colors"
             >
               {child.name}
             </Link>
