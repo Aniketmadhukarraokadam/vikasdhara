@@ -37,6 +37,7 @@ const navigation = [
       { name: "Gau Shala", href: "/what-we-do/gau-shala" },
     ],
   },
+  { name: "Pune NGO Hub", href: "/pune-ngo" },
   {
     name: "Impact",
     href: "/impact",
@@ -51,8 +52,8 @@ const navigation = [
     name: "Get Involved",
     href: "/get-involved",
     children: [
-      { name: "Partner With Us", href: "/get-involved/partner" },
-      { name: "Volunteer", href: "/get-involved/volunteer" },
+      { name: "Partner With Us (CSR)", href: "/get-involved/partner" },
+      { name: "Volunteer in Pune & Nanded", href: "/get-involved/volunteer" },
       { name: "Support the Mission", href: "/get-involved/support" },
     ],
   },
@@ -62,7 +63,6 @@ const navigation = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -74,13 +74,42 @@ export function Header() {
   const isActive = (href: string) => location.pathname === href || (href !== "/" && location.pathname.startsWith(href));
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/95 backdrop-blur-sm shadow-soft border-b border-neutral-100" : "bg-transparent"
-      )}
-    >
-      <nav className="relative" aria-label="Main navigation">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      {/* Top Institutional & Geo Banner */}
+      <div className="bg-primary-950 text-neutral-300 text-[11px] sm:text-xs py-1.5 border-b border-primary-900/60 hidden md:block">
+        <Container>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <span className="flex items-center gap-1.5 text-neutral-200">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Regd. HQ: <strong>Dharmabad, Nanded</strong></span>
+              </span>
+              <span className="text-primary-600">•</span>
+              <Link to="/pune-ngo" className="flex items-center gap-1.5 text-emerald-300 hover:text-emerald-200 transition-colors font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-400"></span>
+                <span>Regional Hub: <strong>Pune, Maharashtra</strong> (CSR & Skills)</span>
+              </Link>
+            </div>
+            <div className="flex items-center gap-5 text-neutral-300">
+              <a href="mailto:info@vikasdharafoundation.org" className="hover:text-white transition-colors flex items-center gap-1">
+                <span>✉️ info@vikasdharafoundation.org</span>
+              </a>
+              <Link to="/transparency" className="hover:text-white transition-colors">
+                Public Charitable Trust (Govt. Regd.)
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* Main Navbar */}
+      <nav
+        className={cn(
+          "transition-all duration-300",
+          isScrolled ? "bg-white/95 backdrop-blur-sm shadow-soft border-b border-neutral-100" : "bg-white/90 backdrop-blur-xs border-b border-neutral-100/60"
+        )}
+        aria-label="Main navigation"
+      >
         <Container>
           <div className="flex h-16 lg:h-18 items-center justify-between">
             <Link to="/" className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 group" aria-label="Vortexsoft Vikasdhara Foundation Home">
@@ -106,8 +135,8 @@ export function Header() {
             </div>
 
             <div className="hidden lg:flex lg:items-center lg:gap-3">
-              <Link to="/get-involved/volunteer" className="btn btn-ghost text-sm px-4 py-2">
-                Volunteer
+              <Link to="/pune-ngo" className="text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80 hover:bg-emerald-100 transition-colors">
+                📍 Pune Hub
               </Link>
               <Link to="/get-involved/partner">
                 <Button size="sm" className="px-5 py-2">
@@ -138,8 +167,14 @@ export function Header() {
           <div id="mobile-menu" className="lg:hidden bg-white border-t border-neutral-100 animate-slide-down">
             <Container className="py-6">
               <div className="space-y-4">
+                <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-100 text-xs text-emerald-900 flex items-center justify-between">
+                  <span>📍 Pune Coordination & CSR Hub</span>
+                  <Link to="/pune-ngo" className="font-bold underline" onClick={() => setMobileMenuOpen(false)}>
+                    View Hub →
+                  </Link>
+                </div>
                 {navigation.map((item) => (
-                  <MobileDropdownItem key={item.href} item={item} isActive={isActive(item.href)} />
+                  <MobileDropdownItem key={item.href} item={item} isActive={isActive(item.href)} onNavigate={() => setMobileMenuOpen(false)} />
                 ))}
                 <div className="pt-4 border-t border-neutral-100 flex flex-col gap-3">
                   <Link
@@ -174,8 +209,8 @@ function DropdownItem({ item, isActive }: { item: typeof navigation[0]; isActive
       <Link
         to={item.href}
         className={cn(
-          "px-4 py-2.5 text-sm font-medium rounded-lg transition-colors",
-          isActive ? "text-primary-700 bg-primary-50" : "text-neutral-700 hover:text-primary-700 hover:bg-primary-50"
+          "px-3.5 py-2 text-sm font-medium rounded-lg transition-colors",
+          isActive ? "text-primary-700 bg-primary-50 font-bold" : "text-neutral-700 hover:text-primary-700 hover:bg-primary-50"
         )}
       >
         {item.name}
@@ -187,8 +222,8 @@ function DropdownItem({ item, isActive }: { item: typeof navigation[0]; isActive
     <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
       <button
         className={cn(
-          "flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-lg transition-colors",
-          isActive ? "text-primary-700 bg-primary-50" : "text-neutral-700 hover:text-primary-700 hover:bg-primary-50"
+          "flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors",
+          isActive ? "text-primary-700 bg-primary-50 font-bold" : "text-neutral-700 hover:text-primary-700 hover:bg-primary-50"
         )}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -216,13 +251,14 @@ function DropdownItem({ item, isActive }: { item: typeof navigation[0]; isActive
   );
 }
 
-function MobileDropdownItem({ item, isActive }: { item: typeof navigation[0]; isActive: boolean }) {
+function MobileDropdownItem({ item, isActive, onNavigate }: { item: typeof navigation[0]; isActive: boolean; onNavigate: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
 
   if (!item.children) {
     return (
       <Link
         to={item.href}
+        onClick={onNavigate}
         className={cn(
           "block px-2 py-2.5 text-base font-medium rounded-lg transition-colors",
           isActive ? "text-primary-700 bg-primary-50" : "text-neutral-700"
@@ -254,6 +290,7 @@ function MobileDropdownItem({ item, isActive }: { item: typeof navigation[0]; is
             <Link
               key={child.href}
               to={child.href}
+              onClick={onNavigate}
               className="block px-2 py-2 text-sm text-neutral-600 hover:text-primary-700 transition-colors"
             >
               {child.name}

@@ -6,7 +6,7 @@ import { Input, Textarea, Label } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { IconWrapper } from "@/components/ui/IconWrapper";
 import { contact } from "@/content";
-import { icons, type IconName } from "@/assets/icons";
+import { SEO } from "@/components/seo/SEO";
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -15,6 +15,7 @@ export function ContactPage() {
     mobile: "",
     organisation: "",
     subject: "",
+    locationPref: "pune",
     message: "",
     consent: false,
   });
@@ -31,20 +32,29 @@ export function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 800));
     setStatus("success");
-    setFormData({ name: "", email: "", mobile: "", organisation: "", subject: "", message: "", consent: false });
-    setTimeout(() => setStatus("idle"), 3000);
+    setFormData({ name: "", email: "", mobile: "", organisation: "", subject: "", locationPref: "pune", message: "", consent: false });
+    setTimeout(() => setStatus("idle"), 4000);
   };
 
   const { contact: cont } = contact;
 
   return (
     <>
-      <Section variant="xl" background="primary">
+      <SEO
+        title="Contact Us | VORTEXSOFT VIKASDHARA FOUNDATION (Pune & Nanded)"
+        description="Connect with VORTEXSOFT VIKASDHARA FOUNDATION in Pune and Nanded, Maharashtra. Inquiries for CSR partnerships, volunteer opportunities, training, and community initiatives."
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Contact", item: "/contact" }
+        ]}
+      />
+
+      <Section variant="lg" background="sky">
         <Container>
           <SectionHeader>
-            <SectionEyebrow>Get in Touch</SectionEyebrow>
+            <SectionEyebrow>Connect With Us</SectionEyebrow>
             <SectionTitle>{cont.heading}</SectionTitle>
             <SectionSubtitle className="max-w-3xl mx-auto">{cont.subheading}</SectionSubtitle>
           </SectionHeader>
@@ -54,17 +64,18 @@ export function ContactPage() {
       <Section variant="lg" background="none">
         <Container>
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Form Column */}
             <div className="lg:col-span-2">
-              <Card variant="bordered" padding="lg">
+              <Card variant="bordered" padding="lg" className="shadow-soft">
                 <CardHeader>
-                  <CardTitle>Send Us a Message</CardTitle>
-                  <p className="text-neutral-600 text-sm mt-1">We'll respond within 2-3 business days</p>
+                  <CardTitle>Send Us an Official Message</CardTitle>
+                  <p className="text-neutral-600 text-sm mt-1">Our coordination team in Pune & Nanded will respond within 24–48 business hours.</p>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="name">Name *</Label>
+                        <Label htmlFor="name">Full Name *</Label>
                         <Input
                           id="name"
                           name="name"
@@ -75,7 +86,7 @@ export function ContactPage() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="email">Email *</Label>
+                        <Label htmlFor="email">Email Address *</Label>
                         <Input
                           id="email"
                           name="email"
@@ -90,7 +101,7 @@ export function ContactPage() {
 
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="mobile">Mobile *</Label>
+                        <Label htmlFor="mobile">Mobile / WhatsApp Number *</Label>
                         <Input
                           id="mobile"
                           name="mobile"
@@ -102,32 +113,49 @@ export function ContactPage() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="organisation">Organisation</Label>
+                        <Label htmlFor="organisation">Organisation / Company Name</Label>
                         <Input
                           id="organisation"
                           name="organisation"
                           value={formData.organisation}
                           onChange={handleChange}
-                          placeholder="Your organisation (if applicable)"
+                          placeholder="Company, NGO, Institution or Self"
                         />
                       </div>
                     </div>
 
-                    <div>
-                      <Label htmlFor="subject">Subject *</Label>
-                      <select
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        required
-                        className="input"
-                      >
-                        <option value="">Select a subject</option>
-                        {cont.categories.map((cat) => (
-                          <option key={cat} value={cat.toLowerCase().replace(/\s+/g, "")}>{cat}</option>
-                        ))}
-                      </select>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div>
+                        <Label htmlFor="subject">Subject / Purpose *</Label>
+                        <select
+                          id="subject"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          required
+                          className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-sm text-neutral-800 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                        >
+                          <option value="">Select purpose</option>
+                          {cont.categories.map((cat) => (
+                            <option key={cat} value={cat.toLowerCase().replace(/\s+/g, "")}>{cat}</option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="locationPref">Preferred Coordination Hub</Label>
+                        <select
+                          id="locationPref"
+                          name="locationPref"
+                          value={formData.locationPref}
+                          onChange={handleChange}
+                          className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-sm text-neutral-800 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                        >
+                          <option value="pune">Pune Coordination Office (CSR & State)</option>
+                          <option value="nanded">Nanded Registered Office (Headquarters)</option>
+                          <option value="general">General / All Maharashtra</option>
+                        </select>
+                      </div>
                     </div>
 
                     <div>
@@ -138,7 +166,7 @@ export function ContactPage() {
                         value={formData.message}
                         onChange={handleChange}
                         required
-                        placeholder="Tell us how we can help or how you'd like to get involved..."
+                        placeholder="Tell us how we can collaborate, or what you would like to discuss..."
                         rows={5}
                       />
                     </div>
@@ -153,90 +181,101 @@ export function ContactPage() {
                         required
                         className="mt-1 w-4 h-4 text-primary-700 border-neutral-300 rounded focus:ring-primary-500"
                       />
-                      <Label htmlFor="consent" className="text-sm text-neutral-700 mb-0 cursor-pointer">
-                        I consent to being contacted by VORTEXSOFT VIKASDHARA FOUNDATION regarding my enquiry.
+                      <Label htmlFor="consent" className="text-xs sm:text-sm text-neutral-600 mb-0 cursor-pointer">
+                        I consent to VORTEXSOFT VIKASDHARA FOUNDATION contacting me regarding this enquiry in accordance with its Privacy Policy.
                       </Label>
                     </div>
 
                     {status === "success" && (
-                      <div className="p-4 bg-accent-50 border border-accent-200 rounded-lg text-accent-800">
-                        Thank you! Your message has been sent successfully. We'll get back to you soon.
-                      </div>
-                    )}
-
-                    {status === "error" && (
-                      <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
-                        Something went wrong. Please try again or email us directly.
+                      <div className="p-4 bg-accent-50 border border-accent-200 rounded-xl text-accent-900 flex items-center gap-3">
+                        <svg className="w-5 h-5 text-accent-700 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Thank you! Your message has been received. Our team will get back to you shortly.</span>
                       </div>
                     )}
 
                     <Button type="submit" size="lg" isLoading={status === "submitting"} className="w-full sm:w-auto">
-                      {status === "submitting" ? "Sending..." : "Send Message"}
+                      {status === "submitting" ? "Submitting..." : "Submit Enquiry"}
                     </Button>
                   </form>
                 </CardContent>
               </Card>
             </div>
 
+            {/* Location & Contact Info Cards */}
             <div className="space-y-6">
-              <Card variant="bordered" padding="lg">
+              {/* Pune Office Card */}
+              <Card variant="bordered" padding="lg" className="border-emerald-200/80 bg-emerald-50/30">
                 <CardHeader>
-                  <CardTitle>{cont.office.heading}</CardTitle>
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
+                    Regional Hub
+                  </div>
+                  <CardTitle className="text-lg text-emerald-950">
+                    Pune Coordination & CSR Liaison
+                  </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <address className="not-italic text-neutral-600 leading-relaxed">
-                    <p className="font-semibold text-neutral-900">{cont.office.name}</p>
-                    <p>{cont.office.address}</p>
-                  </address>
-                  <div className="space-y-3 pt-4 border-t border-neutral-100">
-                    <a href={`mailto:${cont.office.email}`} className="flex items-center gap-3 text-neutral-700 hover:text-primary-700 transition-colors">
-                      <IconWrapper variant="primary" size="sm">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                      </IconWrapper>
-                      <span>{cont.office.email}</span>
-                    </a>
-                    <a href={`tel:${cont.office.phone}`} className="flex items-center gap-3 text-neutral-700 hover:text-primary-700 transition-colors">
-                      <IconWrapper variant="primary" size="sm">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                      </IconWrapper>
-                      <span>{cont.office.phone}</span>
+                <CardContent className="space-y-3 text-sm text-neutral-600">
+                  <p className="font-semibold text-neutral-900">VORTEXSOFT VIKASDHARA FOUNDATION — Pune</p>
+                  <p>Pune, Maharashtra, India.</p>
+                  <p className="text-xs text-neutral-500 leading-relaxed">
+                    Statewide CSR Partnerships, Corporate Alliances, Technical Education & Urban Outreach.
+                  </p>
+                  <div className="pt-3 border-t border-emerald-100 space-y-2">
+                    <a href="mailto:partnerships@vikasdharafoundation.org" className="flex items-center gap-2 text-emerald-800 font-semibold hover:underline">
+                      <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                      partnerships@vikasdharafoundation.org
                     </a>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card variant="bordered" padding="lg">
+              {/* Registered Headquarters (Nanded) */}
+              <Card variant="bordered" padding="lg" className="border-primary-200/80 bg-primary-50/30">
                 <CardHeader>
-                  <CardTitle>Enquiry Categories</CardTitle>
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-primary-100 text-primary-800 text-xs font-bold uppercase tracking-wider mb-2">
+                    Headquarters
+                  </div>
+                  <CardTitle className="text-lg text-primary-950">
+                    Registered Office (Nanded)
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {cont.categories.map((cat) => (
-                      <li key={cat}>
-                        <label className="flex items-center gap-3 cursor-pointer p-2 rounded-lg hover:bg-neutral-50 transition-colors">
-                          <input type="radio" name="category" className="text-primary-700 focus:ring-primary-500" />
-                          <span className="text-neutral-700">{cat}</span>
-                        </label>
-                      </li>
-                    ))}
-                  </ul>
+                <CardContent className="space-y-3 text-sm text-neutral-600">
+                  <address className="not-italic leading-relaxed">
+                    <p className="font-semibold text-neutral-900">VORTEXSOFT VIKASDHARA FOUNDATION</p>
+                    <p>Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot,</p>
+                    <p>Taluka Dharmabad, District Nanded – 431808,</p>
+                    <p>Maharashtra, India.</p>
+                  </address>
+                  <div className="pt-3 border-t border-primary-100 space-y-2">
+                    <a href="mailto:info@vikasdharafoundation.org" className="flex items-center gap-2 text-primary-800 font-semibold hover:underline">
+                      <svg className="w-4 h-4 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                      info@vikasdharafoundation.org
+                    </a>
+                    <a href="mailto:contact@vikasdharafoundation.org" className="flex items-center gap-2 text-primary-800 font-semibold hover:underline">
+                      <svg className="w-4 h-4 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                      contact@vikasdharafoundation.org
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-        </Container>
-      </Section>
 
-      <Section variant="lg" background="neutral" id="office">
-        <Container>
-          <SectionHeader>
-            <SectionTitle>Visit Us</SectionTitle>
-            <SectionSubtitle>Our registered office is open for scheduled meetings</SectionSubtitle>
-          </SectionHeader>
-
-          <div className="aspect-video bg-neutral-100 rounded-2xl overflow-hidden border border-neutral-200">
-            <div className="absolute inset-0 flex items-center justify-center text-neutral-400 text-sm">
-              <p className="text-center px-8">Google Maps Embed<br /><span className="text-xs">{cont.office.address}</span></p>
+              {/* Department Direct Inquiries */}
+              <Card variant="bordered" padding="lg">
+                <CardHeader>
+                  <CardTitle className="text-base">Specialised Channels</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-xs sm:text-sm">
+                  <div>
+                    <span className="font-semibold text-neutral-800 block">Careers & Opportunities:</span>
+                    <a href="mailto:careers@vikasdharafoundation.org" className="text-primary-700 hover:underline">careers@vikasdharafoundation.org</a>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-neutral-800 block">Volunteers:</span>
+                    <a href="mailto:volunteer@vikasdharafoundation.org" className="text-primary-700 hover:underline">volunteer@vikasdharafoundation.org</a>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </Container>

@@ -1,22 +1,51 @@
 import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionEyebrow } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
+import { Card, CardContent, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { IconWrapper } from "@/components/ui/IconWrapper";
 import { Link } from "react-router-dom";
 import { partnership } from "@/content";
-import { icons, type IconName } from "@/assets/icons";
+import { SEO } from "@/components/seo/SEO";
 
 export function PartnerPage() {
   const { partnership: partner } = partnership;
 
   return (
     <>
-      <Section variant="xl" background="primary">
+      <SEO
+        title="Corporate CSR & Institutional Partnerships (Pune & Maharashtra) | VORTEXSOFT VIKASDHARA FOUNDATION"
+        description="Partner with VORTEXSOFT VIKASDHARA FOUNDATION for certified CSR projects in Pune and Maharashtra. Transparent project execution in youth skills, women empowerment, digital education, and rural development."
+        keywords={[
+          "Corporate CSR Partner Pune",
+          "CSR implementation agency Pune",
+          "Schedule VII CSR Maharashtra",
+          "NGO for CSR in Hinjewadi",
+          "Corporate social responsibility partner Maharashtra",
+          "Skill development CSR projects Pune",
+          "Women empowerment CSR Pune",
+          "Vikasdhara Foundation partnerships"
+        ]}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Get Involved", item: "/get-involved/partner" },
+          { name: "Partner With Us", item: "/get-involved/partner" }
+        ]}
+        faqs={[
+          {
+            question: "What makes Vortexsoft Vikasdhara Foundation a preferred CSR partner in Pune?",
+            answer: "We offer complete end-to-end statutory CSR compliance, transparent bank escrow utilization, real-time photo-documented project updates, and independent third-party impact assessments."
+          },
+          {
+            question: "How can corporations initiate a partnership?",
+            answer: "Send a project brief or Schedule VII requirement to partnerships@vikasdharafoundation.org or call our Pune liaison office to schedule an exploratory discussion."
+          }
+        ]}
+      />
+
+      <Section variant="xl" background="sky">
         <Container>
           <SectionHeader>
-            <SectionEyebrow>For Organisations</SectionEyebrow>
+            <SectionEyebrow>For Organisations & Enterprises</SectionEyebrow>
             <SectionTitle>{partner.heading}</SectionTitle>
             <SectionSubtitle className="max-w-3xl mx-auto whitespace-pre-line">{partner.intro}</SectionSubtitle>
           </SectionHeader>
@@ -29,7 +58,7 @@ export function PartnerPage() {
             <SectionEyebrow>Partnership Categories</SectionEyebrow>
             <SectionTitle>Ways to Partner With Us</SectionTitle>
             <SectionSubtitle>
-              We welcome conversations with organisations that want to support lawful charitable and socially beneficial initiatives
+              We welcome collaborations with corporations, foundations, government bodies, and social enterprises
             </SectionSubtitle>
           </SectionHeader>
 
@@ -79,9 +108,11 @@ export function PartnerPage() {
           </div>
 
           <div className="text-center">
-            <Button size="lg" asChild>
-              <Link to="/contact">{partner.cta.text}</Link>
-            </Button>
+            <Link to="/contact">
+              <Button size="lg">
+                {partner.cta.text}
+              </Button>
+            </Link>
             <p className="mt-4 text-neutral-600 text-sm">{partner.cta.description}</p>
           </div>
         </Container>
@@ -91,9 +122,9 @@ export function PartnerPage() {
         <Container>
           <SectionHeader className="text-left max-w-none mx-auto mb-12">
             <SectionEyebrow>Corporate Projects</SectionEyebrow>
-            <SectionTitle>Build Impact Through Meaningful Projects</SectionTitle>
+            <SectionTitle>Build Impact Through Structured Projects</SectionTitle>
             <SectionSubtitle>
-              From skill development to employment generation, organisations can work with the Foundation on structured projects designed to create measurable social value.
+              From technical skill centers in Pune to rural education in Nanded, partner with us on high-return social investments.
             </SectionSubtitle>
           </SectionHeader>
 

@@ -6,10 +6,41 @@ import { Badge } from "@/components/ui/Badge";
 import { about } from "@/content";
 import { icons, type IconName } from "@/assets/icons";
 
+import { SEO } from "@/components/seo/SEO";
+
 export function About() {
   return (
     <>
-      <Section variant="xl" background="primary">
+      <SEO
+        title="About Us | Vision, Trustees & Governance | VORTEXSOFT VIKASDHARA FOUNDATION"
+        description="Learn about VORTEXSOFT VIKASDHARA FOUNDATION, a registered public charitable trust operating across Pune and Nanded, Maharashtra. Discover our founding vision, board of trustees, core values, and transparent institutional governance."
+        keywords={[
+          "About Vikasdhara Foundation",
+          "Vortexsoft Vikasdhara Foundation Trustees",
+          "Founder Anirudh Madhukarrao Kadam",
+          "NGO in Pune",
+          "NGO in Nanded Maharashtra",
+          "Registered Public Charitable Trust Maharashtra",
+          "Non-Profit Governance India",
+          "CSR Partner NGO Pune",
+          "Maharashtra NGO leadership"
+        ]}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "About Us", item: "/about" }
+        ]}
+        faqs={[
+          {
+            question: "Who founded Vortexsoft Vikasdhara Foundation?",
+            answer: "Vortexsoft Vikasdhara Foundation was founded and settled by Anirudh Madhukarrao Kadam along with co-trustees Dnyaneshvar Taterao Ballod and Sumit Balaji Jadhav, with a mandate to uplift underserved communities across Maharashtra."
+          },
+          {
+            question: "What governance standards does the Foundation adhere to?",
+            answer: "The Foundation is governed as a public charitable trust in Maharashtra with zero tolerance for corruption, statutory financial audits, published annual reports, and transparent fund allocation for both rural Marathwada and urban Pune programmes."
+          }
+        ]}
+      />
+      <Section variant="xl" background="sky">
         <Container>
           <SectionHeader>
             <SectionEyebrow>About Us</SectionEyebrow>

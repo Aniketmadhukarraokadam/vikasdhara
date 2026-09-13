@@ -23,13 +23,20 @@
       { "name": "consent", "label": "I consent to being contacted by VORTEXSOFT VIKASDHARA FOUNDATION regarding my enquiry.", "type": "checkbox", "required": true }
     ],
     "office": {
-      "heading": "Our Registered Office",
+      "heading": "Registered Office (Nanded)",
       "name": "VORTEXSOFT VIKASDHARA FOUNDATION",
       "address": "Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot, Taluka Dharmabad, District Nanded – 431808, Maharashtra, India.",
       "email": "info@vikasdharafoundation.org",
       "secondaryEmail": "contact@vikasdharafoundation.org",
       "website": "www.vikasdharafoundation.org",
       "phone": "+91 XXXXX XXXXX"
+    },
+    "puneOffice": {
+      "heading": "Pune Coordination & Regional Centre",
+      "name": "VORTEXSOFT VIKASDHARA FOUNDATION — Pune Office",
+      "address": "Pune, Maharashtra, India.",
+      "focus": "CSR Partnerships, Institutional Collaborations, Urban Outreach & Skill Initiatives across Pune & Western Maharashtra.",
+      "email": "partnerships@vikasdharafoundation.org"
     },
     "categories": [
       "General enquiry",

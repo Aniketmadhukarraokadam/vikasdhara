@@ -1,18 +1,46 @@
 import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionEyebrow } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { transparency } from "@/content";
+import { SEO } from "@/components/seo/SEO";
 
 export function TransparencyPage() {
   const { transparency: trans } = transparency;
 
   return (
     <>
-      <Section variant="xl" background="primary">
+      <SEO
+        title="Transparency, Compliance & Disclosures | VORTEXSOFT VIKASDHARA FOUNDATION"
+        description="Public disclosures, annual reports, statutory trust compliance, financial statements, and institutional governance policies of VORTEXSOFT VIKASDHARA FOUNDATION."
+        keywords={[
+          "NGO Transparency Maharashtra",
+          "Public trust compliance Maharashtra",
+          "Annual reports Vikasdhara Foundation",
+          "Statutory audit NGO India",
+          "Trust deed disclosures Dharmabad",
+          "Governance policies Pune NGO"
+        ]}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Transparency", item: "/transparency" }
+        ]}
+        faqs={[
+          {
+            question: "Where can public annual audit reports be accessed?",
+            answer: "Statutory annual returns, audited balance sheets, and activity reports are uploaded to this Transparency portal upon completion of each financial year's audit."
+          },
+          {
+            question: "How can stakeholders request specific compliance documentation?",
+            answer: "Legitimate institutional partners and stakeholders can request documentation by emailing info@vikasdharafoundation.org."
+          }
+        ]}
+      />
+
+      <Section variant="xl" background="sky">
         <Container>
           <SectionHeader>
-            <SectionEyebrow>Accountability</SectionEyebrow>
+            <SectionEyebrow>Accountability & Governance</SectionEyebrow>
             <SectionTitle>{trans.heading}</SectionTitle>
             <SectionSubtitle className="max-w-3xl mx-auto">{trans.intro}</SectionSubtitle>
           </SectionHeader>

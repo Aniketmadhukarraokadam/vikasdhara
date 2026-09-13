@@ -24,10 +24,40 @@ const categories = [
   { id: "gau-shala", title: "Gau Seva & Animal Care", slug: "gau-shala", description: "Supporting responsible cattle-care and Gau Shala initiatives." },
 ];
 
+import { SEO } from "@/components/seo/SEO";
+
 export function WhatWeDoPage() {
   return (
     <>
-      <Section variant="xl" background="primary">
+      <SEO
+        title="Social Development Initiatives & Programmes | VORTEXSOFT VIKASDHARA FOUNDATION"
+        description="Explore VORTEXSOFT VIKASDHARA FOUNDATION's 14+ integrated community initiatives across youth skill training, women empowerment, digital learning, CSR partnerships, rural infrastructure, and animal welfare in Pune & Maharashtra."
+        keywords={[
+          "Social Development Programmes Maharashtra",
+          "Skill Development Initiatives Pune",
+          "Women Empowerment NGO Pune",
+          "Digital Education Maharashtra",
+          "Youth Employability NGO",
+          "Corporate CSR Projects Pune",
+          "Rural Upliftment Programmes",
+          "Animal Welfare and Gau Shala Nanded"
+        ]}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "What We Do", item: "/what-we-do" }
+        ]}
+        faqs={[
+          {
+            question: "What are the core programme pillars of Vikasdhara Foundation?",
+            answer: "The Foundation focuses on 4 main impact verticals: 1) Education & Digital Skills, 2) Women Empowerment & Livelihood, 3) Rural Development & Healthcare, and 4) Environmental Protection & Animal Welfare."
+          },
+          {
+            question: "Can corporations fund specific programmes through CSR?",
+            answer: "Yes, corporate partners can align their CSR funding with specific initiatives such as youth coding bootcamps in Pune, rural computer labs in Nanded, mobile healthcare units, or gaushala infrastructure."
+          }
+        ]}
+      />
+      <Section variant="xl" background="sky">
         <Container>
           <SectionHeader>
             <SectionEyebrow>Our Programmes</SectionEyebrow>

@@ -1,19 +1,48 @@
 import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionEyebrow } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/Card";
+import { IconWrapper } from "@/components/ui/IconWrapper";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Link } from "react-router-dom";
 import { impact, stories } from "@/content";
 import { icons, type IconName } from "@/assets/icons";
+import { SEO } from "@/components/seo/SEO";
 
 export function ImpactPage() {
   return (
     <>
-      <Section variant="xl" background="primary">
+      <SEO
+        title="Social Impact & Verified Outcomes | VORTEXSOFT VIKASDHARA FOUNDATION"
+        description="Explore the measurable social impact of VORTEXSOFT VIKASDHARA FOUNDATION across Maharashtra and Pune. Transparent reporting, community case studies, and verified beneficiary outcomes."
+        keywords={[
+          "NGO Impact Report Maharashtra",
+          "Vikasdhara Foundation Outcomes",
+          "CSR Impact Assessment Pune",
+          "Beneficiary Metrics NGO India",
+          "Social Return on Investment Maharashtra",
+          "Verified NGO Projects Pune"
+        ]}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Impact", item: "/impact" }
+        ]}
+        faqs={[
+          {
+            question: "How does Vortexsoft Vikasdhara Foundation measure and verify its impact?",
+            answer: "The Foundation measures impact using verifiable metrics: student attendance logs, skill test certifications, job placement confirmation letters, photographic Geo-tagged field reports, and independent statutory audits."
+          },
+          {
+            question: "Are CSR project impact reports provided to corporate donors?",
+            answer: "Yes, every corporate CSR partner receives a comprehensive quarterly and annual impact dossier containing itemized fund utilization, qualitative testimonials, and quantitative output dashboards."
+          }
+        ]}
+      />
+
+      <Section variant="xl" background="sky">
         <Container>
           <SectionHeader>
-            <SectionEyebrow>Results</SectionEyebrow>
+            <SectionEyebrow>Results & Accountability</SectionEyebrow>
             <SectionTitle>{impact.impact.heading}</SectionTitle>
             <SectionSubtitle>{impact.impact.subheading}</SectionSubtitle>
           </SectionHeader>
@@ -23,16 +52,16 @@ export function ImpactPage() {
       <Section variant="lg" background="none">
         <Container>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-            {impact.impact.metrics.map((metric, index) => (
+            {impact.impact.metrics.map((metric) => (
               <Card key={metric.label} variant="hover-lift" padding="lg" className="text-center">
                 <CardContent className="pt-2">
                   <IconWrapper variant="primary" size="lg" className="mx-auto mb-4">
                     {icons[metric.icon as IconName] || icons.book}
                   </IconWrapper>
-                  <div className="text-3xl lg:text-4xl font-bold text-primary-700 mb-1" data-count="0">
+                  <div className="text-3xl lg:text-4xl font-bold text-primary-700 mb-1">
                     —
                   </div>
-                  <p className="text-neutral-600 text-sm font-medium">{metric.label}</p>
+                  <p className="text-neutral-700 text-sm font-semibold">{metric.label}</p>
                   <p className="text-neutral-500 text-xs mt-1 line-clamp-2">{metric.description}</p>
                 </CardContent>
               </Card>
@@ -60,44 +89,42 @@ export function ImpactPage() {
           <SectionHeader>
             <SectionEyebrow>From the Field</SectionEyebrow>
             <SectionTitle>Stories from the Field</SectionTitle>
-            <SectionSubtitle>Real people. Real change. Real impact.</SectionSubtitle>
+            <SectionSubtitle>Real people. Real change. Real impact across Maharashtra.</SectionSubtitle>
           </SectionHeader>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {stories.stories.map((story) => (
-              <Link key={story.id} to={`/impact/stories/${story.id}`} className="group">
-                <Card variant="hover-lift" padding="none" className="h-full overflow-hidden">
-                  <div className="aspect-video bg-neutral-100 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-100/50 to-accent-100/50" aria-hidden="true" />
-                    <div className="absolute inset-0 flex items-center justify-center text-neutral-400 text-sm">
-                      {story.image}
-                    </div>
-                    <Badge variant="primary" className="absolute top-4 left-4 z-10">
-                      {story.category}
-                    </Badge>
+              <Card key={story.id} variant="hover-lift" padding="none" className="h-full overflow-hidden">
+                <div className="aspect-video bg-neutral-100 relative overflow-hidden flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-100/50 to-emerald-100/50" aria-hidden="true" />
+                  <span className="text-neutral-500 text-xs font-semibold px-4 text-center relative z-10">{story.title}</span>
+                  <Badge variant="primary" className="absolute top-4 left-4 z-10">
+                    {story.category}
+                  </Badge>
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 text-xs text-neutral-500 mb-3">
+                    <span>{story.location}</span>
+                    <span>•</span>
+                    <span>{story.readTime}</span>
                   </div>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 text-xs text-neutral-500 mb-3">
-                      <span>{story.location}</span>
-                      <span>•</span>
-                      <span>{story.readTime}</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-neutral-950 mb-2 line-clamp-2 group-hover:text-primary-700 transition-colors">
-                      {story.title}
-                    </h3>
-                    <p className="text-neutral-600 text-sm leading-relaxed line-clamp-2">
-                      {story.excerpt}
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
+                  <h3 className="text-lg font-semibold text-neutral-950 mb-2 line-clamp-2">
+                    {story.title}
+                  </h3>
+                  <p className="text-neutral-600 text-sm leading-relaxed line-clamp-2">
+                    {story.excerpt}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
           </div>
 
           <div className="text-center">
-            <Button variant="ghost" size="lg" asChild>
-              <Link to="/impact/stories">{stories.cta.text}</Link>
-            </Button>
+            <Link to="/what-we-do">
+              <Button variant="outline" size="lg">
+                Explore All Community Initiatives
+              </Button>
+            </Link>
           </div>
         </Container>
       </Section>
@@ -105,10 +132,10 @@ export function ImpactPage() {
       <Section variant="lg" background="primary">
         <Container>
           <SectionHeader className="text-left max-w-none mx-auto mb-12">
-            <SectionEyebrow>Projects</SectionEyebrow>
-            <SectionTitle>Project Case Studies</SectionTitle>
+            <SectionEyebrow>Framework</SectionEyebrow>
+            <SectionTitle>Project Impact Methodology</SectionTitle>
             <SectionSubtitle>
-              Detailed documentation of completed projects with verified outcomes
+              Structured documentation and evaluation for completed grassroots programmes
             </SectionSubtitle>
           </SectionHeader>
 
@@ -127,9 +154,11 @@ export function ImpactPage() {
           </div>
 
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/impact/projects">View All Projects</Link>
-            </Button>
+            <Link to="/get-involved/partner">
+              <Button variant="secondary" size="lg">
+                Partner on an Impact Project
+              </Button>
+            </Link>
           </div>
         </Container>
       </Section>

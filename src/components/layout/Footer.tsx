@@ -65,11 +65,12 @@ const navigationLinks = {
   getInvolved: {
     title: "Get Involved",
     links: [
-      { name: "Volunteer", href: "/get-involved/volunteer" },
-      { name: "Partner With Us", href: "/get-involved/partner" },
-      { name: "Corporate / CSR Partnership", href: "/what-we-do/corporate-projects" },
+      { name: "Pune NGO Hub", href: "/pune-ngo" },
+      { name: "Partner With Us (CSR)", href: "/get-involved/partner" },
+      { name: "Volunteer in Pune & Nanded", href: "/get-involved/volunteer" },
+      { name: "Corporate CSR Projects", href: "/what-we-do/corporate-projects" },
       { name: "Support Our Work", href: "/get-involved/support" },
-      { name: "Contact Us", href: "/contact" },
+      { name: "Contact Our Team", href: "/contact" },
     ],
   },
   transparency: {
@@ -78,8 +79,8 @@ const navigationLinks = {
       { name: "Annual Reports", href: "/transparency#reports" },
       { name: "Financial Information", href: "/transparency#financials" },
       { name: "Trust Documents", href: "/transparency#trust-docs" },
-      { name: "Policies", href: "/transparency#policies" },
-      { name: "Governance", href: "/about#governance" },
+      { name: "Policies & Ethics", href: "/transparency#policies" },
+      { name: "Governance Structure", href: "/about#governance" },
     ],
   },
 };
@@ -122,10 +123,11 @@ export function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <div>
-                  <span className="text-neutral-200 font-medium block">Registered Office:</span>
+                  <span className="text-neutral-200 font-medium block">Registered Trust Office:</span>
                   Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot,<br />
-                  Taluka Dharmabad, District Nanded – 431808,<br />
-                  Maharashtra, India.
+                  Taluka Dharmabad, District Nanded – 431808, Maharashtra.
+                  <span className="text-neutral-200 font-medium block mt-2">Regional Coordination & CSR Liaison:</span>
+                  Pune, Maharashtra, India.
                 </div>
               </div>
 

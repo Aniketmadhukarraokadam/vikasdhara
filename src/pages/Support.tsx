@@ -1,19 +1,45 @@
 import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionEyebrow } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
+import { Card, CardContent, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { IconWrapper } from "@/components/ui/IconWrapper";
 import { Link } from "react-router-dom";
 import { support } from "@/content";
-import { icons, type IconName } from "@/assets/icons";
+import { SEO } from "@/components/seo/SEO";
 
 export function SupportPage() {
   const { support: sup } = support;
 
   return (
     <>
-      <Section variant="xl" background="primary">
+      <SEO
+        title="Support the Mission & Transparent Contributions | VORTEXSOFT VIKASDHARA FOUNDATION"
+        description="Support VORTEXSOFT VIKASDHARA FOUNDATION's social development initiatives across Pune and Maharashtra. Transparent financial accounting, ethical compliance, and direct impact for communities."
+        keywords={[
+          "Support NGO Maharashtra",
+          "Donate to NGO Pune",
+          "Public charitable trust donations",
+          "Non profit contribution Maharashtra",
+          "Transparent NGO Pune",
+          "Vikasdhara Foundation support"
+        ]}
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Get Involved", item: "/get-involved/support" },
+          { name: "Support the Mission", item: "/get-involved/support" }
+        ]}
+        faqs={[
+          {
+            question: "How are funds and donations utilized by Vikasdhara Foundation?",
+            answer: "All funds are deployed strictly according to statutory public charitable objectives: educational scholarships, skill development training kits, rural village development, community health camps, and gaushala cattle care."
+          },
+          {
+            question: "Does the Foundation issue receipts and audit disclosures?",
+            answer: "Yes, every contribution is documented with an official stamped receipt, unique transaction tracking number, and audited in the foundation's annual financial accounts."
+          }
+        ]}
+      />
+
+      <Section variant="xl" background="sky">
         <Container>
           <SectionHeader>
             <SectionEyebrow>Get Involved</SectionEyebrow>
@@ -26,13 +52,15 @@ export function SupportPage() {
       <Section variant="lg" background="none">
         <Container>
           <SectionHeader className="text-left max-w-none mx-auto mb-12">
-            <SectionEyebrow>Compliance</SectionEyebrow>
+            <SectionEyebrow>Compliance & Governance</SectionEyebrow>
             <SectionTitle>Important Compliance Notice</SectionTitle>
           </SectionHeader>
 
-          <Card variant="bordered" padding="lg" className="bg-warm-50 border-warm-100 max-w-3xl mx-auto mb-16">
+          <Card variant="bordered" padding="lg" className="bg-amber-50 border-amber-200 max-w-3xl mx-auto mb-16">
             <CardContent>
-              <p className="text-warm-800 whitespace-pre-line">{sup.complianceNote}</p>
+              <p className="text-amber-900 whitespace-pre-line leading-relaxed text-sm sm:text-base font-medium">
+                {sup.complianceNote}
+              </p>
             </CardContent>
           </Card>
         </Container>
@@ -44,7 +72,7 @@ export function SupportPage() {
             <SectionEyebrow>Ways to Support</SectionEyebrow>
             <SectionTitle>How You Can Contribute</SectionTitle>
             <SectionSubtitle>
-              Multiple ways to support our mission, each making a meaningful difference
+              Multiple pathways to support our mission in Pune and Maharashtra
             </SectionSubtitle>
           </SectionHeader>
 
@@ -77,9 +105,11 @@ export function SupportPage() {
           </div>
 
           <div className="text-center">
-            <Button size="lg" asChild>
-              <Link to="/contact">{sup.cta.text}</Link>
-            </Button>
+            <Link to="/contact">
+              <Button size="lg">
+                {sup.cta.text}
+              </Button>
+            </Link>
             <p className="mt-4 text-neutral-600 text-sm">{sup.cta.description}</p>
           </div>
         </Container>
