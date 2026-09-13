@@ -1,0 +1,46 @@
+{
+  "contact": {
+    "heading": "Connect With Us",
+    "subheading": "We'd love to hear from you. Whether you have a question, want to partner, volunteer, or support our work — get in touch.",
+    "formFields": [
+      { "name": "name", "label": "Name", "type": "text", "required": true, "placeholder": "Your full name" },
+      { "name": "email", "label": "Email", "type": "email", "required": true, "placeholder": "your@email.com" },
+      { "name": "mobile", "label": "Mobile", "type": "tel", "required": true, "placeholder": "+91 XXXXX XXXXX" },
+      { "name": "organisation", "label": "Organisation", "type": "text", "required": false, "placeholder": "Your organisation (if applicable)" },
+      { "name": "subject", "label": "Subject", "type": "select", "required": true, "options": [
+        { "value": "", "label": "Select a subject" },
+        { "value": "general", "label": "General Enquiry" },
+        { "value": "volunteer", "label": "Volunteer" },
+        { "value": "partnership", "label": "Partnership" },
+        { "value": "corporate", "label": "Corporate Project" },
+        { "value": "training", "label": "Training" },
+        { "value": "employment", "label": "Employment Programme" },
+        { "value": "community", "label": "Community Support" },
+        { "value": "media", "label": "Media" },
+        { "value": "other", "label": "Other" }
+      ]},
+      { "name": "message", "label": "Message", "type": "textarea", "required": true, "placeholder": "Tell us how we can help or how you'd like to get involved...", "rows": 5 },
+      { "name": "consent", "label": "I consent to being contacted by VORTEXSOFT VIKASDHARA FOUNDATION regarding my enquiry.", "type": "checkbox", "required": true }
+    ],
+    "office": {
+      "heading": "Our Registered Office",
+      "name": "VORTEXSOFT VIKASDHARA FOUNDATION",
+      "address": "Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot, Taluka Dharmabad, District Nanded – 431808, Maharashtra, India.",
+      "email": "info@vikasdharafoundation.org",
+      "secondaryEmail": "contact@vikasdharafoundation.org",
+      "website": "www.vikasdharafoundation.org",
+      "phone": "+91 XXXXX XXXXX"
+    },
+    "categories": [
+      "General enquiry",
+      "Volunteer",
+      "Partnership",
+      "Corporate project",
+      "Training",
+      "Employment programme",
+      "Community support",
+      "Media",
+      "Other"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "volunteer": {
+    "heading": "Your Time Can Create Opportunity",
+    "intro": "Volunteers are the heartbeat of our work. Whether you have a few hours a week or want to lead a programme, there's a place for you.",
+    "areas": [
+      {
+        "title": "Teaching Support",
+        "description": "Support educational programmes, tutoring, and learning activities"
+      },
+      {
+        "title": "Career Guidance",
+        "description": "Mentor youth and job seekers on career paths and opportunities"
+      },
+      {
+        "title": "Skill Training",
+        "description": "Deliver or assist with vocational and technical training sessions"
+      },
+      {
+        "title": "Event Coordination",
+        "description": "Help organise community events, workshops, and awareness campaigns"
+      },
+      {
+        "title": "Field Outreach",
+        "description": "Work directly with communities to understand needs and deliver programmes"
+      },
+      {
+        "title": "Documentation",
+        "description": "Help with reporting, case studies, photography, and content creation"
+      },
+      {
+        "title": "Digital Support",
+        "description": "Website, social media, data management, and technology assistance"
+      },
+      {
+        "title": "Social Media",
+        "description": "Content creation, community management, and digital storytelling"
+      },
+      {
+        "title": "Fundraising Support",
+        "description": "Support fundraising efforts subject to compliance requirements"
+      },
+      {
+        "title": "Environmental Activities",
+        "description": "Tree plantation, cleanliness drives, and conservation work"
+      },
+      {
+        "title": "Animal Welfare Activities",
+        "description": "Support animal care, feeding, and welfare initiatives"
+      },
+      {
+        "title": "Community Programmes",
+        "description": "General support for community development and humanitarian activities"
+      }
+    ],
+    "cta": {
+      "text": "Become a Volunteer",
+      "href": "/contact",
+      "description": "Fill out our volunteer interest form and we'll match you with opportunities"
+    },
+    "process": [
+      "Submit your interest and skills",
+      "We match you with suitable opportunities",
+      "Orientation and onboarding",
+      "Start making an impact"
+    ]
+  }
+}

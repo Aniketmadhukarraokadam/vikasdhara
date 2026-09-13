@@ -1,0 +1,99 @@
+{
+  "transparency": {
+    "heading": "Transparency & Accountability",
+    "intro": "We believe trust is earned through openness. This page provides access to our key documents, reports, and governance information.",
+    "sections": [
+      {
+        "id": "legal",
+        "title": "Trust Deed & Legal Documents",
+        "description": "Foundational legal documents establishing the Trust",
+        "items": [
+          { "label": "Trust Deed", "href": "#", "status": "Available on request" },
+          { "label": "Registration Certificate", "href": "#", "status": "Available on request" },
+          { "label": "PAN Card", "href": "#", "status": "Available on request" }
+        ]
+      },
+      {
+        "id": "registration",
+        "title": "Registration Details",
+        "description": "Statutory registrations and compliance status",
+        "items": [
+          { "label": "Trust Registration Number", "value": "[To be updated on registration]" },
+          { "label": "PAN", "value": "[To be updated]" },
+          { "label": "TAN", "value": "[To be updated]" },
+          { "label": "80G Status", "value": "[Application pending / Not yet applied]" },
+          { "label": "12A/12AA Status", "value": "[Application pending / Not yet applied]" },
+          { "label": "FCRA Status", "value": "[Not applicable / Application pending]" },
+          { "label": "CSR Eligibility", "value": "[To be confirmed]" }
+        ]
+      },
+      {
+        "id": "reports",
+        "title": "Annual Reports",
+        "description": "Yearly summaries of activities, impact, and finances",
+        "items": [
+          { "label": "Annual Report 2024-25", "href": "#", "status": "Forthcoming" },
+          { "label": "Annual Report 2023-24", "href": "#", "status": "Forthcoming" }
+        ]
+      },
+      {
+        "id": "financials",
+        "title": "Audited Financial Statements",
+        "description": "Independent audit reports and financial statements",
+        "items": [
+          { "label": "FY 2024-25", "href": "#", "status": "Forthcoming" },
+          { "label": "FY 2023-24", "href": "#", "status": "Forthcoming" }
+        ]
+      },
+      {
+        "id": "programmes",
+        "title": "Programme Reports",
+        "description": "Detailed reports on specific programmes and projects",
+        "items": [
+          { "label": "Education Programme Report", "href": "#", "status": "Forthcoming" },
+          { "label": "Skill Development Report", "href": "#", "status": "Forthcoming" },
+          { "label": "Community Development Report", "href": "#", "status": "Forthcoming" }
+        ]
+      },
+      {
+        "id": "governance",
+        "title": "Governance Information",
+        "description": "Board structure, policies, and decision-making processes",
+        "items": [
+          { "label": "Board of Trustees", "href": "/about#leadership" },
+          { "label": "Governance Policies", "href": "#", "status": "Available on request" },
+          { "label": "Conflict of Interest Policy", "href": "#", "status": "Available on request" },
+          { "label": "Whistleblower Policy", "href": "#", "status": "Available on request" }
+        ]
+      },
+      {
+        "id": "policies",
+        "title": "Major Policies",
+        "description": "Operational and compliance policies",
+        "items": [
+          { "label": "Privacy Policy", "href": "/privacy" },
+          { "label": "Terms of Use", "href": "/terms" },
+          { "label": "Donation & Refund Policy", "href": "/donation-policy" },
+          { "label": "Photo Consent Policy", "href": "#", "status": "Available on request" },
+          { "label": "Data Protection Policy", "href": "#", "status": "Available on request" },
+          { "label": "Child Safeguarding Policy", "href": "#", "status": "Available on request" }
+        ]
+      },
+      {
+        "id": "partners",
+        "title": "Partner Disclosures",
+        "description": "Information about institutional and corporate partners",
+        "items": [
+          { "label": "Current Partners", "href": "#", "status": "Forthcoming" },
+          { "label": "Past Partners", "href": "#", "status": "Forthcoming" }
+        ]
+      }
+    ],
+    "contactInfo": {
+      "title": "Contact for Transparency Queries",
+      "email": "transparency@vortexsoftvikasdhara.org",
+      "description": "For requests related to documents, reports, or governance information not published here."
+    },
+    "note": "Never upload confidential identity documents. Beneficiary privacy is protected in all published materials."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "support": {
+    "heading": "Support the Mission",
+    "copy": "Your support can help strengthen programmes in education, skills, employment, humanitarian assistance, community development, care, environment and animal welfare.",
+    "complianceNote": "Do not claim tax benefits such as 80G unless the Foundation actually holds the applicable approval/certificate and the claim is legally valid at the time.\n\nDo not publish a donation payment gateway before the Trust's bank/payment arrangements are properly established.",
+    "waysToSupport": [
+      {
+        "title": "One-time Contribution",
+        "description": "Make a single donation to support our current programmes"
+      },
+      {
+        "title": "Monthly Giving",
+        "description": "Become a sustaining supporter with a recurring monthly donation"
+      },
+      {
+        "title": "Programme Sponsorship",
+        "description": "Sponsor a specific programme, training batch, or community initiative"
+      },
+      {
+        "title": "Corporate Giving",
+        "description": "Company donations and CSR contributions (where applicable)"
+      },
+      {
+        "title": "In-Kind Donations",
+        "description": "Equipment, materials, books, computers, or other resources"
+      },
+      {
+        "title": "Legacy Giving",
+        "description": "Include the Foundation in your will or estate planning"
+      }
+    ],
+    "transparency": [
+      "All donations are used for charitable objectives only",
+      "Regular utilisation reports shared with donors",
+      "Audited financial statements published annually",
+      "No private profit distribution from donations"
+    ],
+    "cta": {
+      "text": "I Want to Support",
+      "href": "/contact",
+      "description": "Contact us to discuss how you'd like to contribute"
+    }
+  }
+}

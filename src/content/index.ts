@@ -1,0 +1,13 @@
+export { default as brand } from './brand.json';
+export { default as programmes } from './programmes.json';
+export { default as about } from './about.json';
+export { default as impact } from './impact.json';
+export { default as partnership } from './partnership.json';
+export { default as volunteer } from './volunteer.json';
+export { default as support } from './support.json';
+export { default as contact } from './contact.json';
+export { default as transparency } from './transparency.json';
+export { default as future } from './future.json';
+export { default as seo } from './seo.json';
+export { default as introduction } from './introduction.json';
+export { default as stories } from './stories.json';

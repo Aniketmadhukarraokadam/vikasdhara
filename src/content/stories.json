@@ -1,0 +1,38 @@
+{
+  "stories": [
+    {
+      "id": "story-1",
+      "title": "From Classroom to Career: Priya's Journey",
+      "excerpt": "How a skill development programme helped a young woman from rural Maharashtra build a sustainable livelihood.",
+      "category": "Skills & Employment",
+      "location": "Nanded, Maharashtra",
+      "image": "/stories/priya.jpg",
+      "date": "2024-03-15",
+      "readTime": "5 min read"
+    },
+    {
+      "id": "story-2",
+      "title": "Community Kitchen: Feeding Dignity",
+      "excerpt": "Our humanitarian food programme serves nutritious meals to elderly and vulnerable community members with respect.",
+      "category": "Humanitarian Support",
+      "location": "Dharmabad, Maharashtra",
+      "image": "/stories/community-kitchen.jpg",
+      "date": "2024-02-28",
+      "readTime": "4 min read"
+    },
+    {
+      "id": "story-3",
+      "title": "Green Village Initiative",
+      "excerpt": "Villagers come together for tree plantation and environmental awareness, creating a greener future for their children.",
+      "category": "Environment",
+      "location": "Chondi, Maharashtra",
+      "image": "/stories/green-village.jpg",
+      "date": "2024-01-20",
+      "readTime": "6 min read"
+    }
+  ],
+  "cta": {
+    "text": "Read All Stories",
+    "href": "/impact/stories"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "futureVision": {
+    "heading": "The Future We Are Building",
+    "copy": "Our journey begins with meaningful local action.\n\nOver time, the Foundation aims to build stronger programmes, wider partnerships and measurable community impact across India.",
+    "futureAreas": [
+      "Education centres",
+      "Skill-development centres",
+      "Employment programmes",
+      "Rural development initiatives",
+      "Women-focused programmes",
+      "Elderly-care facilities",
+      "Humanitarian response systems",
+      "Animal-care initiatives",
+      "Environmental programmes",
+      "Community infrastructure",
+      "Technology-enabled social programmes",
+      "Partnerships with companies and institutions"
+    ],
+    "disclaimer": "Use wording such as \"aims to,\" \"plans to,\" \"proposes to,\" or \"may develop\" until a facility/programme actually exists."
+  },
+  "programmeFamilies": [
+    { "name": "Vikasdhara Shiksha", "focus": "Education initiatives", "icon": "book" },
+    { "name": "Vikasdhara Kaushal", "focus": "Skill-development initiatives", "icon": "tools" },
+    { "name": "Vikasdhara Rozgar", "focus": "Employment and livelihood initiatives", "icon": "briefcase" },
+    { "name": "Vikasdhara Mahila", "focus": "Women's education and opportunity initiatives", "icon": "users" },
+    { "name": "Vikasdhara Seva", "focus": "Humanitarian and community support", "icon": "heart" },
+    { "name": "Vikasdhara Gram", "focus": "Rural development", "icon": "tree-pine" },
+    { "name": "Vikasdhara Jeevdaya", "focus": "Animal welfare", "icon": "paw-print" },
+    { "name": "Vikasdhara Paryavaran", "focus": "Environmental initiatives", "icon": "leaf" }
+  ],
+  "note": "These names can be adopted later after internal approval and brand review."
+}

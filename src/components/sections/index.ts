@@ -1,0 +1,12 @@
+export { Hero } from './Hero';
+export { Introduction } from './Introduction';
+export { WhatWeDo } from './WhatWeDo';
+export { Approach } from './Approach';
+export { Ecosystem } from './Ecosystem';
+export { CorporatePartnerships } from './CorporatePartnerships';
+export { Impact } from './Impact';
+export { FutureVision } from './FutureVision';
+export { CTASection } from './CTASection';
+export { TransparencySection } from './TransparencySection';
+export { RegisteredOffice } from './RegisteredOffice';
+export { IndiaIdentity } from './IndiaIdentity';

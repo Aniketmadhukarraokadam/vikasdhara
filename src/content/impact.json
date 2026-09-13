@@ -1,0 +1,41 @@
+{
+  "impact": {
+    "heading": "Our Impact",
+    "subheading": "We are building systems to measure and report our work transparently.",
+    "note": "Once verified data exists, we will share metrics such as:",
+    "metrics": [
+      { "label": "People trained", "icon": "graduation-cap", "description": "Individuals who completed skill development programmes" },
+      { "label": "Students supported", "icon": "book", "description": "Children and youth receiving educational support" },
+      { "label": "Employment opportunities facilitated", "icon": "briefcase", "description": "Job placements and livelihood connections made" },
+      { "label": "Women reached", "icon": "users", "description": "Women participating in education and empowerment programmes" },
+      { "label": "Meals/services delivered", "icon": "heart", "description": "Humanitarian support provided to communities in need" },
+      { "label": "Community programmes", "icon": "home", "description": "Active programmes across different focus areas" },
+      { "label": "Villages/areas reached", "icon": "map-pin", "description": "Geographic spread of our community work" },
+      { "label": "Trees planted", "icon": "tree-pine", "description": "Environmental restoration and awareness activities" },
+      { "label": "Animals supported", "icon": "paw-print", "description": "Animal welfare and care initiatives" },
+      { "label": "Volunteers engaged", "icon": "hand-heart", "description": "People contributing time and skills to our mission" },
+      { "label": "Corporate projects implemented", "icon": "building", "description": "Partnership projects with companies and institutions" }
+    ],
+    "reportingStandards": [
+      "Every number has a reporting period",
+      "Every number has a clear definition",
+      "Every number has a source/record",
+      "Methodology is documented where useful",
+      "We never publish invented impact statistics"
+    ]
+  },
+  "caseStudyTemplate": {
+    "sections": [
+      { "id": "name", "label": "Project Name", "type": "text" },
+      { "id": "location", "label": "Location", "type": "text" },
+      { "id": "problem", "label": "Problem", "type": "textarea", "prompt": "What community need was identified?" },
+      { "id": "objective", "label": "Objective", "type": "textarea", "prompt": "What did the project intend to achieve?" },
+      { "id": "activities", "label": "Activities", "type": "textarea", "prompt": "What was actually done?" },
+      { "id": "peopleReached", "label": "People Reached", "type": "text", "prompt": "Use verified data only" },
+      { "id": "outcome", "label": "Outcome", "type": "textarea", "prompt": "What changed?" },
+      { "id": "partners", "label": "Partners", "type": "textarea", "prompt": "List only confirmed partners" },
+      { "id": "evidence", "label": "Evidence", "type": "list", "items": ["Photographs", "Attendance records", "Reports", "Certificates", "Beneficiary feedback where appropriate"] },
+      { "id": "learnings", "label": "Learnings", "type": "textarea", "prompt": "What will improve in the next phase?" }
+    ]
+  }
+}

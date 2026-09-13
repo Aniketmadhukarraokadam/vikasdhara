@@ -1,0 +1,324 @@
+{
+  "programmes": [
+    {
+      "id": "education",
+      "title": "Education & Learning",
+      "slug": "education",
+      "icon": "book",
+      "description": "Supporting access to education, learning resources, awareness and educational opportunities for children, youth, women and communities.",
+      "shortDescription": "Supporting access to education and learning opportunities for all.",
+      "possibleActivities": [
+        "Educational awareness",
+        "Learning support",
+        "Study material support",
+        "Community learning initiatives",
+        "Educational workshops",
+        "Digital learning",
+        "Career awareness",
+        "Scholarships or assistance where lawfully permitted and resources are available"
+      ],
+      "iconVariant": "primary",
+      "color": "primary"
+    },
+    {
+      "id": "womens-education",
+      "title": "Women's Education & Empowerment",
+      "slug": "womens-education",
+      "icon": "graduation-cap",
+      "description": "Creating pathways for women and girls to access learning, skills, awareness and opportunities for greater social and economic participation.",
+      "shortDescription": "Creating pathways for women and girls to access learning and opportunities.",
+      "possibleActivities": [
+        "Education awareness",
+        "Digital literacy",
+        "Vocational training",
+        "Livelihood skills",
+        "Career guidance",
+        "Entrepreneurship awareness",
+        "Community workshops"
+      ],
+      "iconVariant": "accent",
+      "color": "accent"
+    },
+    {
+      "id": "skills",
+      "title": "Skills for the Future",
+      "slug": "skills",
+      "icon": "tools",
+      "description": "Helping people build practical skills that can improve employability, livelihood opportunities and confidence.",
+      "shortDescription": "Helping people build practical skills for employability and livelihood.",
+      "possibleActivities": [
+        "Vocational training",
+        "Digital skills",
+        "Technical training",
+        "Communication skills",
+        "Workplace readiness",
+        "Entrepreneurship orientation",
+        "Industry-linked training",
+        "Certification-linked programmes where applicable"
+      ],
+      "iconVariant": "primary",
+      "color": "primary"
+    },
+    {
+      "id": "employment",
+      "title": "Employment & Livelihood",
+      "slug": "employment",
+      "icon": "briefcase",
+      "description": "Connecting training and opportunity by supporting employability, career guidance, placement facilitation and livelihood development.",
+      "shortDescription": "Connecting training and opportunity through employability and placement support.",
+      "possibleActivities": [
+        "Job-readiness programmes",
+        "Career counselling",
+        "Placement facilitation",
+        "Employer connections",
+        "Recruitment support projects",
+        "Employment awareness",
+        "Livelihood programmes",
+        "Youth opportunity programmes"
+      ],
+      "iconVariant": "warm",
+      "color": "warm"
+    },
+    {
+      "id": "corporate-projects",
+      "title": "Corporate & Institutional Partnerships",
+      "slug": "corporate-projects",
+      "icon": "building",
+      "description": "Companies, industries, corporate entities, institutions and other lawful organisations can partner with the Foundation to design and implement socially beneficial projects focused on employment, skills, training, livelihood and community development.",
+      "shortDescription": "Partnering with companies and institutions for socially beneficial projects.",
+      "possibleActivities": [
+        "Manpower development",
+        "Skill-development programmes",
+        "Vocational training",
+        "Employment-generation initiatives",
+        "Youth training",
+        "Women-focused livelihood programmes",
+        "Apprenticeships and workplace readiness",
+        "Community development projects",
+        "CSR-supported initiatives where applicable",
+        "Awareness programmes",
+        "Rural livelihood projects",
+        "Project implementation and field support"
+      ],
+      "iconVariant": "primary",
+      "color": "primary",
+      "importantNote": "Project receipts and programme income are applied towards the Foundation's charitable objectives and are not intended for private profit distribution."
+    },
+    {
+      "id": "humanitarian",
+      "title": "Food, Care & Human Dignity",
+      "slug": "humanitarian",
+      "icon": "heart",
+      "description": "Supporting people facing difficult circumstances through responsible humanitarian and community-support initiatives, subject to available resources and applicable requirements.",
+      "shortDescription": "Supporting people facing difficult circumstances with dignity.",
+      "possibleActivities": [
+        "Food distribution",
+        "Community meals",
+        "Emergency support",
+        "Essential supplies",
+        "Seasonal assistance",
+        "Humanitarian relief",
+        "Community outreach"
+      ],
+      "iconVariant": "warm",
+      "color": "warm",
+      "visualDirection": "Show people receiving support respectfully. Avoid images that humiliate beneficiaries."
+    },
+    {
+      "id": "shelter",
+      "title": "Shelter, Rest & Community Support",
+      "slug": "shelter",
+      "icon": "home",
+      "description": "Supporting or developing facilities and programmes that provide safe, dignified and useful spaces for people who need temporary or long-term support.",
+      "shortDescription": "Supporting safe, dignified spaces for people in need.",
+      "possibleActivities": [
+        "Shelter support",
+        "Dharamshala initiatives",
+        "Community accommodation",
+        "Traveller/community assistance",
+        "Support infrastructure",
+        "Basic facilities"
+      ],
+      "iconVariant": "neutral",
+      "color": "neutral"
+    },
+    {
+      "id": "elderly-care",
+      "title": "Care With Dignity",
+      "slug": "elderly-care",
+      "icon": "users",
+      "description": "Working toward programmes and facilities that support elderly people with dignity, companionship, care and access to essential support.",
+      "shortDescription": "Supporting elderly people with dignity, companionship and care.",
+      "possibleActivities": [
+        "Vruddhashram / old-age care initiatives",
+        "Elderly outreach",
+        "Companionship",
+        "Food support",
+        "Health-awareness activities",
+        "Recreational/community activities",
+        "Essential assistance"
+      ],
+      "iconVariant": "accent",
+      "color": "accent"
+    },
+    {
+      "id": "health",
+      "title": "Health Awareness & Community Wellbeing",
+      "slug": "health",
+      "icon": "heart-pulse",
+      "description": "Promoting health awareness and preventive community wellbeing through educational and outreach programmes.",
+      "shortDescription": "Promoting health awareness and preventive community wellbeing.",
+      "possibleActivities": [
+        "Health-awareness camps",
+        "Hygiene awareness",
+        "Nutrition awareness",
+        "Preventive health education",
+        "Community outreach",
+        "Referrals and awareness support",
+        "Wellness education"
+      ],
+      "iconVariant": "accent",
+      "color": "accent",
+      "importantNote": "Do not claim medical treatment or professional clinical services unless the Foundation is actually authorised and appropriately staffed."
+    },
+    {
+      "id": "rural",
+      "title": "Stronger Villages, Stronger Communities",
+      "slug": "rural",
+      "icon": "tree-pine",
+      "description": "Supporting practical development initiatives that strengthen communities, improve awareness and create opportunities for local people.",
+      "shortDescription": "Strengthening communities through practical development initiatives.",
+      "possibleActivities": [
+        "Rural education",
+        "Skill programmes",
+        "Livelihood support",
+        "Community awareness",
+        "Infrastructure support",
+        "Sanitation awareness",
+        "Digital literacy",
+        "Youth development",
+        "Women-focused programmes",
+        "Environmental activities"
+      ],
+      "iconVariant": "accent",
+      "color": "accent"
+    },
+    {
+      "id": "disaster-relief",
+      "title": "Responding When Communities Need Support",
+      "slug": "disaster-relief",
+      "icon": "shield-alert",
+      "description": "Supporting lawful relief and rehabilitation initiatives during disasters and emergencies, subject to resources, permissions and operational capacity.",
+      "shortDescription": "Supporting relief and rehabilitation during disasters and emergencies.",
+      "possibleActivities": [
+        "Food",
+        "Essential supplies",
+        "Temporary support",
+        "Community coordination",
+        "Relief distribution",
+        "Awareness and recovery support"
+      ],
+      "iconVariant": "warm",
+      "color": "warm"
+    },
+    {
+      "id": "environment",
+      "title": "Protecting the Environment Around Us",
+      "slug": "environment",
+      "icon": "leaf",
+      "description": "Encouraging environmental responsibility through community participation, awareness and practical local initiatives.",
+      "shortDescription": "Encouraging environmental responsibility through community participation.",
+      "possibleActivities": [
+        "Tree plantation",
+        "Environmental awareness",
+        "Cleanliness drives",
+        "Waste-management awareness",
+        "Water conservation awareness",
+        "Biodiversity awareness",
+        "Sustainable community practices"
+      ],
+      "iconVariant": "accent",
+      "color": "accent"
+    },
+    {
+      "id": "animal-welfare",
+      "title": "Compassion Beyond People",
+      "slug": "animal-welfare",
+      "icon": "paw-print",
+      "description": "Supporting responsible animal welfare and community initiatives that promote humane treatment, care and awareness.",
+      "shortDescription": "Supporting responsible animal welfare and community initiatives.",
+      "possibleActivities": [
+        "Animal care",
+        "Animal welfare awareness",
+        "Support to animal-care initiatives",
+        "Community awareness",
+        "Responsible feeding initiatives",
+        "Veterinary support partnerships where appropriate"
+      ],
+      "iconVariant": "warm",
+      "color": "warm"
+    },
+    {
+      "id": "gau-shala",
+      "title": "Gau Seva & Animal Care",
+      "slug": "gau-shala",
+      "icon": "cow",
+      "description": "Supporting responsible cattle-care and Gau Shala-related charitable initiatives with an emphasis on animal welfare, cleanliness, nutrition and humane care.",
+      "shortDescription": "Supporting responsible cattle-care and Gau Shala initiatives.",
+      "possibleActivities": [
+        "Cattle care and welfare",
+        "Cleanliness and hygiene",
+        "Nutrition and feeding",
+        "Humane care practices",
+        "Veterinary support"
+      ],
+      "iconVariant": "neutral",
+      "color": "neutral",
+      "importantNote": "Avoid presenting religious activity as the only purpose of the organisation. The website should position this within the broader charitable and animal-welfare mission."
+    }
+  ],
+  "ecosystem": {
+    "title": "One Mission. Many Pathways.",
+    "steps": [
+      "Education",
+      "Skills",
+      "Employment",
+      "Income & Livelihood",
+      "Family & Community Stability",
+      "Sustainable Development"
+    ],
+    "pillars": [
+      "Women",
+      "Youth",
+      "Rural Communities",
+      "Elderly",
+      "Humanitarian Support",
+      "Environment",
+      "Animals"
+    ]
+  },
+  "approach": {
+    "title": "From Need to Opportunity",
+    "steps": [
+      { "number": "01", "title": "Understand", "description": "Listen to communities and identify genuine needs." },
+      { "number": "02", "title": "Design", "description": "Develop practical programmes, projects and partnerships." },
+      { "number": "03", "title": "Implement", "description": "Work with trained people, volunteers, institutions and partners." },
+      { "number": "04", "title": "Measure", "description": "Track outputs and outcomes using records and verifiable information." },
+      { "number": "05", "title": "Improve", "description": "Learn from implementation and continuously strengthen programmes." }
+    ]
+  },
+  "whoWeServe": [
+    "Children",
+    "Students",
+    "Youth",
+    "Women",
+    "Job seekers",
+    "Underprivileged communities",
+    "Economically weaker persons",
+    "Rural communities",
+    "Elderly people",
+    "Families requiring support",
+    "Communities affected by emergencies",
+    "Animals requiring care"
+  ]
+}

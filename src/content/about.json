@@ -1,0 +1,71 @@
+{
+  "about": {
+    "heading": "About VORTEXSOFT VIKASDHARA FOUNDATION",
+    "copy": "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust established with a vision of contributing to education, skills, employment, humanitarian support, care and sustainable community development.\n\nThe Foundation aims to build practical programmes and partnerships that respond to community needs while maintaining accountability, dignity and responsible use of resources.\n\nOur long-term vision is to grow from local initiatives into a broader platform for opportunity and social development across India."
+  },
+  "vision": {
+    "heading": "Our Vision",
+    "statement": "To contribute to an India where people have greater access to education, skills, livelihood opportunities, care, dignity and community development resources."
+  },
+  "mission": {
+    "heading": "Our Mission",
+    "statement": "To develop and support practical charitable programmes that create education, skill, employment, livelihood, humanitarian, environmental, animal-welfare and community-development opportunities for people and communities in need."
+  },
+  "values": [
+    {
+      "title": "Dignity",
+      "description": "Every person deserves respect."
+    },
+    {
+      "title": "Opportunity",
+      "description": "We focus on creating pathways rather than only temporary assistance."
+    },
+    {
+      "title": "Inclusion",
+      "description": "Our programmes should serve people without discrimination."
+    },
+    {
+      "title": "Integrity",
+      "description": "Resources should be handled responsibly and transparently."
+    },
+    {
+      "title": "Collaboration",
+      "description": "Meaningful social change requires partnerships."
+    },
+    {
+      "title": "Sustainability",
+      "description": "We seek solutions that create lasting value."
+    }
+  ],
+  "leadership": [
+    {
+      "name": "Mr. Anirudh Madhukarrao Kadam",
+      "designation": "Settlor / Founder & Managing Trustee",
+      "bio": "Founder and Managing Trustee with a vision to build sustainable community development initiatives across India.",
+      "areaOfResponsibility": "Overall strategy, governance, partnerships and organisational leadership"
+    },
+    {
+      "name": "Mr. Dnyaneshvar Taterao Ballod",
+      "designation": "Trustee",
+      "bio": "Trustee bringing experience in community development and programme implementation.",
+      "areaOfResponsibility": "Programme oversight, field operations and community engagement"
+    },
+    {
+      "name": "Mr. Sumit Balaji Jadhav",
+      "designation": "Trustee",
+      "bio": "Trustee with expertise in organisational management and stakeholder relations.",
+      "areaOfResponsibility": "Administration, compliance and institutional partnerships"
+    }
+  ],
+  "governance": {
+    "heading": "Governance & Accountability",
+    "principles": [
+      "Transparent financial management and reporting",
+      "Regular board meetings and documented decisions",
+      "Compliance with all applicable laws and regulations",
+      "Beneficiary privacy and data protection",
+      "Conflict of interest policies",
+      "Whistleblower and grievance mechanisms"
+    ]
+  }
+}

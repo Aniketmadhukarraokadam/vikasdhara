@@ -1,0 +1,93 @@
+{
+  "partnership": {
+    "heading": "Partner With Us",
+    "intro": "Social impact becomes stronger when organisations combine resources, expertise and local understanding.\n\nWe welcome conversations with organisations that want to support lawful charitable and socially beneficial initiatives.",
+    "categories": [
+      {
+        "title": "Corporate Partnerships",
+        "description": "Long-term strategic partnerships with companies aligned with our mission"
+      },
+      {
+        "title": "CSR-Supported Programmes",
+        "description": "Programmes supported through Corporate Social Responsibility initiatives, where applicable"
+      },
+      {
+        "title": "Project Implementation",
+        "description": "End-to-end implementation of social impact projects on the ground"
+      },
+      {
+        "title": "Skill-Development Partnerships",
+        "description": "Collaborative design and delivery of vocational and technical training"
+      },
+      {
+        "title": "Employment Partnerships",
+        "description": "Connecting trained candidates with employment opportunities"
+      },
+      {
+        "title": "Training Partnerships",
+        "description": "Joint training programmes with industry and academic partners"
+      },
+      {
+        "title": "Institutional Partnerships",
+        "description": "Collaborations with educational institutions, government bodies, and NGOs"
+      },
+      {
+        "title": "NGO Collaborations",
+        "description": "Working with other non-profits for greater collective impact"
+      },
+      {
+        "title": "Government/Community Programmes",
+        "description": "Implementation support for public schemes and community initiatives"
+      },
+      {
+        "title": "Professional Volunteering",
+        "description": "Skilled professionals contributing expertise pro bono"
+      },
+      {
+        "title": "Technology Partnerships",
+        "description": "Leveraging technology for scale, efficiency, and innovation in social programmes"
+      }
+    ],
+    "cta": {
+      "text": "Start a Partnership Conversation",
+      "href": "/contact",
+      "description": "Tell us about your organisation and how you'd like to work together"
+    },
+    "process": {
+      "heading": "Our Partnership Process",
+      "steps": [
+        "Discuss",
+        "Design",
+        "Implement",
+        "Measure",
+        "Report"
+      ]
+    },
+    "deliverables": [
+      "Project concept note",
+      "Beneficiary identification",
+      "Training coordination",
+      "Field implementation",
+      "Documentation",
+      "Monitoring",
+      "Outcome reporting"
+    ]
+  },
+  "corporateLanding": {
+    "hero": {
+      "headline": "Build Impact Through Meaningful Projects",
+      "paragraph": "From skill development to employment generation, organisations can work with the Foundation on structured projects designed to create measurable social value."
+    },
+    "process": "Discuss → Design → Implement → Measure → Report",
+    "deliverables": [
+      "Project concept note",
+      "Beneficiary identification",
+      "Training coordination",
+      "Field implementation",
+      "Documentation",
+      "Monitoring",
+      "Outcome reporting"
+    ],
+    "note": "Only advertise services that the Foundation is actually equipped and authorised to provide."
+  }
+}

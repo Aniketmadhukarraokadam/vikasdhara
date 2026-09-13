@@ -1,0 +1,63 @@
+{
+  "seo": {
+    "siteName": "VORTEXSOFT VIKASDHARA FOUNDATION",
+    "defaultTitle": "VORTEXSOFT VIKASDHARA FOUNDATION | Education, Skills, Employment & Community Development",
+    "defaultDescription": "VORTEXSOFT VIKASDHARA FOUNDATION works for education, skill development, employment, humanitarian support, rural development, elderly care, environment, animal welfare and community development across India.",
+    "keywords": [
+      "Vortexsoft Vikasdhara Foundation",
+      "public charitable trust India",
+      "NGO Maharashtra",
+      "NGO Nanded",
+      "education NGO",
+      "skill development NGO",
+      "employment support NGO",
+      "women education NGO",
+      "rural development NGO",
+      "community development India",
+      "animal welfare NGO",
+      "Gau Shala charitable initiative",
+      "corporate social impact partnership"
+    ],
+    "ogImage": "/og-image.jpg",
+    "twitterHandle": "@vvf_india",
+    "canonicalBase": "https://vortexsoftvikasdhara.org"
+  },
+  "pages": {
+    "home": {
+      "title": "VORTEXSOFT VIKASDHARA FOUNDATION | Building a Stronger India",
+      "description": "VORTEXSOFT VIKASDHARA FOUNDATION works for education, skill development, employment, humanitarian support, rural development, elderly care, environment, animal welfare and community development across India."
+    },
+    "about": {
+      "title": "About Us | VORTEXSOFT VIKASDHARA FOUNDATION",
+      "description": "Learn about VORTEXSOFT VIKASDHARA FOUNDATION - our vision, mission, values, leadership team, and governance as a public charitable trust in India."
+    },
+    "whatWeDo": {
+      "title": "What We Do | VORTEXSOFT VIKASDHARA FOUNDATION",
+      "description": "Explore our programmes in education, women's empowerment, skill development, employment, corporate partnerships, humanitarian support, elderly care, health awareness, rural development, disaster relief, environment, animal welfare, and Gau Shala initiatives."
+    },
+    "impact": {
+      "title": "Our Impact | VORTEXSOFT VIKASDHARA FOUNDATION",
+      "description": "View our impact metrics, project case studies, stories from the field, and annual reports. Transparent reporting on education, skills, employment, and community development outcomes."
+    },
+    "partner": {
+      "title": "Partner With Us | VORTEXSOFT VIKASDHARA FOUNDATION",
+      "description": "Explore partnership opportunities with VORTEXSOFT VIKASDHARA FOUNDATION - corporate partnerships, CSR programmes, project implementation, skill development, and employment partnerships."
+    },
+    "volunteer": {
+      "title": "Volunteer | VORTEXSOFT VIKASDHARA FOUNDATION",
+      "description": "Join us as a volunteer. Opportunities in teaching, career guidance, skill training, field outreach, digital support, environmental activities, animal welfare, and community programmes."
+    },
+    "support": {
+      "title": "Support the Mission | VORTEXSOFT VIKASDHARA FOUNDATION",
+      "description": "Support VORTEXSOFT VIKASDHARA FOUNDATION's work in education, skills, employment, humanitarian assistance, community development, care, environment and animal welfare."
+    },
+    "contact": {
+      "title": "Contact Us | VORTEXSOFT VIKASDHARA FOUNDATION",
+      "description": "Get in touch with VORTEXSOFT VIKASDHARA FOUNDATION. Registered office in Dharmabad, Nanded, Maharashtra. Email, phone, and contact form for enquiries."
+    },
+    "transparency": {
+      "title": "Transparency & Accountability | VORTEXSOFT VIKASDHARA FOUNDATION",
+      "description": "Access our trust documents, registration details, annual reports, audited financials, programme reports, governance policies, and partner disclosures."
+    }
+  }
+}
