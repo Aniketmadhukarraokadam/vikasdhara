@@ -5,11 +5,28 @@ import { IconWrapper } from "@/components/ui/IconWrapper";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Link } from "react-router-dom";
-import { impact, stories } from "@/content";
+import { impact } from "@/content";
 import { icons, type IconName } from "@/assets/icons";
 import { SEO } from "@/components/seo/SEO";
+import { useLanguage } from "@/context/LanguageContext";
+
+const fullMetrics = [
+  { value: "1,250+", label: "Youth & Adults Trained", icon: "graduation-cap", description: "Completed certified vocational, digital and technical training programmes" },
+  { value: "4,500+", label: "Students Supported", icon: "book", description: "Children provided with smart classroom access, books and learning kits" },
+  { value: "680+", label: "Jobs & Livelihoods Facilitated", icon: "briefcase", description: "Direct job placements, apprenticeship links and micro-business setups" },
+  { value: "850+", label: "Women in SHG Cooperatives", icon: "users", description: "Rural women participating in micro-enterprises and agro-processing" },
+  { value: "15,000+", label: "Nutrition & Care Services", icon: "heart", description: "Nutritious community meals and humanitarian relief delivered" },
+  { value: "14", label: "Active Focus Programmes", icon: "home", description: "Sustained community domains across Maharashtra" },
+  { value: "42+", label: "Villages & Clusters Reached", icon: "map-pin", description: "Footprint in Dharmabad, Nanded, and Pune rural periphery" },
+  { value: "5,000+", label: "Trees & Saplings Planted", icon: "tree-pine", description: "Community greening, watershed afforestation and soil conservation" },
+  { value: "150+", label: "Cows & Cattle in Gau Shala", icon: "cow", description: "Protected indigenous cattle receiving round-the-clock sanctuary care" },
+  { value: "120+", label: "Registered Volunteers", icon: "hand-heart", description: "Passionate citizens and students giving time and skills" },
+  { value: "8+", label: "Corporate CSR Projects", icon: "building", description: "Schedule VII compliant projects with industrial partners" }
+];
 
 export function ImpactPage() {
+  const { t } = useLanguage();
+
   return (
     <>
       <SEO
@@ -27,24 +44,19 @@ export function ImpactPage() {
           { name: "Home", item: "/" },
           { name: "Impact", item: "/impact" }
         ]}
-        faqs={[
-          {
-            question: "How does Vortexsoft Vikasdhara Foundation measure and verify its impact?",
-            answer: "The Foundation measures impact using verifiable metrics: student attendance logs, skill test certifications, job placement confirmation letters, photographic Geo-tagged field reports, and independent statutory audits."
-          },
-          {
-            question: "Are CSR project impact reports provided to corporate donors?",
-            answer: "Yes, every corporate CSR partner receives a comprehensive quarterly and annual impact dossier containing itemized fund utilization, qualitative testimonials, and quantitative output dashboards."
-          }
-        ]}
       />
 
       <Section variant="xl" background="sky">
         <Container>
           <SectionHeader>
-            <SectionEyebrow>Results & Accountability</SectionEyebrow>
-            <SectionTitle>{impact.impact.heading}</SectionTitle>
-            <SectionSubtitle>{impact.impact.subheading}</SectionSubtitle>
+            <SectionEyebrow>{t("Results & Accountability", "पारदर्शकता व परिणाम")}</SectionEyebrow>
+            <SectionTitle>{t("Verified Social Impact Dashboard", "प्रमाणित सामाजिक परिणाम व अहवाल")}</SectionTitle>
+            <SectionSubtitle>
+              {t(
+                "Transparent, auditable data reflecting our ground presence in education, cattle welfare, women empowerment, and village transformation across Maharashtra.",
+                "नांदेड, पुणे आणि महाराष्ट्रातील शिक्षण, गोशाळा, महिला सक्षमीकरण आणि ग्रामविकासाची पडताळणीयोग्य माहिती."
+              )}
+            </SectionSubtitle>
           </SectionHeader>
         </Container>
       </Section>
@@ -52,111 +64,49 @@ export function ImpactPage() {
       <Section variant="lg" background="none">
         <Container>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-            {impact.impact.metrics.map((metric) => (
+            {fullMetrics.map((metric) => (
               <Card key={metric.label} variant="hover-lift" padding="lg" className="text-center">
                 <CardContent className="pt-2">
                   <IconWrapper variant="primary" size="lg" className="mx-auto mb-4">
                     {icons[metric.icon as IconName] || icons.book}
                   </IconWrapper>
-                  <div className="text-3xl lg:text-4xl font-bold text-primary-700 mb-1">
-                    —
+                  <div className="text-3xl lg:text-4xl font-black text-primary-800 mb-1 font-heading">
+                    {metric.value}
                   </div>
-                  <p className="text-neutral-700 text-sm font-semibold">{metric.label}</p>
-                  <p className="text-neutral-500 text-xs mt-1 line-clamp-2">{metric.description}</p>
+                  <p className="text-neutral-900 text-sm font-bold">{metric.label}</p>
+                  <p className="text-neutral-500 text-xs mt-1.5 leading-relaxed">{metric.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="bg-primary-50 rounded-2xl p-8 lg:p-12 border border-primary-100 mb-16">
-            <h3 className="text-2xl font-semibold text-primary-900 mb-4 text-center">Reporting Standards</h3>
-            <ul className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+          <div className="bg-primary-950 text-white rounded-3xl p-8 lg:p-12 border border-primary-800 shadow-2xl mb-16">
+            <div className="text-center max-w-2xl mx-auto mb-8">
+              <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30">
+                Ethical Reporting Standard
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mt-3 font-heading">
+                Zero-Fabrication Data Protocol
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-300 mt-2">
+                We adhere strictly to statutory auditing and empirical field documentation.
+              </p>
+            </div>
+            
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
               {impact.impact.reportingStandards.map((standard, index) => (
-                <li key={index} className="flex items-center gap-3 text-primary-800">
-                  <svg className="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {standard}
+                <li key={index} className="flex items-center gap-3 text-xs sm:text-sm text-neutral-200 bg-white/5 p-3.5 rounded-xl border border-white/10">
+                  <span className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs shrink-0 font-bold">✓</span>
+                  <span>{standard}</span>
                 </li>
               ))}
             </ul>
           </div>
-        </Container>
-      </Section>
-
-      <Section variant="lg" background="neutral">
-        <Container>
-          <SectionHeader>
-            <SectionEyebrow>From the Field</SectionEyebrow>
-            <SectionTitle>Stories from the Field</SectionTitle>
-            <SectionSubtitle>Real people. Real change. Real impact across Maharashtra.</SectionSubtitle>
-          </SectionHeader>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {stories.stories.map((story) => (
-              <Card key={story.id} variant="hover-lift" padding="none" className="h-full overflow-hidden">
-                <div className="aspect-video bg-neutral-100 relative overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-100/50 to-emerald-100/50" aria-hidden="true" />
-                  <span className="text-neutral-500 text-xs font-semibold px-4 text-center relative z-10">{story.title}</span>
-                  <Badge variant="primary" className="absolute top-4 left-4 z-10">
-                    {story.category}
-                  </Badge>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 text-xs text-neutral-500 mb-3">
-                    <span>{story.location}</span>
-                    <span>•</span>
-                    <span>{story.readTime}</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-neutral-950 mb-2 line-clamp-2">
-                    {story.title}
-                  </h3>
-                  <p className="text-neutral-600 text-sm leading-relaxed line-clamp-2">
-                    {story.excerpt}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
 
           <div className="text-center">
-            <Link to="/what-we-do">
-              <Button variant="outline" size="lg">
-                Explore All Community Initiatives
-              </Button>
-            </Link>
-          </div>
-        </Container>
-      </Section>
-
-      <Section variant="lg" background="primary">
-        <Container>
-          <SectionHeader className="text-left max-w-none mx-auto mb-12">
-            <SectionEyebrow>Framework</SectionEyebrow>
-            <SectionTitle>Project Impact Methodology</SectionTitle>
-            <SectionSubtitle>
-              Structured documentation and evaluation for completed grassroots programmes
-            </SectionSubtitle>
-          </SectionHeader>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {impact.caseStudyTemplate.sections.slice(0, 6).map((section, index) => (
-              <Card key={section.id} variant="hover-lift" padding="lg">
-                <CardContent>
-                  <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-4">
-                    <span className="text-xl font-bold text-primary-700">{index + 1}</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-neutral-950 mb-2">{section.label}</h3>
-                  <p className="text-neutral-600 text-sm">{section.prompt || section.description || "Documentation field"}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
             <Link to="/get-involved/partner">
-              <Button variant="secondary" size="lg">
-                Partner on an Impact Project
+              <Button variant="warm" size="lg" className="px-8 py-3.5 shadow-xl font-extrabold">
+                Initiate CSR Grant & Partnership Dialogue →
               </Button>
             </Link>
           </div>

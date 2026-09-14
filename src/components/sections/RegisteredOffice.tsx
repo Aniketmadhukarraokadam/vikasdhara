@@ -1,6 +1,7 @@
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/Button";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function RegisteredOffice() {
@@ -65,8 +66,10 @@ export function RegisteredOffice() {
                 </a>
               </div>
 
-              <Link to="/contact" className="btn btn-primary text-xs sm:text-sm px-4 py-2">
-                {t("Contact the Foundation →", "संस्थेशी संपर्क साधा →")}
+              <Link to="/contact">
+                <Button size="sm" className="font-bold shadow-md">
+                  {t("Contact the Foundation →", "संस्थेशी संपर्क साधा →")}
+                </Button>
               </Link>
             </div>
           </div>

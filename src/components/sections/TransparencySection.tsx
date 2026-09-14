@@ -45,9 +45,11 @@ export function TransparencySection() {
         </div>
 
         <div className="text-center">
-          <Button variant="primary" size="lg" asChild>
-            <Link to="/transparency">View Full Transparency Page</Link>
-          </Button>
+          <Link to="/transparency">
+            <Button variant="primary" size="lg" className="font-bold shadow-md">
+              View Full Transparency Page →
+            </Button>
+          </Link>
         </div>
       </Container>
     </Section>
