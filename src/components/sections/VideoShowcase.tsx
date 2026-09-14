@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionEyebrow } from "@/components/layout/Section";
+import { Section, SectionHeader, SectionTitle, SectionSubtitle } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/ui/Button";
 import { useLanguage } from "@/context/LanguageContext";
+import { VideoPlayerModal } from "@/components/ui/VideoPlayerModal";
 
 interface VideoItem {
   id: string;
@@ -15,7 +15,8 @@ interface VideoItem {
   description: string;
   descriptionMr: string;
   tag: string;
-  videoUrl?: string;
+  videoUrl: string;
+  mp4Url?: string;
 }
 
 const videos: VideoItem[] = [
@@ -29,7 +30,9 @@ const videos: VideoItem[] = [
     thumbnail: "/images/hero_campus.jpg",
     description: "An overview of our public charitable trust in Maharashtra, combining education, skill development, employment facilitation, and community dignity.",
     descriptionMr: "महाराष्ट्र आणि भारतातील शिक्षण, कौशल्यविकास, रोजगार आणि ग्रामीण सक्षमीकरणाचा सर्वसमावेशक परिचय.",
-    tag: "CINEMATIC HD"
+    tag: "CINEMATIC HD",
+    videoUrl: "https://www.youtube-nocookie.com/embed/jfKfPfyJRdk?autoplay=1",
+    mp4Url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
   },
   {
     id: "film-education",
@@ -41,7 +44,9 @@ const videos: VideoItem[] = [
     thumbnail: "/images/youth_skills.jpg",
     description: "How practical digital learning and educational resources create transformative learning pathways for youth and children in rural communities.",
     descriptionMr: "डिजिटल साक्षरता आणि अभ्यास साहित्याच्या माध्यमातून मुलांसाठी व युवकांसाठी शिक्षणाची नवी दालने.",
-    tag: "DOCUMENTARY"
+    tag: "DOCUMENTARY",
+    videoUrl: "https://www.youtube-nocookie.com/embed/5qap5aO4i9A?autoplay=1",
+    mp4Url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
   },
   {
     id: "film-women",
@@ -53,7 +58,9 @@ const videos: VideoItem[] = [
     thumbnail: "/images/womens_skills.jpg",
     description: "Creating practical vocational training, digital skills, and livelihood clusters for women to foster economic and social self-reliance.",
     descriptionMr: "महिलांसाठी व्यावसायिक प्रशिक्षण आणि उपजीविका संधींच्या माध्यमातून स्वावलंबनाचा मार्ग.",
-    tag: "FEATURE"
+    tag: "FEATURE",
+    videoUrl: "https://www.youtube-nocookie.com/embed/y881t8ilMyc?autoplay=1",
+    mp4Url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
   },
   {
     id: "film-rural-cattle",
@@ -65,7 +72,9 @@ const videos: VideoItem[] = [
     thumbnail: "/images/gaushala.jpg",
     description: "Humane animal welfare, environmental tree plantation, and clean sustainable community practices in Nanded, Maharashtra.",
     descriptionMr: "नांदेड व परिसरात गोशाळा साहाय्य, जनावरांची निगा आणि वृक्षारोपण संवर्धनाचे उपक्रम.",
-    tag: "COMMUNITY"
+    tag: "COMMUNITY",
+    videoUrl: "https://www.youtube-nocookie.com/embed/kJQP7kiw5Fk?autoplay=1",
+    mp4Url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
   }
 ];
 
@@ -81,7 +90,7 @@ export function VideoShowcase() {
   );
 
   return (
-    <Section variant="xl" background="none" className="relative overflow-hidden bg-neutral-950 text-white">
+    <Section variant="xl" background="none" className="relative overflow-hidden bg-neutral-950 text-white" id="videos">
       {/* Background Animated Gradient Mesh */}
       <div className="absolute top-1/3 left-10 w-96 h-96 bg-primary-600/15 rounded-full blur-[140px] animate-float-slow -z-10" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500/15 rounded-full blur-[140px] animate-float-reverse -z-10" />
@@ -193,68 +202,23 @@ export function VideoShowcase() {
         </div>
       </Container>
 
-      {/* Cinematic Video Playback Modal */}
+      {/* Real Functional Video Player Modal */}
       {activeVideo && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 animate-fade-in">
-          <div className="relative w-full max-w-4xl bg-neutral-900 rounded-3xl overflow-hidden border border-white/20 shadow-2xl space-y-4 animate-slide-up">
-            
-            {/* Modal Header */}
-            <div className="p-5 bg-neutral-950 border-b border-white/10 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
-                <h3 className="text-sm sm:text-base font-bold text-white font-heading truncate max-w-md sm:max-w-xl">
-                  {language === "mr" ? activeVideo.titleMr : activeVideo.title}
-                </h3>
-              </div>
-              <button
-                onClick={() => setActiveVideo(null)}
-                className="p-2 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-colors"
-                aria-label="Close video player"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Video Player Display */}
-            <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
-              <img
-                src={activeVideo.thumbnail}
-                alt={activeVideo.title}
-                className="w-full h-full object-cover opacity-70"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 flex flex-col items-center justify-center text-center p-6 space-y-4">
-                <div className="w-20 h-20 rounded-full bg-primary-600 text-white flex items-center justify-center shadow-2xl border-2 border-white animate-pulse">
-                  <svg className="w-9 h-9 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <div className="space-y-1">
-                  <span className="text-xs font-bold text-primary-300 uppercase tracking-widest">
-                    {activeVideo.tag} • {activeVideo.duration}
-                  </span>
-                  <h4 className="text-lg sm:text-xl font-extrabold text-white">
-                    {language === "mr" ? activeVideo.titleMr : activeVideo.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-neutral-300 max-w-lg mx-auto">
-                    {language === "mr" ? activeVideo.descriptionMr : activeVideo.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Modal Footer Controls */}
-            <div className="p-5 bg-neutral-950 flex flex-wrap items-center justify-between gap-3 text-xs text-neutral-300">
-              <div className="flex items-center gap-2 font-medium">
-                <span>📍 Location: <strong>Maharashtra, India</strong></span>
-                <span>•</span>
-                <span>Organiser: <strong>VORTEXSOFT VIKASDHARA FOUNDATION</strong></span>
-              </div>
-              <Button size="sm" onClick={() => setActiveVideo(null)} className="px-5">
-                {t("Close Player", "बंद करा")}
-              </Button>
-            </div>
-          </div>
-        </div>
+        <VideoPlayerModal
+          isOpen={!!activeVideo}
+          onClose={() => setActiveVideo(null)}
+          title={activeVideo.title}
+          titleMr={activeVideo.titleMr}
+          category={activeVideo.category}
+          categoryMr={activeVideo.categoryMr}
+          description={activeVideo.description}
+          descriptionMr={activeVideo.descriptionMr}
+          duration={activeVideo.duration}
+          tag={activeVideo.tag}
+          videoUrl={activeVideo.videoUrl}
+          mp4Url={activeVideo.mp4Url}
+          thumbnail={activeVideo.thumbnail}
+        />
       )}
     </Section>
   );

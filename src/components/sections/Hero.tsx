@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { MotionCanvas } from "@/components/ui/MotionCanvas";
+import { VideoPlayerModal } from "@/components/ui/VideoPlayerModal";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
@@ -251,73 +252,21 @@ export function Hero() {
       </div>
 
       {/* Hero Foundation Film Video Modal */}
-      {isVideoOpen && (
-        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 animate-fade-in">
-          <div className="relative w-full max-w-4xl bg-neutral-900 rounded-3xl overflow-hidden border border-white/20 shadow-2xl space-y-4 animate-slide-up">
-            <div className="p-5 bg-neutral-950 border-b border-white/10 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <span className="w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
-                <h3 className="text-sm sm:text-base font-bold text-white font-heading">
-                  {t(
-                    "VORTEXSOFT VIKASDHARA FOUNDATION — The Journey of Opportunity",
-                    "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन — गरजेकडून संधीकडे प्रवास"
-                  )}
-                </h3>
-              </div>
-              <button
-                onClick={() => setIsVideoOpen(false)}
-                className="p-2 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-colors"
-                aria-label="Close video"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
-              <img
-                src="/images/hero_campus.jpg"
-                alt="Documentary Foundation Film"
-                className="w-full h-full object-cover opacity-75"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center p-6 space-y-4">
-                <div className="w-20 h-20 rounded-full bg-primary-600 text-white flex items-center justify-center shadow-2xl border-2 border-white animate-pulse">
-                  <svg className="w-9 h-9 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <div className="space-y-1">
-                  <span className="text-xs font-bold text-primary-300 uppercase tracking-widest">
-                    CINEMATIC HD • 3:20 MIN
-                  </span>
-                  <h4 className="text-lg sm:text-2xl font-extrabold text-white font-heading">
-                    {t(
-                      "Empowering People. Strengthening Communities. Building a Better India.",
-                      "समर्थ लोक • सक्षम समाज • समृद्ध भारत"
-                    )}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-neutral-300 max-w-lg mx-auto leading-relaxed">
-                    {t(
-                      "An overview of our public charitable trust in Maharashtra, combining education, skill development, employment facilitation, and community dignity.",
-                      "महाराष्ट्र आणि भारतातील शिक्षण, कौशल्यविकास, रोजगार आणि ग्रामीण सक्षमीकरणाचा सर्वसमावेशक परिचय."
-                    )}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-5 bg-neutral-950 flex flex-wrap items-center justify-between gap-3 text-xs text-neutral-300">
-              <div className="flex items-center gap-2 font-medium">
-                <span>📍 <strong>Nanded & Pune, Maharashtra, India</strong></span>
-                <span>•</span>
-                <span>Organiser: <strong>VORTEXSOFT VIKASDHARA FOUNDATION</strong></span>
-              </div>
-              <Button size="sm" onClick={() => setIsVideoOpen(false)} className="px-5">
-                {t("Close Film", "बंद करा")}
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
+      <VideoPlayerModal
+        isOpen={isVideoOpen}
+        onClose={() => setIsVideoOpen(false)}
+        title="VORTEXSOFT VIKASDHARA FOUNDATION — The Journey of Opportunity"
+        titleMr="वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन — गरजेकडून संधीकडे प्रवास"
+        category="Foundation Film"
+        categoryMr="संस्था परिचय"
+        duration="3:20 MIN"
+        tag="CINEMATIC HD"
+        description="An overview of our public charitable trust in Maharashtra, combining education, skill development, employment facilitation, and community dignity."
+        descriptionMr="महाराष्ट्र आणि भारतातील शिक्षण, कौशल्यविकास, रोजगार आणि ग्रामीण सक्षमीकरणाचा सर्वसमावेशक परिचय."
+        videoUrl="https://www.youtube-nocookie.com/embed/jfKfPfyJRdk?autoplay=1"
+        mp4Url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+        thumbnail="/images/hero_campus.jpg"
+      />
     </section>
   );
 }
