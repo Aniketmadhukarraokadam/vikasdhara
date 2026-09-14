@@ -11,3 +11,4 @@ export { TransparencySection } from './TransparencySection';
 export { RegisteredOffice } from './RegisteredOffice';
 export { IndiaIdentity } from './IndiaIdentity';
 export { VideoShowcase } from './VideoShowcase';
+export { VillageSanctuaryShowcase } from './VillageSanctuaryShowcase';

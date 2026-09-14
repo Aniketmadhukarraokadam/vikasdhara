@@ -2,6 +2,7 @@ import {
   Hero,
   Introduction,
   WhatWeDo,
+  VillageSanctuaryShowcase,
   VideoShowcase,
   Approach,
   Ecosystem,
@@ -42,6 +43,7 @@ export function Home() {
       <Hero />
       <Introduction />
       <WhatWeDo />
+      <VillageSanctuaryShowcase />
       <VideoShowcase />
       <Approach />
       <Ecosystem />
