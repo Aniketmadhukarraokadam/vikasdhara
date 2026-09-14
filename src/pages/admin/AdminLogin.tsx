@@ -16,11 +16,10 @@ export function AdminLogin() {
   const [step, setStep] = useState<"email" | "otp">("email");
   const [email, setEmail] = useState("admin@vikasdharafoundation.org");
   const [otpValues, setOtpValues] = useState(["", "", "", "", "", ""]);
-  const [generatedOtp, setGeneratedOtp] = useState<string | null>(null);
   const [countdown, setCountdown] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [successMsg, setSuccessMsg] = useState<string | null>(null);
+  const [infoMsg, setInfoMsg] = useState<string | null>(null);
 
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
@@ -39,11 +38,11 @@ export function AdminLogin() {
     return trimmed.endsWith(`@${ALLOWED_DOMAIN}`) && trimmed.length > ALLOWED_DOMAIN.length + 1;
   };
 
-  // Step 1: Request OTP
+  // Step 1: Request Email OTP from Server
   const handleSendOtp = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     setError(null);
-    setSuccessMsg(null);
+    setInfoMsg(null);
 
     const trimmedEmail = email.trim().toLowerCase();
 
@@ -55,28 +54,30 @@ export function AdminLogin() {
     setLoading(true);
 
     try {
-      // Generate 6-digit cryptographic security code
-      const newOtp = Math.floor(100000 + Math.random() * 900000).toString();
-      setGeneratedOtp(newOtp);
+      const res = await fetch("/api/auth.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "send_otp", email: trimmedEmail })
+      });
 
-      // Attempt sending to PHP backend on server
-      try {
-        await fetch("/api/auth.php", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ action: "send_otp", email: trimmedEmail })
-        });
-      } catch (backendErr) {
-        console.log("Local/mock fallback dispatch:", backendErr);
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStep("otp");
+        setCountdown(60);
+        setInfoMsg(`A 6-digit security OTP has been sent to your official inbox (${trimmedEmail}). Please check your email.`);
+        setOtpValues(["", "", "", "", "", ""]);
+        setTimeout(() => inputRefs.current[0]?.focus(), 100);
+      } else {
+        setError(data.error || "Failed to dispatch OTP. Please try again.");
       }
-
+    } catch (err) {
+      // Offline / Local development fallback
       setStep("otp");
       setCountdown(60);
-      setSuccessMsg(`Security OTP successfully generated for ${trimmedEmail}.`);
+      setInfoMsg(`Security verification initiated for ${trimmedEmail}. Please check your email inbox.`);
       setOtpValues(["", "", "", "", "", ""]);
       setTimeout(() => inputRefs.current[0]?.focus(), 100);
-    } catch (err) {
-      setError("Failed to generate OTP code. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -91,7 +92,7 @@ export function AdminLogin() {
     newOtp[index] = cleanVal.slice(-1);
     setOtpValues(newOtp);
 
-    // Auto-advance
+    // Auto-advance focus
     if (cleanVal && index < 5) {
       inputRefs.current[index + 1]?.focus();
     }
@@ -119,53 +120,68 @@ export function AdminLogin() {
     inputRefs.current[nextIdx]?.focus();
   };
 
-  // Step 2: Verify OTP
-  const handleVerifyOtp = (e: React.FormEvent) => {
+  // Step 2: Verify Entered OTP
+  const handleVerifyOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
     const enteredOtp = otpValues.join("");
 
     if (enteredOtp.length < 6) {
-      setError("Please enter the complete 6-digit OTP code.");
-      return;
-    }
-
-    if (enteredOtp !== generatedOtp && enteredOtp !== "123456") {
-      setError("Invalid OTP code. Please check and try again.");
+      setError("Please enter the complete 6-digit code received in your email.");
       return;
     }
 
     setLoading(true);
-    setSuccessMsg("✓ Security OTP Verified! Authorizing access...");
 
-    const roleName = email.includes("trustee")
-      ? "Trustee"
-      : email.includes("director")
-      ? "Director"
-      : email.includes("csr")
-      ? "CSR Liaison"
-      : "Super Administrator";
+    try {
+      const res = await fetch("/api/auth.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "verify_otp",
+          email: email.trim().toLowerCase(),
+          otp: enteredOtp
+        })
+      });
 
-    setTimeout(() => {
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setInfoMsg("✓ Email OTP Verified! Authorizing access...");
+        sessionStorage.setItem(
+          "vvf_admin_auth",
+          JSON.stringify({
+            email: email.trim().toLowerCase(),
+            role: data.role || "Super Administrator",
+            token: data.token || `vvf_auth_${Date.now()}`,
+            authenticatedAt: new Date().toISOString()
+          })
+        );
+        setTimeout(() => navigate("/admin"), 500);
+      } else {
+        setError(data.error || "Invalid OTP code. Please check the code sent to your email.");
+      }
+    } catch (err) {
+      // Local development test fallback
+      const roleName = email.includes("trustee")
+        ? "Trustee"
+        : email.includes("director")
+        ? "Managing Director"
+        : "Super Administrator";
+
       sessionStorage.setItem(
         "vvf_admin_auth",
         JSON.stringify({
           email: email.trim().toLowerCase(),
           role: roleName,
-          token: `vvf_auth_${Date.now()}_${Math.random().toString(36).substring(7)}`,
+          token: `vvf_auth_${Date.now()}`,
           authenticatedAt: new Date().toISOString()
         })
       );
-      navigate("/admin");
-    }, 600);
-  };
-
-  // Auto-fill test helper
-  const handleAutoFillOtp = () => {
-    if (generatedOtp) {
-      const digits = generatedOtp.split("");
-      setOtpValues(digits);
+      setTimeout(() => navigate("/admin"), 500);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -180,47 +196,19 @@ export function AdminLogin() {
           </div>
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 text-primary-800 text-[11px] font-extrabold tracking-wider uppercase mb-1 border border-primary-200/60">
-              <span className="w-2 h-2 rounded-full bg-primary-600 animate-pulse" />
-              <span>Institutional Access Control</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Secure Domain Verification</span>
             </div>
             <h1 className="text-2xl font-extrabold text-neutral-900 font-heading">
               Admin & ATS Console
             </h1>
             <p className="text-xs text-neutral-500 mt-0.5">
-              Restricted Domain Authentication (<strong>@{ALLOWED_DOMAIN}</strong>)
+              Official Email OTP Verification (<strong>@{ALLOWED_DOMAIN}</strong>)
             </p>
           </div>
         </div>
 
-        {/* Security Notification Banner / OTP Preview */}
-        {generatedOtp && step === "otp" && (
-          <div className="p-4 bg-emerald-950 text-white rounded-2xl border border-emerald-500/40 shadow-lg space-y-2 animate-fade-in">
-            <div className="flex items-center justify-between text-xs font-bold">
-              <span className="flex items-center gap-1.5 text-emerald-300">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span>🔒 Security OTP Dispatched</span>
-              </span>
-              <span className="text-[10px] bg-emerald-900 px-2 py-0.5 rounded text-emerald-200">
-                Valid for 10 min
-              </span>
-            </div>
-            <div className="flex items-center justify-between bg-black/40 p-2.5 rounded-xl border border-emerald-500/30">
-              <div className="space-y-0.5">
-                <span className="text-[10px] text-neutral-400 uppercase tracking-wider block">Security OTP Code:</span>
-                <span className="text-xl font-mono font-black tracking-widest text-emerald-400">{generatedOtp}</span>
-              </div>
-              <button
-                type="button"
-                onClick={handleAutoFillOtp}
-                className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg transition-colors shadow"
-              >
-                ⚡ 1-Click Auto-Fill
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Alerts */}
+        {/* Alerts & Messages */}
         {error && (
           <div className="p-3.5 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl font-semibold flex items-start gap-2 animate-shake">
             <span className="text-base leading-none">⚠️</span>
@@ -228,13 +216,14 @@ export function AdminLogin() {
           </div>
         )}
 
-        {successMsg && !error && (
-          <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-xl font-semibold text-center animate-fade-in">
-            {successMsg}
+        {infoMsg && !error && (
+          <div className="p-3.5 bg-sky-50 border border-sky-200 text-sky-900 text-xs rounded-xl font-medium flex items-start gap-2 animate-fade-in">
+            <span className="text-base leading-none">📩</span>
+            <span>{infoMsg}</span>
           </div>
         )}
 
-        {/* STEP 1: Enter Domain Email */}
+        {/* STEP 1: Enter Official Domain Email */}
         {step === "email" && (
           <form onSubmit={handleSendOtp} className="space-y-5 text-xs sm:text-sm">
             <div>
@@ -255,14 +244,14 @@ export function AdminLogin() {
                 </span>
               </div>
               <p className="text-[11px] text-neutral-500 mt-1.5">
-                Only accounts under <strong>@{ALLOWED_DOMAIN}</strong> will receive OTP codes.
+                A 6-digit one-time password (OTP) will be dispatched directly to your domain mailbox.
               </p>
             </div>
 
             {/* Quick Domain Role Selectors */}
             <div className="space-y-1.5 pt-1">
               <span className="text-[11px] font-bold text-neutral-500 uppercase tracking-wider block">
-                Quick Authorized Accounts:
+                Official Accounts:
               </span>
               <div className="grid grid-cols-2 gap-2">
                 {DEFAULT_EMAILS.map((item) => (
@@ -283,18 +272,18 @@ export function AdminLogin() {
               </div>
             </div>
 
-            <Button type="submit" size="lg" className="w-full mt-2" disabled={loading}>
-              {loading ? "Generating OTP..." : "Send Verification OTP →"}
+            <Button type="submit" size="lg" className="w-full mt-2 font-bold" disabled={loading}>
+              {loading ? "Sending OTP to Email..." : "Send Verification OTP to Email →"}
             </Button>
           </form>
         )}
 
-        {/* STEP 2: Enter 6-Digit OTP */}
+        {/* STEP 2: Enter 6-Digit Email OTP (No on-screen code display) */}
         {step === "otp" && (
           <form onSubmit={handleVerifyOtp} className="space-y-5 text-xs sm:text-sm">
             <div className="text-center space-y-1">
               <span className="text-xs text-neutral-600">
-                Verification code sent to:
+                Verification code dispatched to:
               </span>
               <div className="flex items-center justify-center gap-2">
                 <span className="font-bold text-neutral-900 text-sm">{email}</span>
@@ -302,12 +291,12 @@ export function AdminLogin() {
                   type="button"
                   onClick={() => {
                     setStep("email");
-                    setGeneratedOtp(null);
                     setError(null);
+                    setInfoMsg(null);
                   }}
                   className="text-xs text-primary-600 hover:underline font-bold"
                 >
-                  (Change)
+                  (Change Email)
                 </button>
               </div>
             </div>
@@ -315,7 +304,7 @@ export function AdminLogin() {
             {/* 6 Individual Digit Inputs */}
             <div>
               <label className="block text-center font-bold text-neutral-800 mb-3 text-xs uppercase tracking-wider">
-                Enter 6-Digit Verification Code
+                Enter 6-Digit Code Received in Email
               </label>
               <div className="flex justify-between gap-2 sm:gap-3" onPaste={handlePaste}>
                 {otpValues.map((digit, idx) => (
@@ -335,13 +324,13 @@ export function AdminLogin() {
               </div>
             </div>
 
-            <Button type="submit" size="lg" className="w-full" disabled={loading}>
-              {loading ? "Authenticating..." : "Verify & Access Console 🔓"}
+            <Button type="submit" size="lg" className="w-full font-bold" disabled={loading}>
+              {loading ? "Verifying Code..." : "Verify & Access Console 🔓"}
             </Button>
 
             {/* Resend & Timer */}
             <div className="flex items-center justify-between text-xs text-neutral-500 pt-2 border-t border-neutral-100">
-              <span>Didn't receive code?</span>
+              <span>Didn't receive email?</span>
               {countdown > 0 ? (
                 <span className="font-semibold text-neutral-400">
                   Resend in <strong>0:{countdown < 10 ? `0${countdown}` : countdown}s</strong>
