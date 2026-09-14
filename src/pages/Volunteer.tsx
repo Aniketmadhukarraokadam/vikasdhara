@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Link } from "react-router-dom";
 import { volunteer } from "@/content";
 import { SEO } from "@/components/seo/SEO";
+import { ApplicationInquiryForm } from "@/components/common/ApplicationInquiryForm";
 
 export function VolunteerPage() {
   const { volunteer: vol } = volunteer;
@@ -115,11 +116,11 @@ export function VolunteerPage() {
           </div>
 
           <div className="text-center">
-            <Link to="/contact">
+            <a href="#volunteer-apply-form">
               <Button size="lg">
                 {vol.cta.text}
               </Button>
-            </Link>
+            </a>
             <p className="mt-4 text-neutral-600 text-sm">{vol.cta.description}</p>
           </div>
         </Container>
@@ -162,14 +163,23 @@ export function VolunteerPage() {
                       <span>{role.commitment}</span>
                     </div>
                   </div>
-                  <Link to="/contact">
-                    <Button variant="outline" size="sm" className="w-full">
-                      Apply as Volunteer
+                  <a href="#volunteer-apply-form">
+                    <Button variant="primary" size="sm" className="w-full">
+                      Apply for This Role
                     </Button>
-                  </Link>
+                  </a>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div id="volunteer-apply-form" className="mt-16 max-w-3xl mx-auto scroll-mt-28">
+            <ApplicationInquiryForm
+              defaultType="volunteer"
+              defaultSubject="Volunteer Registration & Mentorship in Maharashtra"
+              title="Apply Online as Volunteer / Mentor"
+              subtitle="Fill in your details below to register. Your application is directly tracked in our Pune Coordination ATS, and you will receive instant confirmation."
+            />
           </div>
         </Container>
       </Section>

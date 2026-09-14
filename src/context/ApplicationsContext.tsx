@@ -171,6 +171,31 @@ export function ApplicationsProvider({ children }: { children: ReactNode }) {
     };
 
     setApplications(prev => [newApp, ...prev]);
+
+    // Asynchronously dispatch to backend PHP handler for email notification and file persistence
+    try {
+      fetch('/api/inquiry.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          application_id: newId,
+          type: newApp.type,
+          name: newApp.name,
+          email: newApp.email,
+          mobile: newApp.mobile,
+          organization: newApp.organization,
+          location: newApp.location,
+          subject: newApp.subject,
+          message: newApp.message,
+          source: 'vvf_web_portal'
+        })
+      }).catch(err => {
+        console.warn('Backend inquiry sync notice:', err);
+      });
+    } catch (e) {
+      // Non-blocking in frontend
+    }
+
     return newApp;
   };
 

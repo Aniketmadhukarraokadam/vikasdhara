@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Link } from "react-router-dom";
 import { support } from "@/content";
 import { SEO } from "@/components/seo/SEO";
+import { ApplicationInquiryForm } from "@/components/common/ApplicationInquiryForm";
 
 export function SupportPage() {
   const { support: sup } = support;
@@ -104,13 +105,13 @@ export function SupportPage() {
             </ul>
           </div>
 
-          <div className="text-center">
-            <Link to="/contact">
-              <Button size="lg">
-                {sup.cta.text}
-              </Button>
-            </Link>
-            <p className="mt-4 text-neutral-600 text-sm">{sup.cta.description}</p>
+          <div id="support-inquiry-form" className="max-w-3xl mx-auto scroll-mt-28">
+            <ApplicationInquiryForm
+              defaultType="contact"
+              defaultSubject="Support the Mission & Contribution Inquiry"
+              title="Official Contribution & Support Inquiry"
+              subtitle="Submit your inquiry or intent to support below. We will provide verified statutory bank account details and official receipt procedures."
+            />
           </div>
         </Container>
       </Section>

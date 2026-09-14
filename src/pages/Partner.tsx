@@ -6,6 +6,7 @@ import { IconWrapper } from "@/components/ui/IconWrapper";
 import { Link } from "react-router-dom";
 import { partnership } from "@/content";
 import { SEO } from "@/components/seo/SEO";
+import { ApplicationInquiryForm } from "@/components/common/ApplicationInquiryForm";
 
 export function PartnerPage() {
   const { partnership: partner } = partnership;
@@ -162,6 +163,16 @@ export function PartnerPage() {
                 {partnership.corporateLanding.note}
               </p>
             </div>
+          </div>
+
+          {/* Direct CSR Application & Proposal Submission Form */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <ApplicationInquiryForm
+              defaultType="csr_partner"
+              defaultSubject="CSR Partnership & Grant Proposal"
+              title="Submit a Corporate CSR Partnership Inquiry"
+              subtitle="Connect directly with our CSR & project leadership desk to discuss mandate alignment, feasibility, and timelines."
+            />
           </div>
         </Container>
       </Section>

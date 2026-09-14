@@ -9,6 +9,7 @@ import { programmes } from "@/content";
 import { icons, type IconName } from "@/assets/icons";
 import { SEO } from "@/components/seo/SEO";
 import { useLanguage } from "@/context/LanguageContext";
+import { ApplicationInquiryForm } from "@/components/common/ApplicationInquiryForm";
 
 export function ProgrammeDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -270,19 +271,19 @@ export function ProgrammeDetail() {
               </Card>
 
               <Card variant="bordered" padding="lg" className="space-y-3 shadow-soft bg-white">
-                <Link to="/get-involved/partner" className="block">
+                <a href="#programme-inquiry-form" className="block">
                   <Button size="lg" className="w-full">
-                    {t("Partner on This Programme", "या उपक्रमात भागीदार व्हा")}
+                    {t("Enroll / Apply for This", "या उपक्रमासाठी अर्ज करा")}
+                  </Button>
+                </a>
+                <Link to="/get-involved/partner" className="block">
+                  <Button variant="outline" size="lg" className="w-full">
+                    {t("Partner on This Programme", "संस्थात्मक CSR भागीदारी")}
                   </Button>
                 </Link>
                 <Link to="/get-involved/volunteer" className="block">
-                  <Button variant="outline" size="lg" className="w-full">
-                    {t("Volunteer for This", "स्वयंसेवक म्हणून सहभागी व्हा")}
-                  </Button>
-                </Link>
-                <Link to="/contact" className="block">
                   <Button variant="ghost" size="lg" className="w-full">
-                    {t("Enquire Now", "चौकशी करा")}
+                    {t("Volunteer for This", "स्वयंसेवक म्हणून सहभागी व्हा")}
                   </Button>
                 </Link>
               </Card>
@@ -309,6 +310,20 @@ export function ProgrammeDetail() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+
+          {/* Direct In-page Application & Inquiry Section */}
+          <div id="programme-inquiry-form" className="mt-20 max-w-3xl mx-auto scroll-mt-28">
+            <ApplicationInquiryForm
+              defaultType="beneficiary_skilling"
+              programmeTitle={programme.title}
+              defaultSubject={`Enrollment & Inquiry: ${programme.title}`}
+              title={t(`Apply / Inquire for ${programme.title}`, `${programme.title} उपक्रमासाठी अर्ज व चौकशी`)}
+              subtitle={t(
+                "Submit your application details below. Applications are tracked in our ATS and you can also send direct WhatsApp confirmation.",
+                "खालील फॉर्ममध्ये आपले तपशील भरा. आपला अर्ज थेट आमच्या प्रणालीत नोंदवला जाईल."
+              )}
+            />
           </div>
         </Container>
       </Section>
