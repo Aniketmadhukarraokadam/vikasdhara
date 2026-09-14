@@ -145,6 +145,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-neutral-400 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/blogs" className="text-neutral-400 hover:text-white transition-colors">Blogs & Field Insights</Link></li>
               <li><Link to="/about#vision-mission" className="text-neutral-400 hover:text-white transition-colors">Vision & Mission</Link></li>
               <li><Link to="/about#leadership" className="text-neutral-400 hover:text-white transition-colors">Board of Trustees</Link></li>
               <li><Link to="/transparency" className="text-neutral-400 hover:text-white transition-colors">Governance & Reports</Link></li>

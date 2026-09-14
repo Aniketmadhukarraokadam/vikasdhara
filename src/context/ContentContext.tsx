@@ -5,6 +5,28 @@ import aboutData from "@/content/about.json";
 import contactData from "@/content/contact.json";
 import partnershipData from "@/content/partnership.json";
 import transparencyData from "@/content/transparency.json";
+import blogsData from "@/content/blogs.json";
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  titleMr: string;
+  excerpt: string;
+  excerptMr: string;
+  content: string;
+  contentMr: string;
+  category: string;
+  categoryMr: string;
+  author: string;
+  authorRole: string;
+  publishDate: string;
+  readTime: string;
+  coverImage: string;
+  featured: boolean;
+  published: boolean;
+  tags: string[];
+}
 
 export interface DynamicContentState {
   programmes: typeof programmesData;
@@ -13,6 +35,7 @@ export interface DynamicContentState {
   contact: typeof contactData;
   partnership: typeof partnershipData;
   transparency: typeof transparencyData;
+  blogs: BlogPost[];
   lastUpdated: string;
 }
 
@@ -23,14 +46,19 @@ const defaultContent: DynamicContentState = {
   contact: contactData,
   partnership: partnershipData,
   transparency: transparencyData,
+  blogs: blogsData as BlogPost[],
   lastUpdated: new Date().toISOString(),
 };
 
-const STORAGE_KEY = "vvf_cms_content_v1";
+const STORAGE_KEY = "vvf_cms_content_v2";
 
 interface ContentContextType {
   content: DynamicContentState;
   updateSection: <K extends keyof DynamicContentState>(section: K, data: DynamicContentState[K]) => void;
+  addBlog: (post: BlogPost) => void;
+  updateBlog: (id: string, updated: Partial<BlogPost>) => void;
+  deleteBlog: (id: string) => void;
+  togglePublishBlog: (id: string) => void;
   resetToDefaults: () => void;
   exportBackup: () => void;
   importBackup: (jsonStr: string) => boolean;
@@ -43,7 +71,12 @@ export function ContentProvider({ children }: { children: ReactNode }) {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
-        return JSON.parse(stored);
+        const parsed = JSON.parse(stored);
+        return {
+          ...defaultContent,
+          ...parsed,
+          blogs: parsed.blogs && parsed.blogs.length > 0 ? parsed.blogs : defaultContent.blogs,
+        };
       }
     } catch (e) {
       console.error("Error loading CMS content from localStorage", e);
@@ -64,6 +97,38 @@ export function ContentProvider({ children }: { children: ReactNode }) {
       ...prev,
       [section]: data,
       lastUpdated: new Date().toISOString(),
+    }));
+  };
+
+  const addBlog = (post: BlogPost) => {
+    setContent(prev => ({
+      ...prev,
+      blogs: [post, ...prev.blogs],
+      lastUpdated: new Date().toISOString()
+    }));
+  };
+
+  const updateBlog = (id: string, updated: Partial<BlogPost>) => {
+    setContent(prev => ({
+      ...prev,
+      blogs: prev.blogs.map(b => b.id === id ? { ...b, ...updated } : b),
+      lastUpdated: new Date().toISOString()
+    }));
+  };
+
+  const deleteBlog = (id: string) => {
+    setContent(prev => ({
+      ...prev,
+      blogs: prev.blogs.filter(b => b.id !== id),
+      lastUpdated: new Date().toISOString()
+    }));
+  };
+
+  const togglePublishBlog = (id: string) => {
+    setContent(prev => ({
+      ...prev,
+      blogs: prev.blogs.map(b => b.id === id ? { ...b, published: !b.published } : b),
+      lastUpdated: new Date().toISOString()
     }));
   };
 
@@ -89,7 +154,9 @@ export function ContentProvider({ children }: { children: ReactNode }) {
       const parsed = JSON.parse(jsonStr);
       if (parsed.programmes && parsed.about) {
         setContent({
+          ...defaultContent,
           ...parsed,
+          blogs: parsed.blogs || defaultContent.blogs,
           lastUpdated: new Date().toISOString(),
         });
         return true;
@@ -105,6 +172,10 @@ export function ContentProvider({ children }: { children: ReactNode }) {
       value={{
         content,
         updateSection,
+        addBlog,
+        updateBlog,
+        deleteBlog,
+        togglePublishBlog,
         resetToDefaults,
         exportBackup,
         importBackup,

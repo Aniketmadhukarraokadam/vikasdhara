@@ -48,6 +48,7 @@ export function Header() {
       ],
     },
     { name: t("Impact", "प्रभाव व अहवाल"), href: "/impact" },
+    { name: t("Blogs & Stories", "लेख व अनुभव"), href: "/blogs" },
     { name: t("FAQs", "प्रश्नोत्तरे"), href: "/frequently-asked-questions" },
     {
       name: t("Get Involved", "सहभागी व्हा"),

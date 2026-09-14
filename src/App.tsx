@@ -4,7 +4,6 @@ import { ContentProvider } from "@/context/ContentContext";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 // Public Layout & Pages
-
 import { Layout } from "@/components/layout/Layout";
 import { Home } from "@/pages/Home";
 import { About } from "@/pages/About";
@@ -18,12 +17,15 @@ import { ContactPage } from "@/pages/Contact";
 import { TransparencyPage } from "@/pages/Transparency";
 import { FAQPage } from "@/pages/FAQPage";
 import { PuneNGO } from "@/pages/PuneNGO";
+import { BlogList } from "@/pages/BlogList";
+import { BlogDetail } from "@/pages/BlogDetail";
 import { NotFound } from "@/pages/NotFound";
 
 // Admin Layout & Pages
 import { AdminLayout } from "@/components/admin/AdminLayout";
 import { AdminDashboard } from "@/pages/admin/AdminDashboard";
 import { AdminApplications } from "@/pages/admin/AdminApplications";
+import { AdminBlogs } from "@/pages/admin/AdminBlogs";
 import { AdminContent } from "@/pages/admin/AdminContent";
 import { AdminSettings } from "@/pages/admin/AdminSettings";
 import { AdminLogin } from "@/pages/admin/AdminLogin";
@@ -57,6 +59,13 @@ export function App() {
                 <Route path="frequently-asked-questions" element={<FAQPage />} />
                 <Route path="faq" element={<Navigate to="/frequently-asked-questions" replace />} />
 
+                {/* Editorial & Blog Routes */}
+                <Route path="blogs" element={<BlogList />} />
+                <Route path="blogs/:slug" element={<BlogDetail />} />
+                <Route path="blog" element={<Navigate to="/blogs" replace />} />
+                <Route path="news" element={<Navigate to="/blogs" replace />} />
+                <Route path="articles" element={<Navigate to="/blogs" replace />} />
+
                 {/* Blueprint Top-Level Programme Alias Redirects */}
                 <Route path="education" element={<Navigate to="/what-we-do/education" replace />} />
                 <Route path="women-empowerment" element={<Navigate to="/what-we-do/women-empowerment" replace />} />
@@ -82,6 +91,7 @@ export function App() {
               <Route path="/admin" element={<AdminLayout />}>
                 <Route index element={<AdminDashboard />} />
                 <Route path="applications" element={<AdminApplications />} />
+                <Route path="blogs" element={<AdminBlogs />} />
                 <Route path="content" element={<AdminContent />} />
                 <Route path="settings" element={<AdminSettings />} />
               </Route>
