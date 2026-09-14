@@ -264,7 +264,7 @@ export function Hero() {
         description="An overview of our public charitable trust in Maharashtra, combining education, skill development, employment facilitation, and community dignity."
         descriptionMr="महाराष्ट्र आणि भारतातील शिक्षण, कौशल्यविकास, रोजगार आणि ग्रामीण सक्षमीकरणाचा सर्वसमावेशक परिचय."
         videoUrl="https://www.youtube-nocookie.com/embed/jfKfPfyJRdk?autoplay=1"
-        mp4Url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+        mp4Url="/videos/foundation_journey.mp4"
         thumbnail="/images/hero_campus.jpg"
       />
     </section>

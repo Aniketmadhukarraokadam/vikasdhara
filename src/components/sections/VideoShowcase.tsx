@@ -118,11 +118,10 @@ export function VideoShowcase() {
             <button
               key={cat}
               onClick={() => setSelectedFilter(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-                selectedFilter === cat
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${selectedFilter === cat
                   ? "bg-primary-600 text-white shadow-lg shadow-primary-900/50 scale-105 border border-primary-400/40"
                   : "bg-white/10 text-neutral-300 hover:bg-white/20 border border-white/10"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -144,7 +143,7 @@ export function VideoShowcase() {
                   alt={video.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
                 />
-                
+
                 {/* Gradient Shadow Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-black/30" />
 

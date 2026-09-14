@@ -76,15 +76,15 @@ export function VideoPlayerModal({
   const activeMp4Url = mp4Url || "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6 animate-fade-in"
       onClick={onClose}
     >
-      <div 
+      <div
         className="relative w-full max-w-5xl bg-neutral-900 rounded-3xl overflow-hidden border border-white/20 shadow-2xl space-y-4 animate-slide-up flex flex-col max-h-[92vh]"
         onClick={(e) => e.stopPropagation()}
       >
-        
+
         {/* Modal Top Navigation Bar */}
         <div className="p-4 sm:p-5 bg-neutral-950 border-b border-white/10 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
@@ -104,21 +104,19 @@ export function VideoPlayerModal({
             <div className="hidden sm:flex items-center bg-white/10 rounded-xl p-1 border border-white/10 text-xs font-semibold">
               <button
                 onClick={() => setPlayerType("stream")}
-                className={`px-3 py-1 rounded-lg transition-all ${
-                  playerType === "stream" 
-                    ? "bg-primary-600 text-white shadow-md font-bold" 
+                className={`px-3 py-1 rounded-lg transition-all ${playerType === "stream"
+                    ? "bg-primary-600 text-white shadow-md font-bold"
                     : "text-neutral-300 hover:text-white"
-                }`}
+                  }`}
               >
                 HD Stream
               </button>
               <button
                 onClick={() => setPlayerType("html5")}
-                className={`px-3 py-1 rounded-lg transition-all ${
-                  playerType === "html5" 
-                    ? "bg-primary-600 text-white shadow-md font-bold" 
+                className={`px-3 py-1 rounded-lg transition-all ${playerType === "html5"
+                    ? "bg-primary-600 text-white shadow-md font-bold"
                     : "text-neutral-300 hover:text-white"
-                }`}
+                  }`}
               >
                 HTML5 Video
               </button>
@@ -207,8 +205,8 @@ export function VideoPlayerModal({
           </div>
 
           <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-            <Button 
-              size="sm" 
+            <Button
+              size="sm"
               variant="outline"
               onClick={() => {
                 navigator.clipboard?.writeText(window.location.href);
