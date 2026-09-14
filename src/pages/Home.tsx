@@ -2,6 +2,7 @@ import {
   Hero,
   Introduction,
   WhatWeDo,
+  VideoShowcase,
   Approach,
   Ecosystem,
   CorporatePartnerships,
@@ -41,6 +42,7 @@ export function Home() {
       <Hero />
       <Introduction />
       <WhatWeDo />
+      <VideoShowcase />
       <Approach />
       <Ecosystem />
       <CorporatePartnerships />

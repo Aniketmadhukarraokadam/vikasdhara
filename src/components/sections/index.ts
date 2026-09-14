@@ -10,3 +10,4 @@ export { CTASection } from './CTASection';
 export { TransparencySection } from './TransparencySection';
 export { RegisteredOffice } from './RegisteredOffice';
 export { IndiaIdentity } from './IndiaIdentity';
+export { VideoShowcase } from './VideoShowcase';
