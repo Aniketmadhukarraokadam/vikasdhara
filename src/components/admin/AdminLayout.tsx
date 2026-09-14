@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useApplications } from "@/context/ApplicationsContext";
 import { cn } from "@/utils/cn";
@@ -8,6 +8,27 @@ export function AdminLayout() {
   const navigate = useNavigate();
   const { applications } = useApplications();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState<{ email: string; role: string } | null>(null);
+
+  // Authentication Guard Check
+  useEffect(() => {
+    try {
+      const authRaw = sessionStorage.getItem("vvf_admin_auth");
+      if (!authRaw) {
+        navigate("/admin/login", { replace: true });
+        return;
+      }
+      const parsed = JSON.parse(authRaw);
+      if (!parsed?.email || !parsed?.email.endsWith("@vikasdharafoundation.org")) {
+        sessionStorage.removeItem("vvf_admin_auth");
+        navigate("/admin/login", { replace: true });
+        return;
+      }
+      setCurrentUser(parsed);
+    } catch {
+      navigate("/admin/login", { replace: true });
+    }
+  }, [navigate]);
 
   const pendingCount = applications.filter(a => a.status === "new" || a.status === "in_review").length;
 
@@ -103,10 +124,14 @@ export function AdminLayout() {
 
           {/* User Profile Badge */}
           <div className="hidden md:flex items-center gap-2 px-3 py-1 bg-neutral-900 rounded-full border border-neutral-800 text-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span className="font-medium text-neutral-200">Anirudh Kadam (Trustee)</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="font-bold text-neutral-200">
+              {currentUser?.email || "admin@vikasdharafoundation.org"}
+            </span>
             <span className="text-neutral-500">|</span>
-            <span className="text-emerald-400 font-bold">HQ & Pune</span>
+            <span className="text-emerald-400 font-bold">
+              {currentUser?.role || "Administrator"}
+            </span>
           </div>
 
           <button
@@ -131,11 +156,11 @@ export function AdminLayout() {
             {/* Quick Status Pill */}
             <div className="bg-neutral-950/80 rounded-xl p-3 border border-neutral-800 space-y-1">
               <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
-                System Status
+                Security Session
               </div>
               <div className="text-xs text-neutral-200 flex items-center justify-between">
-                <span>Database Sync:</span>
-                <span className="text-emerald-400 font-semibold">Active (Local)</span>
+                <span>Domain Auth:</span>
+                <span className="text-emerald-400 font-semibold">@vikasdharafoundation.org</span>
               </div>
               <div className="text-xs text-neutral-200 flex items-center justify-between">
                 <span>Inbound Submissions:</span>
@@ -182,7 +207,7 @@ export function AdminLayout() {
           {/* Sidebar Footer */}
           <div className="p-4 border-t border-neutral-800 text-xs text-neutral-500">
             <p className="font-semibold text-neutral-400">Vikasdhara Admin v2.0</p>
-            <p className="text-[11px] mt-0.5">Maharashtra Trust Act & CSR Portal</p>
+            <p className="text-[11px] mt-0.5">Domain OTP Verified Session</p>
           </div>
         </aside>
 
