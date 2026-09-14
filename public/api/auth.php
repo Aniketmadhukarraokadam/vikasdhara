@@ -151,10 +151,17 @@ if ($action === 'verify_otp') {
         // Success: Clean up OTP record
         @unlink($filePath);
         
-        $role = "Super Administrator";
-        if (strpos($email, 'trustee') !== false) $role = "Trustee";
-        else if (strpos($email, 'director') !== false) $role = "Managing Director";
-        else if (strpos($email, 'csr') !== false) $role = "CSR Liaison";
+        // Role Assignment: ONLY admin@vikasdharafoundation.org is Super Administrator
+        $role = "Authorized Staff";
+        if ($email === 'admin@vikasdharafoundation.org') {
+            $role = "Super Administrator";
+        } else if (strpos($email, 'trustee') !== false) {
+            $role = "Trustee";
+        } else if (strpos($email, 'director') !== false) {
+            $role = "Managing Director";
+        } else if (strpos($email, 'csr') !== false) {
+            $role = "CSR Liaison";
+        }
 
         $token = "vvf_token_" . bin2hex(random_bytes(16)) . "_" . time();
 

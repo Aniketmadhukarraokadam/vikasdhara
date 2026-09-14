@@ -164,11 +164,16 @@ export function AdminLogin() {
       }
     } catch (err) {
       // Local development test fallback
-      const roleName = email.includes("trustee")
+      const cleanEmail = email.trim().toLowerCase();
+      const roleName = cleanEmail === "admin@vikasdharafoundation.org"
+        ? "Super Administrator"
+        : cleanEmail.includes("trustee")
         ? "Trustee"
-        : email.includes("director")
+        : cleanEmail.includes("director")
         ? "Managing Director"
-        : "Super Administrator";
+        : cleanEmail.includes("csr")
+        ? "CSR Liaison"
+        : "Staff Member";
 
       sessionStorage.setItem(
         "vvf_admin_auth",
