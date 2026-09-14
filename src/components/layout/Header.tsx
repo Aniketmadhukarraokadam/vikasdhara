@@ -67,12 +67,12 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top Institutional Banner */}
       <div className="bg-primary-950 text-neutral-300 text-[11px] sm:text-xs py-1.5 border-b border-primary-900/60 hidden md:block">
-        <Container>
+        <Container size="full">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <span className="flex items-center gap-1.5 text-neutral-200">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span>Public Charitable Trust • <strong>Nanded, Maharashtra</strong></span>
+                <span>Public Charitable Trust • <strong>Nanded & Pune, Maharashtra</strong></span>
               </span>
               <span className="text-primary-700">•</span>
               <span className="text-neutral-300 hidden lg:inline">
@@ -109,11 +109,11 @@ export function Header() {
       <nav
         className={cn(
           "transition-all duration-300",
-          isScrolled ? "bg-white/98 backdrop-blur-sm shadow-soft border-b border-neutral-100" : "bg-white/95 backdrop-blur-xs border-b border-neutral-100/60"
+          isScrolled ? "bg-white/98 backdrop-blur-md shadow-soft border-b border-neutral-100" : "bg-white/95 backdrop-blur-sm border-b border-neutral-100/60"
         )}
         aria-label="Main navigation"
       >
-        <Container>
+        <Container size="full">
           <div className="flex h-16 lg:h-18 items-center justify-between">
             {/* Brand Logo & Name */}
             <Link to="/" className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 group" aria-label="Vortexsoft Vikasdhara Foundation Home">

@@ -4,87 +4,240 @@ import { Button } from "@/components/ui/Button";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
-    <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 pb-16 lg:py-28 overflow-hidden bg-neutral-950 text-white" aria-labelledby="hero-heading">
-      {/* Background 4K Hero Photograph with Cinematic Legibility Gradient */}
-      <div className="absolute inset-0 z-0">
+    <section 
+      className="relative min-h-[96vh] lg:min-h-screen flex items-center pt-24 pb-16 lg:py-24 overflow-hidden bg-neutral-950 text-white" 
+      aria-labelledby="hero-heading"
+    >
+      {/* Background 4K Hero Media with Cinematic Ambient Glow */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           src="/images/hero_campus.jpg"
-          alt="Vortexsoft Vikasdhara Foundation Community Development in India"
-          className="w-full h-full object-cover object-center lg:object-right opacity-90 scale-[1.01]"
+          alt="Vortexsoft Vikasdhara Foundation Community Development in Maharashtra India"
+          className="w-full h-full object-cover object-center lg:object-right opacity-85 scale-105 transition-transform duration-[10000ms] hover:scale-100"
         />
-        {/* Dark Contrast Gradient for Guaranteed Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/85 to-transparent/30 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950/40 z-10" />
+        {/* Layered Cinematic Contrast & Mesh Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/90 to-neutral-950/40 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950/60 z-10" />
+        
+        {/* 3D Glowing Ambient Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-600/20 rounded-full blur-[120px] animate-pulse-glow z-10" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/20 rounded-full blur-[100px] animate-float-slow z-10" />
+        <div className="absolute top-1/3 right-10 w-72 h-72 bg-warm-500/15 rounded-full blur-[90px] animate-float-reverse z-10" />
       </div>
 
-      <Container className="relative z-20">
-        <div className="max-w-2xl lg:max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-950/80 border border-primary-500/40 backdrop-blur-md shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-xs sm:text-sm font-bold text-primary-200 uppercase tracking-wider">
-              {t("Public Charitable Trust • Nanded, Maharashtra", "सार्वजनिक धर्मादाय न्यास • नांदेड, महाराष्ट्र")}
-            </span>
-          </div>
+      <Container size="full" className="relative z-20 w-full">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          
+          {/* Left Column: Core Entity Headline & Actions (7 cols) */}
+          <div className="lg:col-span-7 space-y-7 animate-slide-in-left">
+            
+            {/* Shimmering Trust Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-primary-950/80 border border-primary-400/40 backdrop-blur-xl shadow-lg shimmer-badge">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-xs sm:text-sm font-extrabold text-primary-100 uppercase tracking-widest">
+                {t("Public Charitable Trust • Nanded & Pune, Maharashtra", "सार्वजनिक धर्मादाय न्यास • नांदेड व पुणे, महाराष्ट्र")}
+              </span>
+            </div>
 
-          <h1 id="hero-heading" className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] text-balance font-heading">
-            {t(
-              "Empowering People. Strengthening Communities. Building a Better India.",
-              "समर्थ लोक • सक्षम समाज • समृद्ध भारत"
-            )}
-          </h1>
-
-          <div className="space-y-2">
-            <p className="text-base sm:text-xl text-neutral-200 leading-relaxed font-normal max-w-2xl text-balance">
-              {t(
-                "VORTEXSOFT VIKASDHARA FOUNDATION works to create meaningful opportunities through education, skill development, employment, livelihood support, humanitarian service and community development.",
-                "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन शिक्षण, कौशल्यविकास, रोजगार, उपजीविका साहाय्य, मानवतावादी सेवा आणि समुदाय विकासाच्या माध्यमातून अर्थपूर्ण संधी निर्माण करण्याचे कार्य करते."
+            {/* Main H1 Title */}
+            <h1 id="hero-heading" className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-heading text-balance">
+              {language === "mr" ? (
+                <>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-warm-400 via-white to-primary-300">
+                    समर्थ लोक • सक्षम समाज
+                  </span>
+                  <br />
+                  <span className="text-emerald-400">समृद्ध भारत</span>
+                </>
+              ) : (
+                <>
+                  Empowering People.{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-primary-200 to-warm-400">
+                    Strengthening Communities.
+                  </span>{" "}
+                  <span className="text-emerald-400">Building a Better India.</span>
+                </>
               )}
-            </p>
-            <p className="text-xs sm:text-sm text-primary-300 font-semibold tracking-wide">
-              {t("From Need to Opportunity.", "गरजेकडून संधीकडे.")}
-            </p>
+            </h1>
+
+            {/* Core Entity Description & Marathi Supporting Line */}
+            <div className="space-y-3 max-w-2xl">
+              <p className="text-base sm:text-lg lg:text-xl text-neutral-200 leading-relaxed font-normal text-balance">
+                {t(
+                  "VORTEXSOFT VIKASDHARA FOUNDATION works to create meaningful opportunities through education, skill development, employment, livelihood support, humanitarian service and community development.",
+                  "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन शिक्षण, कौशल्यविकास, रोजगार, उपजीविका साहाय्य, मानवतावादी सेवा आणि समुदाय विकासाच्या माध्यमातून अर्थपूर्ण संधी निर्माण करण्याचे कार्य करते."
+                )}
+              </p>
+              <div className="flex items-center gap-2 text-sm sm:text-base text-warm-400 font-bold tracking-wide">
+                <span className="w-6 h-0.5 bg-warm-400 rounded-full inline-block" />
+                <span>{t("From Need to Opportunity.", "गरजेकडून संधीकडे.")}</span>
+              </div>
+            </div>
+
+            {/* High-Contrast Interactive CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link to="/what-we-do">
+                <Button size="lg" className="px-6 py-3.5 bg-gradient-to-r from-primary-600 to-sky-600 hover:from-primary-500 hover:to-sky-500 text-white font-bold text-sm sm:text-base rounded-xl shadow-xl shadow-primary-950/60 card-3d-hover border border-primary-400/30">
+                  {t("Explore Our Work", "आमचे उपक्रम पहा")} →
+                </Button>
+              </Link>
+              <Link to="/get-involved/partner">
+                <Button variant="secondary" size="lg" className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base rounded-xl border border-white/30 backdrop-blur-md card-3d-hover">
+                  {t("Partner With Us (CSR)", "प्रकल्प भागीदारी (CSR)")}
+                </Button>
+              </Link>
+              <Link
+                to="/frequently-asked-questions"
+                className="text-sm font-bold text-neutral-300 hover:text-white transition-colors underline-offset-8 hover:underline py-2"
+              >
+                {t("Master FAQ Hub 💡", "माहिती व प्रश्नोत्तरे 💡")}
+              </Link>
+            </div>
+
+            {/* Trust Badges Bar */}
+            <div className="pt-6 border-t border-white/15 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm font-semibold text-neutral-300">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                  ✓
+                </div>
+                <span>{t("Registered Trust", "नोंदणीकृत न्यास")}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-sky-500/20 border border-sky-500/40 flex items-center justify-center text-sky-400 shrink-0">
+                  🎯
+                </div>
+                <span>{t("14 Active Domains", "१४ कार्यक्षेत्रे")}</span>
+              </div>
+              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
+                <div className="w-7 h-7 rounded-lg bg-warm-500/20 border border-warm-500/40 flex items-center justify-center text-warm-400 shrink-0">
+                  🤝
+                </div>
+                <span>{t("CSR / Partner Ready", "सीएसआर भागीदारी")}</span>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-            <Link to="/what-we-do">
-              <Button size="lg" className="w-full sm:w-auto bg-primary-600 hover:bg-primary-500 text-white font-semibold shadow-lg shadow-primary-950/50">
-                {t("Explore Our Work", "आमचे उपक्रम पहा")}
-              </Button>
-            </Link>
-            <Link to="/get-involved/partner">
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm">
-                {t("Partner With Us", "प्रकल्प भागीदारी")}
-              </Button>
-            </Link>
-            <Link
-              to="/about"
-              className="text-sm font-semibold text-neutral-200 hover:text-white transition-colors underline-offset-4 hover:underline py-2 text-center sm:text-left"
-            >
-              {t("About the Foundation →", "संस्थेविषयी अधिक जाणून घ्या →")}
-            </Link>
+          {/* Right Column: 3D Glassmorphic Floating Showcase (5 cols) */}
+          <div className="lg:col-span-5 relative perspective-1000 preserve-3d animate-slide-in-right hidden md:block">
+            
+            {/* Top Floating 3D Badge */}
+            <div className="absolute -top-6 -left-6 z-30 animate-float-slow">
+              <div className="glass-dark-3d p-3.5 rounded-2xl flex items-center gap-3 border border-primary-400/40 shadow-2xl">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-primary-600 flex items-center justify-center text-lg shadow-md">
+                  🎓
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold text-sky-300 uppercase tracking-widest">
+                    {t("Education & Skills", "शिक्षण व कौशल्ये")}
+                  </div>
+                  <div className="text-xs font-extrabold text-white">
+                    {t("Practical Opportunities", "व्यावहारिक संधी")}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Floating 3D Badge */}
+            <div className="absolute -bottom-6 -right-4 z-30 animate-float-reverse">
+              <div className="glass-dark-3d p-3.5 rounded-2xl flex items-center gap-3 border border-emerald-400/40 shadow-2xl">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-accent-600 flex items-center justify-center text-lg shadow-md">
+                  🏢
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold text-emerald-300 uppercase tracking-widest">
+                    {t("Corporate CSR Pathway", "सीएसआर प्रकल्प मॉडेल")}
+                  </div>
+                  <div className="text-xs font-extrabold text-white">
+                    {t("5-Stage Implementation", "५ टप्प्यांचे नियोजन")}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Central 3D Glassmorphic Card */}
+            <div className="glass-dark-3d rounded-3xl p-7 border border-white/20 shadow-2xl space-y-6 card-3d-hover">
+              
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-300">
+                    {t("Mission Ecosystem", "कार्यप्रणाली")}
+                  </span>
+                </div>
+                <span className="text-[11px] font-bold text-primary-300 bg-primary-900/60 px-2.5 py-1 rounded-full border border-primary-700">
+                  {t("Maharashtra & India", "महाराष्ट्र व भारत")}
+                </span>
+              </div>
+
+              {/* Ecosystem Interactive Progress Items */}
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between text-xs font-bold mb-1.5">
+                    <span className="text-neutral-200">📚 {t("Education & Digital Learning", "शिक्षण व डिजिटल साक्षरता")}</span>
+                    <span className="text-sky-400">ACTIVE</span>
+                  </div>
+                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="bg-gradient-to-r from-sky-400 to-primary-500 h-full rounded-full w-[90%] animate-pulse" />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs font-bold mb-1.5">
+                    <span className="text-neutral-200">⚡ {t("Skill Development & Vocational", "कौशल्यविकास व प्रशिक्षण")}</span>
+                    <span className="text-emerald-400">ACTIVE</span>
+                  </div>
+                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="bg-gradient-to-r from-emerald-400 to-accent-500 h-full rounded-full w-[85%]" />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs font-bold mb-1.5">
+                    <span className="text-neutral-200">💼 {t("Employment Facilitation", "रोजगार व प्लेसमेंट साहाय्य")}</span>
+                    <span className="text-warm-400">ACTIVE</span>
+                  </div>
+                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="bg-gradient-to-r from-warm-400 to-warm-600 h-full rounded-full w-[80%]" />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs font-bold mb-1.5">
+                    <span className="text-neutral-200">🌿 {t("Community & Animal Welfare", "समुदाय विकास व गोशाळा")}</span>
+                    <span className="text-primary-300">CONTINUING</span>
+                  </div>
+                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="bg-gradient-to-r from-primary-400 to-emerald-400 h-full rounded-full w-[95%]" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Trust Deed Verification Callout */}
+              <div className="p-3.5 bg-primary-950/60 rounded-2xl border border-primary-500/30 text-xs text-neutral-300 flex items-center gap-3">
+                <span className="text-xl">📜</span>
+                <div className="leading-snug">
+                  <span className="font-bold text-white block">
+                    {t("Statutory Public Trust Standards", "धर्मादाय न्यास वैधानिक मानके")}
+                  </span>
+                  <span className="text-[11px] text-neutral-400">
+                    {t("Near Chhatrapati Shivaji Putla, Chondi, Nanded", "छत्रपती शिवाजी पुतळ्याजवळ, चोंडी, नांदेड")}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="pt-6 border-t border-white/15 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm text-neutral-300 font-medium">
-            <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              {t("Registered Public Charitable Trust", "नोंदणीकृत धर्मादाय न्यास")}
-            </span>
-            <span className="text-neutral-500">•</span>
-            <span>Education • Skills • Employment • Opportunity • Dignity • Service</span>
-          </div>
         </div>
       </Container>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-neutral-400 animate-bounce" aria-hidden="true">
-        <span className="text-[10px] uppercase tracking-widest text-neutral-300 font-semibold">Scroll</span>
-        <svg className="w-5 h-5 text-neutral-300" fill="none" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7" />
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-neutral-400 animate-bounce" aria-hidden="true">
+        <span className="text-[10px] uppercase tracking-widest text-neutral-300 font-bold">Scroll Down</span>
+        <svg className="w-4 h-4 text-neutral-300" fill="none" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7" />
         </svg>
       </div>
     </section>
