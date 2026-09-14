@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useApplications } from "@/context/ApplicationsContext";
+import { useDynamicContent } from "@/context/ContentContext";
 import { cn } from "@/utils/cn";
 
 export function AdminLayout() {
   const location = useLocation();
   const navigate = useNavigate();
   const { applications } = useApplications();
+  const { content } = useDynamicContent();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState<{ email: string; role: string } | null>(null);
 
