@@ -62,14 +62,16 @@
   --color-neutral-900: #12324a;
   --color-neutral-950: #091a27;
 
-  /* Typography: Manrope (Headings), DM Sans (Body) */
-  --font-sans: "DM Sans", "Noto Sans Devanagari", system-ui, sans-serif;
-  --font-heading: "Manrope", "Noto Sans Devanagari", system-ui, sans-serif;
+  /* Typography: Outfit (Headings & Logo Brand), Plus Jakarta Sans (Modern Body & Nav) */
+  --font-sans: "Plus Jakarta Sans", "DM Sans", "Noto Sans Devanagari", system-ui, -apple-system, sans-serif;
+  --font-heading: "Outfit", "Plus Jakarta Sans", "Noto Sans Devanagari", system-ui, sans-serif;
+  --font-brand: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
 
   /* Custom Elevation & Shadows */
   --shadow-soft: 0 2px 10px -2px rgb(7 89 133 / 0.06), 0 4px 14px -4px rgb(7 89 133 / 0.04);
   --shadow-card: 0 4px 20px -4px rgb(7 89 133 / 0.08), 0 8px 28px -8px rgb(7 89 133 / 0.06);
   --shadow-elevated: 0 12px 36px -8px rgb(7 89 133 / 0.12), 0 16px 48px -12px rgb(7 89 133 / 0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(7, 89, 133, 0.08);
 }
 
 @layer base {
