@@ -92,8 +92,8 @@ const videos: VideoItem[] = [
   },
   {
     id: "film-journey",
-    title: "VORTEXSOFT VIKASDHARA FOUNDATION — The Institutional Mission",
-    titleMr: "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन — संस्थात्मक ध्येय व कार्य",
+    title: "VIKASDHARA FOUNDATION — The Institutional Mission",
+    titleMr: "विकासधारा फाउंडेशन — संस्थात्मक ध्येय व कार्य",
     category: "Rural & Village Life",
     categoryMr: "ग्राम विकास व शेती",
     duration: "3:30 MIN",

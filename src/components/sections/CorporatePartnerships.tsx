@@ -29,7 +29,7 @@ export function CorporatePartnerships() {
           </SectionTitle>
           <SectionSubtitle className="max-w-3xl mx-auto">
             {t(
-              "VORTEXSOFT VIKASDHARA FOUNDATION collaborates with corporations, industries, institutions, and government bodies on lawful skill development, employment generation, and social impact initiatives.",
+              "VIKASDHARA FOUNDATION collaborates with corporations, industries, institutions, and government bodies on lawful skill development, employment generation, and social impact initiatives.",
               "संस्था उद्योग आणि कंपन्यांसोबत कौशल्यविकास, रोजगार निर्मिती आणि शाश्वत ग्रामीण विकासासाठी प्रकल्प भागीदारी करते."
             )}
           </SectionSubtitle>

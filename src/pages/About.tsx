@@ -5,6 +5,8 @@ import { IconWrapper } from "@/components/ui/IconWrapper";
 import { Badge } from "@/components/ui/Badge";
 import { SEO } from "@/components/seo/SEO";
 import { useLanguage } from "@/context/LanguageContext";
+import { about } from "@/content";
+import { icons, type IconName } from "@/assets/icons";
 
 const valuesList = [
   {
@@ -56,7 +58,7 @@ const trustees = [
     designation: "Settlor / Founder & Managing Trustee",
     designationMr: "संस्थापक व मुख्य व्यवस्थापकीय विश्वस्त",
     responsibility: "Executive Leadership, Programme Strategy & Institutional Development",
-    bio: "Guiding the vision, founding principles and long-term socio-economic roadmap of VORTEXSOFT VIKASDHARA FOUNDATION."
+    bio: "Guiding the vision, founding principles and long-term socio-economic roadmap of VIKASDHARA FOUNDATION."
   },
   {
     name: "Mr. Dnyaneshvar Taterao Ballod",
@@ -82,8 +84,8 @@ export function About() {
   return (
     <>
       <SEO
-        title="About VORTEXSOFT VIKASDHARA FOUNDATION | Public Charitable Trust in India"
-        description="VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, with an intended area of operation throughout India. Focused on education, skill development, employment, women empowerment, and community development."
+        title="About VIKASDHARA FOUNDATION | Public Charitable Trust in India"
+        description="VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, with an intended area of operation throughout India. Focused on education, skill development, employment, women empowerment, and community development."
         breadcrumbs={[
           { name: "Home", item: "/" },
           { name: "About Us", item: "/about" }
@@ -95,13 +97,13 @@ export function About() {
         <Container>
           <SectionHeader>
             <SectionEyebrow>{t("About Us", "संस्थेचा परिचय")}</SectionEyebrow>
-            <SectionTitle>About VORTEXSOFT VIKASDHARA FOUNDATION</SectionTitle>
+            <SectionTitle>About VIKASDHARA FOUNDATION</SectionTitle>
           </SectionHeader>
           <div className="max-w-4xl mx-auto text-center mt-6 space-y-4">
             <p className="text-base sm:text-lg lg:text-xl text-neutral-800 leading-relaxed font-medium">
               {t(
-                "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, with an intended area of operation throughout India.",
-                "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन हा नांदेड, महाराष्ट्र येथे आधारित सार्वजनिक धर्मादाय न्यास असून संपूर्ण भारतात सामाजिक कार्य करण्याचा उद्देश आहे."
+                "VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, with an intended area of operation throughout India.",
+                "विकासधारा फाउंडेशन हा नांदेड, महाराष्ट्र येथे आधारित सार्वजनिक धर्मादाय न्यास असून संपूर्ण भारतात सामाजिक कार्य करण्याचा उद्देश आहे."
               )}
             </p>
             <p className="text-sm sm:text-base text-neutral-600 leading-relaxed max-w-3xl mx-auto">
@@ -123,46 +125,155 @@ export function About() {
       {/* Vision & Mission (§25, §26) */}
       <Section variant="lg" background="none" id="vision-mission">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14">
-            {/* Vision */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-neutral-200/90 shadow-soft flex flex-col justify-between">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+            {/* Vision Main Card */}
+            <div className="bg-gradient-to-br from-white via-primary-50/30 to-sky-50/40 rounded-3xl p-8 sm:p-10 border border-primary-200/80 shadow-soft flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/5 rounded-full blur-2xl pointer-events-none" />
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-50 px-3 py-1 rounded-full mb-4 inline-block">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-100/70 px-3.5 py-1.5 rounded-full mb-4 inline-block">
                   {t("Our Vision", "आमचे ध्येय (Vision)")}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 font-heading mb-4">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 font-heading mb-4">
                   {t("A Stronger, Inclusive & Self-Reliant India", "सक्षम, समावेशक आणि आत्मनिर्भर भारत")}
                 </h2>
                 <p className="text-neutral-700 text-base sm:text-lg leading-relaxed">
-                  {t(
-                    "To contribute to a stronger, more inclusive and self-reliant India where people have fair opportunities to learn, develop skills, earn with dignity, live safely and contribute to the wellbeing of their communities.",
-                    "एका सक्षम, सर्वसमावेशक आणि आत्मनिर्भर भारताच्या उभारणीत योगदान देणे, जिथे प्रत्येक व्यक्तीला शिकण्याची, कौशल्ये विकसित करण्याची, सन्मानाने उपजीविका मिळवण्याची आणि समाजाच्या विकासात सहभागी होण्याची समान संधी मिळेल."
-                  )}
+                  {t(about.vision.statement, about.vision.statementMr)}
                 </p>
               </div>
-              <div className="pt-6 mt-6 border-t border-neutral-100 text-xs text-neutral-400 font-semibold uppercase tracking-wider">
-                समर्थ लोक • सक्षम समाज • समृद्ध भारत
+              <div className="pt-6 mt-8 border-t border-primary-100 flex items-center justify-between text-xs text-primary-800 font-bold uppercase tracking-wider">
+                <span>समर्थ लोक • सक्षम समाज • समृद्ध भारत</span>
+                <span className="text-primary-600 font-semibold">Vision 2030 Roadmap</span>
               </div>
             </div>
 
-            {/* Mission */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-neutral-200/90 shadow-soft flex flex-col justify-between">
+            {/* Mission Main Card */}
+            <div className="bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/40 rounded-3xl p-8 sm:p-10 border border-emerald-200/80 shadow-soft flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full mb-4 inline-block">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-3.5 py-1.5 rounded-full mb-4 inline-block">
                   {t("Our Mission", "आमचे उद्दिष्ट (Mission)")}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 font-heading mb-4">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 font-heading mb-4">
                   {t("Practical Pathways from Need to Opportunity", "गरजेकडून संधीकडे नेणारे व्यावहारिक मार्ग")}
                 </h2>
                 <p className="text-neutral-700 text-base sm:text-lg leading-relaxed">
-                  {t(
-                    "To develop and support practical charitable programmes that create education, skill, employment, livelihood, humanitarian, environmental, animal-welfare and community-development opportunities for people and communities in need.",
-                    "गरजू व्यक्ती आणि समुदायांसाठी शिक्षण, कौशल्य, रोजगार, उपजीविका, मानवतावादी मदत, पर्यावरण, प्राणी कल्याण आणि समुदाय विकासाच्या संधी निर्माण करणारे व्यावहारिक धर्मादाय उपक्रम विकसित करणे आणि राबवणे."
-                  )}
+                  {t(about.mission.statement, about.mission.statementMr)}
                 </p>
               </div>
-              <div className="pt-6 mt-6 border-t border-neutral-100 text-xs text-neutral-400 font-semibold uppercase tracking-wider">
-                From Need to Opportunity
+              <div className="pt-6 mt-8 border-t border-emerald-100 flex items-center justify-between text-xs text-emerald-800 font-bold uppercase tracking-wider">
+                <span>From Need to Opportunity</span>
+                <span className="text-emerald-600 font-semibold">Action-Oriented Implementation</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 5 Strategic Vision Pillars */}
+          <div className="mb-20">
+            <SectionHeader className="text-center max-w-3xl mx-auto mb-10">
+              <SectionEyebrow>{t("Strategic Intent", "रणनीतिक दिशा")}</SectionEyebrow>
+              <SectionTitle>{t("Five Pillars of Our Vision", "दृष्टिकोनाचे पाच मूलभूत स्तंभ")}</SectionTitle>
+              <SectionSubtitle>
+                {t(
+                  "Translating high-level aspirations into durable grassroots programmes that transform lives across Maharashtra and India",
+                  "महाराष्ट्रात आणि देशभरात सामाजिक परिवर्तनासाठी आमचे पाच प्रमुख आधारस्तंभ"
+                )}
+              </SectionSubtitle>
+            </SectionHeader>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+              {about.vision.pillars.map((pillar) => (
+                <Card key={pillar.id} variant="hover-lift" padding="lg" className="bg-white border-neutral-200/80 flex flex-col justify-between text-left group">
+                  <CardContent className="space-y-3">
+                    <IconWrapper variant="primary" size="md" className="group-hover:scale-110 transition-transform mb-2">
+                      {icons[pillar.icon as IconName] || icons.book}
+                    </IconWrapper>
+                    <h3 className="text-base font-bold text-neutral-950 font-heading leading-tight group-hover:text-primary-700 transition-colors">
+                      {t(pillar.title, pillar.titleMr)}
+                    </h3>
+                    <p className="text-xs text-neutral-600 leading-relaxed">
+                      {pillar.desc}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Vision 2030 Milestones Showcase */}
+          <div className="bg-neutral-900 text-white rounded-3xl p-8 lg:p-12 border border-neutral-800 shadow-2xl mb-20 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="relative z-10 text-center max-w-3xl mx-auto mb-10">
+              <span className="text-xs font-bold uppercase tracking-widest text-primary-400 bg-primary-950/80 px-4 py-1.5 rounded-full border border-primary-500/30">
+                {t("Vision 2030 Roadmap", "व्हिजन 2030 ध्येय उद्दिष्टे")}
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-3 font-heading">
+                {t("Strategic Targets & Measurable Horizon", "मोजता येण्याजोगे उद्दिष्टे आणि प्रगती")}
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-300 mt-2">
+                {t(
+                  "We commit to clear, measurable milestones to ensure every rupee and hour invested creates verifiable social returns.",
+                  "प्रत्येक उपक्रमाचा सामाजिक परतावा पारदर्शकपणे मोजण्यासाठी आमची 2030 उद्दिष्टे."
+                )}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 relative z-10">
+              {about.vision.milestones2030.map((milestone, idx) => (
+                <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 transition-colors">
+                  <div className="text-2xl sm:text-3xl font-black text-primary-400 font-heading mb-1">
+                    {milestone.target}
+                  </div>
+                  <div className="text-xs font-semibold text-neutral-200 leading-tight">
+                    {t(milestone.label, milestone.labelMr)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 6 Mission Action Vectors */}
+          <div className="mb-8">
+            <SectionHeader className="text-center max-w-3xl mx-auto mb-10">
+              <SectionEyebrow>{t("How We Execute", "कार्यपद्धती")}</SectionEyebrow>
+              <SectionTitle>{t("Six Mission Action Vectors", "उद्दिष्ट पूर्ततेसाठी सहा कृती मार्ग")}</SectionTitle>
+              <SectionSubtitle>
+                {t(
+                  "From grassroots field surveys to transparent multi-stakeholder corporate partnerships, our systematic operational methodology",
+                  "तळागाळातील सर्वेक्षण ते पारदर्शक सीएसआर भागीदारीपर्यंत आमची कृती पद्धती"
+                )}
+              </SectionSubtitle>
+            </SectionHeader>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {about.mission.actionVectors.map((vector) => (
+                <div key={vector.step} className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-soft hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="w-9 h-9 rounded-xl bg-primary-100 text-primary-800 font-black text-sm flex items-center justify-center font-heading">
+                      {vector.step}
+                    </span>
+                    <h4 className="text-base font-bold text-neutral-900 font-heading">
+                      {t(vector.title, vector.titleMr)}
+                    </h4>
+                  </div>
+                  <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+                    {vector.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Guiding Principles */}
+            <div className="mt-10 p-6 rounded-2xl bg-primary-50/60 border border-primary-200/70">
+              <h4 className="text-xs font-extrabold uppercase tracking-wider text-primary-900 mb-3">
+                {t("Mission Operational Principles", "संस्थेची कार्य तत्त्वे")}
+              </h4>
+              <div className="grid sm:grid-cols-2 gap-3 text-xs text-neutral-700">
+                {about.mission.guidingPrinciples.map((principle, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <span className="text-primary-700 font-bold">✓</span>
+                    <span>{principle}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -257,8 +368,8 @@ export function About() {
             </h2>
             <p className="text-neutral-200 text-sm sm:text-base leading-relaxed">
               {t(
-                "VORTEXSOFT VIKASDHARA FOUNDATION is governed under its registered Trust Deed in Maharashtra, India. We are committed to ethical oversight, meticulous recordkeeping, lawful utilization of charitable funds, programme documentation, and full compliance with applicable statutory regulations.",
-                "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन महाराष्ट्र धर्मादाय न्यास कायद्यानुसार चालवले जाते. संस्था नैतिक प्रशासन, पारदर्शक हिशोब, धर्मादाय निधीचा योग्य वापर आणि कायदेशीर नियमांचे काटेकोर पालन करण्यासाठी कटिबद्ध आहे."
+                "VIKASDHARA FOUNDATION is governed under its registered Trust Deed in Maharashtra, India. We are committed to ethical oversight, meticulous recordkeeping, lawful utilization of charitable funds, programme documentation, and full compliance with applicable statutory regulations.",
+                "विकासधारा फाउंडेशन महाराष्ट्र धर्मादाय न्यास कायद्यानुसार चालवले जाते. संस्था नैतिक प्रशासन, पारदर्शक हिशोब, धर्मादाय निधीचा योग्य वापर आणि कायदेशीर नियमांचे काटेकोर पालन करण्यासाठी कटिबद्ध आहे."
               )}
             </p>
           </div>

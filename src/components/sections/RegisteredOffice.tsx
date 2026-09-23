@@ -19,8 +19,8 @@ export function RegisteredOffice() {
           </h2>
           <p className="text-neutral-600 mt-3 text-base sm:text-lg">
             {t(
-              "VORTEXSOFT VIKASDHARA FOUNDATION is based in Chondi, Dharmabad Taluka, Nanded District, Maharashtra, India. The Foundation aims to develop local initiatives while building programmes and partnerships that can grow across India.",
-              "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन चोंडी, तालुका धर्माबाद, जिल्हा नांदेड, महाराष्ट्र येथे स्थित असून स्थानिक उपक्रमांसोबत संपूर्ण भारतात सामाजिक कार्य विस्तारण्याचे उद्दिष्ट ठेवते."
+              "VIKASDHARA FOUNDATION is based in Chondi, Dharmabad Taluka, Nanded District, Maharashtra, India. The Foundation aims to develop local initiatives while building programmes and partnerships that can grow across India.",
+              "विकासधारा फाउंडेशन चोंडी, तालुका धर्माबाद, जिल्हा नांदेड, महाराष्ट्र येथे स्थित असून स्थानिक उपक्रमांसोबत संपूर्ण भारतात सामाजिक कार्य विस्तारण्याचे उद्दिष्ट ठेवते."
             )}
           </p>
         </div>
@@ -48,7 +48,7 @@ export function RegisteredOffice() {
               </div>
 
               <address className="not-italic text-sm sm:text-base text-neutral-700 leading-relaxed bg-neutral-50 p-5 rounded-2xl border border-neutral-200/80 space-y-1">
-                <p className="font-bold text-neutral-900">VORTEXSOFT VIKASDHARA FOUNDATION</p>
+                <p className="font-bold text-neutral-900">VIKASDHARA FOUNDATION</p>
                 <p>Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot,</p>
                 <p>Taluka Dharmabad, District Nanded – 431808,</p>
                 <p>Maharashtra, India.</p>

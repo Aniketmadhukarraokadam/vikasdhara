@@ -1,5 +1,5 @@
 {
-  "name": "vortexsoft-vikasdhara",
+  "name": "vikasdhara-foundation",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,13 +11,17 @@
   },
   "dependencies": {
     "basic-ftp": "^6.2.1",
+    "canvas-confetti": "^1.9.4",
     "clsx": "^2.1.1",
+    "framer-motion": "^13.4.0",
+    "lucide-react": "^1.47.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
+    "@types/canvas-confetti": "^1.9.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",

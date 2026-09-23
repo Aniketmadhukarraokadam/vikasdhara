@@ -45,7 +45,7 @@ export function BlogDetail() {
   };
 
   const handleShareWhatsApp = () => {
-    const text = encodeURIComponent(`${blog.title} - Read on Vortexsoft Vikasdhara Foundation:\n${window.location.href}`);
+    const text = encodeURIComponent(`${blog.title} - Read on Vikasdhara Foundation:\n${window.location.href}`);
     window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
   };
 
@@ -215,7 +215,7 @@ export function BlogDetail() {
                     </span>
                   </div>
                   <p className="text-xs text-neutral-300 leading-relaxed">
-                    Contributing insights on statutory governance, grassroots empowerment, and social transformation at <strong>VORTEXSOFT VIKASDHARA FOUNDATION</strong>.
+                    Contributing insights on statutory governance, grassroots empowerment, and social transformation at <strong>VIKASDHARA FOUNDATION</strong>.
                   </p>
                   <Link to="/contact" className="inline-block text-xs font-bold text-primary-300 hover:text-white pt-1 underline">
                     Connect with our research team →
@@ -235,7 +235,7 @@ export function BlogDetail() {
                 </h4>
                 <p className="text-xs text-neutral-300 leading-relaxed">
                   {t(
-                    "Collaborate with VORTEXSOFT VIKASDHARA FOUNDATION under CSR Schedule VII for impactful education and skill initiatives.",
+                    "Collaborate with VIKASDHARA FOUNDATION under CSR Schedule VII for impactful education and skill initiatives.",
                     "शिक्षण, कौशल्यविकास आणि सामाजिक विकासासाठी आमच्याशी सीएसआर भागीदारी करा."
                   )}
                 </p>

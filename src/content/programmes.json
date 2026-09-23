@@ -289,6 +289,82 @@
       "iconVariant": "neutral",
       "color": "neutral",
       "importantNote": "Avoid presenting religious activity as the only purpose of the organisation. The website should position this within the broader charitable and animal-welfare mission."
+    },
+    {
+      "id": "stem-digital-labs",
+      "title": "Digital Bharat & STEM Innovation Labs",
+      "slug": "stem-digital-labs",
+      "status": "ACTIVE",
+      "icon": "book",
+      "description": "Equipping rural and semi-urban community schools with digital learning tablets, smart screens, foundational coding workshops, and vernacular STEM resources to eliminate the digital educational divide.",
+      "shortDescription": "Equipping rural schools with digital learning tablets and STEM resources.",
+      "possibleActivities": [
+        "Smart classroom setup",
+        "E-learning tablet distribution",
+        "Foundational computer literacy",
+        "Coding & robotics awareness for children",
+        "Vernacular STEM workshops",
+        "Teacher digital empowerment training"
+      ],
+      "iconVariant": "primary",
+      "color": "primary"
+    },
+    {
+      "id": "agritech-farming",
+      "title": "Farmer Producer & Sustainable Agritech",
+      "slug": "agritech-farming",
+      "status": "ACTIVE",
+      "icon": "tree-pine",
+      "description": "Supporting marginal and smallholder farmers with natural zero-budget farming practices, soil health assessments, micro-irrigation systems, and collective marketplace linkages.",
+      "shortDescription": "Supporting farmers with natural farming, soil health and market links.",
+      "possibleActivities": [
+        "Natural and organic farming workshops",
+        "Soil health card testing drives",
+        "Micro-drip irrigation demonstrations",
+        "Crop aggregation and direct market linkages",
+        "Shared farm equipment tool banks",
+        "Organic bio-fertilizer production with Gaushala inputs"
+      ],
+      "iconVariant": "accent",
+      "color": "accent"
+    },
+    {
+      "id": "maternal-child-health",
+      "title": "Mother & Child Nutrition & Rural Health",
+      "slug": "maternal-child-health",
+      "status": "CONTINUING",
+      "icon": "heart-pulse",
+      "description": "Addressing malnutrition, maternal anemia, and community hygiene through mobile screening camps, fortified nutritional supplements, and adolescent menstrual health dignity kits.",
+      "shortDescription": "Preventive healthcare, nutrition support and menstrual health kits.",
+      "possibleActivities": [
+        "Anemia screening and iron-folic awareness",
+        "Mother and infant nutritional supplements",
+        "Menstrual hygiene kit distribution",
+        "Clean drinking water awareness",
+        "General health checkup and referral camps",
+        "Child wellness monitoring"
+      ],
+      "iconVariant": "warm",
+      "color": "warm",
+      "importantNote": "All medical referral drives are carried out in collaboration with registered qualified healthcare professionals and government PHCs."
+    },
+    {
+      "id": "solar-clean-energy",
+      "title": "Renewable Solar Power & Green Villages",
+      "slug": "solar-clean-energy",
+      "status": "PLANNED",
+      "icon": "leaf",
+      "description": "Promoting sustainable clean energy transitions in rural hamlets through community solar street lighting, solar-powered community water filters, and ecological conservation education.",
+      "shortDescription": "Promoting solar street lighting and clean community energy.",
+      "possibleActivities": [
+        "Solar street light installations for village safety",
+        "Solar-powered clean water filtration units",
+        "Clean energy awareness in rural schools",
+        "Waste segregation and biogas promotion",
+        "Village carbon footprint reduction initiatives"
+      ],
+      "iconVariant": "neutral",
+      "color": "neutral"
     }
   ],
   "ecosystem": {

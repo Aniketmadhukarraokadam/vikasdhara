@@ -16,7 +16,7 @@ const INQUIRY_TYPES: InquiryTypeOption[] = [
     icon: "🏢",
     labelEn: "Corporate CSR / Institutional Grant",
     labelMr: "कॉर्पोरेट CSR / संस्थागत अनुदान",
-    defaultMsgEn: "Hello, our organisation is interested in exploring a CSR partnership / grant with Vortexsoft Vikasdhara Foundation for projects in Maharashtra.",
+    defaultMsgEn: "Hello, our organisation is interested in exploring a CSR partnership / grant with Vikasdhara Foundation for projects in Maharashtra.",
     defaultMsgMr: "नमस्कार, आमच्या संस्थेला महाराष्ट्रात व्हॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशनसोबत CSR भागीदारी करण्यास उत्सुकता आहे."
   },
   {
@@ -56,7 +56,7 @@ const INQUIRY_TYPES: InquiryTypeOption[] = [
     icon: "📋",
     labelEn: "General Inquiry / Field Visit Request",
     labelMr: "सामान्य विचारणा / प्रत्यक्ष भेट",
-    defaultMsgEn: "Hello, I have a general query regarding Vortexsoft Vikasdhara Foundation's initiatives and would like to schedule a field visit / call.",
+    defaultMsgEn: "Hello, I have a general query regarding Vikasdhara Foundation's initiatives and would like to schedule a field visit / call.",
     defaultMsgMr: "नमस्कार, मला विकासधारा फाउंडेशनच्या उपक्रमांबद्दल माहिती हवी आहे आणि प्रत्यक्ष भेटीचे नियोजन करायचे आहे."
   }
 ];
@@ -86,7 +86,7 @@ export function WhatsAppInquiryWidget() {
     const finalDetail = customMsg.trim() ? customMsg.trim() : baseRequirement;
 
     const formattedMessage = 
-`*🇮🇳 OFFICIAL INQUIRY: VORTEXSOFT VIKASDHARA FOUNDATION*
+`*🇮🇳 OFFICIAL INQUIRY: VIKASDHARA FOUNDATION*
 ----------------------------------------
 📌 *Category:* ${categoryTitle}
 👤 *Name:* ${fullName.trim() || "Not specified"}
@@ -172,7 +172,7 @@ _Sent via Official Vikasdhara Foundation Portal (vikasdharafoundation.org)_`;
                     {isMarathi ? "अधिकृत संपर्क व विचारणा केंद्र" : "Official WhatsApp Inquiry Desk"}
                   </span>
                   <h3 className="text-base sm:text-lg font-extrabold text-white mt-1 font-heading">
-                    VORTEXSOFT VIKASDHARA FOUNDATION
+                    VIKASDHARA FOUNDATION
                   </h3>
                   <p className="text-xs text-neutral-300 mt-0.5">
                     {isMarathi ? "थेट विश्वस्त व प्रकल्प समन्वयकांशी संवाद साधा" : "Connect directly with Trustees & Project Coordinators"}

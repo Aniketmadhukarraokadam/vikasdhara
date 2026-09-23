@@ -4,6 +4,11 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { MotionCanvas } from "@/components/ui/MotionCanvas";
 import { VideoPlayerModal } from "@/components/ui/VideoPlayerModal";
+import { HaikeiWave, HaikeiBlobBackdrop } from "@/components/ui/HaikeiBackgrounds";
+import { VengeanceBadge } from "@/components/ui/VengeanceBadge";
+import { MagneticButton } from "@/components/ui/MagneticButton";
+import { BorderBeam } from "@/components/ui/BorderBeam";
+import { ConfettiButton } from "@/components/ui/ConfettiButton";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
@@ -12,17 +17,20 @@ export function Hero() {
 
   return (
     <section 
-      className="relative min-h-[96vh] lg:min-h-screen flex items-center pt-24 pb-16 lg:py-24 overflow-hidden bg-neutral-950 text-white" 
+      className="relative min-h-[96vh] lg:min-h-screen flex items-center pt-24 pb-20 lg:py-24 overflow-hidden bg-neutral-950 text-white" 
       aria-labelledby="hero-heading"
     >
       {/* Interactive 3D Luminous Particle Motion Canvas */}
       <MotionCanvas />
 
+      {/* Haikei Generative Organic Ambient Blob Backdrop */}
+      <HaikeiBlobBackdrop />
+
       {/* Background 4K Hero Media with Cinematic Ambient Glow */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           src="/images/hero_campus.jpg"
-          alt="Vortexsoft Vikasdhara Foundation Community Development in Maharashtra India"
+          alt="Vikasdhara Foundation Community Development in Maharashtra India"
           className="w-full h-full object-cover object-center lg:object-right opacity-85 scale-105 transition-transform duration-[10000ms] hover:scale-100"
         />
         {/* Layered Cinematic Contrast & Mesh Gradients */}
@@ -41,13 +49,12 @@ export function Hero() {
           {/* Left Column: Core Entity Headline & Actions (7 cols) */}
           <div className="lg:col-span-7 space-y-7 animate-slide-in-left">
             
-            {/* Shimmering Trust Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-primary-950/80 border border-primary-400/40 backdrop-blur-xl shadow-lg shimmer-badge">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs sm:text-sm font-extrabold text-primary-100 uppercase tracking-widest">
-                {t("Public Charitable Trust • Nanded & Pune, Maharashtra", "सार्वजनिक धर्मादाय न्यास • नांदेड व पुणे, महाराष्ट्र")}
+            {/* Vengeance UI Glowing Cyber-Beam Trust Badge */}
+            <VengeanceBadge glowColor="emerald" pulsing={true}>
+              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-emerald-300">
+                {t("Public Charitable Trust • Nanded HQ & Pune Hub, Maharashtra", "सार्वजनिक धर्मादाय न्यास • नांदेड मुख्यालय व पुणे केंद्र, महाराष्ट्र")}
               </span>
-            </div>
+            </VengeanceBadge>
 
             {/* Main H1 Title */}
             <h1 id="hero-heading" className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-heading text-balance">
@@ -70,12 +77,12 @@ export function Hero() {
               )}
             </h1>
 
-            {/* Core Entity Description & Marathi Supporting Line */}
+            {/* Core Entity Description & Supporting Line */}
             <div className="space-y-3 max-w-2xl">
               <p className="text-base sm:text-lg lg:text-xl text-neutral-200 leading-relaxed font-normal text-balance">
                 {t(
-                  "VORTEXSOFT VIKASDHARA FOUNDATION works to create meaningful opportunities through education, skill development, employment, livelihood support, humanitarian service and community development.",
-                  "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन शिक्षण, कौशल्यविकास, रोजगार, उपजीविका साहाय्य, मानवतावादी सेवा आणि समुदाय विकासाच्या माध्यमातून अर्थपूर्ण संधी निर्माण करण्याचे कार्य करते."
+                  "VIKASDHARA FOUNDATION works to create meaningful opportunities through education, skill development, employment, livelihood support, humanitarian service and community development.",
+                  "विकासधारा फाउंडेशन शिक्षण, कौशल्यविकास, रोजगार, उपजीविका साहाय्य, मानवतावादी सेवा आणि समुदाय विकासाच्या माध्यमातून अर्थपूर्ण संधी निर्माण करण्याचे कार्य करते."
                 )}
               </p>
               <div className="flex items-center gap-2 text-sm sm:text-base text-warm-400 font-bold tracking-wide">
@@ -84,20 +91,26 @@ export function Hero() {
               </div>
             </div>
 
-            {/* High-Contrast Interactive CTA Buttons */}
+            {/* Animmaster Lib Magnetic & Confetti Interactive Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link to="/what-we-do">
-                <Button size="lg" className="px-6 py-3.5 bg-gradient-to-r from-primary-600 to-sky-600 hover:from-primary-500 hover:to-sky-500 text-white font-bold text-sm sm:text-base rounded-xl shadow-xl shadow-primary-950/60 card-3d-hover border border-primary-400/30">
-                  {t("Explore Our Work", "आमचे उपक्रम पहा")} →
-                </Button>
-              </Link>
-              <button
-                onClick={() => setIsVideoOpen(true)}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base rounded-xl border border-white/30 backdrop-blur-md card-3d-hover transition-all"
-              >
-                <span className="w-6 h-6 rounded-full bg-warm-500 text-neutral-950 flex items-center justify-center text-xs">▶</span>
-                <span>{t("Watch Film (3 Min)", "व्हिडिओ पहा (३ मिनिटे)")}</span>
-              </button>
+              <ConfettiButton strength={0.25}>
+                <Link to="/what-we-do">
+                  <Button size="lg" className="px-6 py-3.5 bg-gradient-to-r from-primary-600 via-sky-600 to-primary-700 hover:from-primary-500 hover:to-sky-500 text-white font-bold text-sm sm:text-base rounded-xl shadow-xl shadow-primary-950/60 card-3d-hover border border-primary-400/30">
+                    {t("Explore Our Work", "आमचे उपक्रम पहा")} ↗
+                  </Button>
+                </Link>
+              </ConfettiButton>
+
+              <MagneticButton strength={0.25}>
+                <button
+                  onClick={() => setIsVideoOpen(true)}
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base rounded-xl border border-white/30 backdrop-blur-md card-3d-hover transition-all"
+                >
+                  <span className="w-6 h-6 rounded-full bg-warm-500 text-neutral-950 flex items-center justify-center text-xs">▶</span>
+                  <span>{t("Watch Film (3 Min)", "व्हिडिओ पहा (३ मिनिटे)")}</span>
+                </button>
+              </MagneticButton>
+
               <Link
                 to="/frequently-asked-questions"
                 className="text-sm font-bold text-neutral-300 hover:text-white transition-colors underline-offset-8 hover:underline py-2"
@@ -105,7 +118,6 @@ export function Hero() {
                 {t("Master FAQ Hub 💡", "माहिती व प्रश्नोत्तरे 💡")}
               </Link>
             </div>
-
 
             {/* Trust Badges Bar */}
             <div className="pt-6 border-t border-white/15 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm font-semibold text-neutral-300">
@@ -167,8 +179,9 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Central 3D Glassmorphic Card */}
-            <div className="glass-dark-3d rounded-3xl p-7 border border-white/20 shadow-2xl space-y-6 card-3d-hover">
+            {/* Central 3D Glassmorphic Card with Vengeance Border Beam */}
+            <div className="relative glass-dark-3d rounded-3xl p-7 border border-white/20 shadow-2xl space-y-6 card-3d-hover overflow-hidden">
+              <BorderBeam size={280} duration={8} colorFrom="#38bdf8" colorTo="#10b981" borderWidth={2} />
               
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <div className="flex items-center gap-2.5">
@@ -243,20 +256,17 @@ export function Hero() {
         </div>
       </Container>
 
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-neutral-400 animate-bounce" aria-hidden="true">
-        <span className="text-[10px] uppercase tracking-widest text-neutral-300 font-bold">Scroll Down</span>
-        <svg className="w-4 h-4 text-neutral-300" fill="none" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7" />
-        </svg>
+      {/* Haikei Bottom Wave Transition */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <HaikeiWave fillColor="#f8fafc" />
       </div>
 
       {/* Hero Foundation Film Video Modal */}
       <VideoPlayerModal
         isOpen={isVideoOpen}
         onClose={() => setIsVideoOpen(false)}
-        title="VORTEXSOFT VIKASDHARA FOUNDATION — The Journey of Opportunity"
-        titleMr="वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन — गरजेकडून संधीकडे प्रवास"
+        title="VIKASDHARA FOUNDATION — The Journey of Opportunity"
+        titleMr="विकासधारा फाउंडेशन — गरजेकडून संधीकडे प्रवास"
         category="Foundation Film"
         categoryMr="संस्था परिचय"
         duration="3:20 MIN"

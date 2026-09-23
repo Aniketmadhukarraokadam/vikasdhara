@@ -11,8 +11,8 @@ export function TransparencyPage() {
   return (
     <>
       <SEO
-        title="Transparency, Compliance & Disclosures | VORTEXSOFT VIKASDHARA FOUNDATION"
-        description="Public disclosures, annual reports, statutory trust compliance, financial statements, and institutional governance policies of VORTEXSOFT VIKASDHARA FOUNDATION."
+        title="Transparency, Compliance & Disclosures | VIKASDHARA FOUNDATION"
+        description="Public disclosures, annual reports, statutory trust compliance, financial statements, and institutional governance policies of VIKASDHARA FOUNDATION."
         keywords={[
           "NGO Transparency Maharashtra",
           "Public trust compliance Maharashtra",

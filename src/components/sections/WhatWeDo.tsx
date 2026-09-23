@@ -2,6 +2,9 @@ import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionEyebrow }
 import { Container } from "@/components/layout/Container";
 import { IconWrapper } from "@/components/ui/IconWrapper";
 import { Button } from "@/components/ui/Button";
+import { TiltCard } from "@/components/ui/TiltCard";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Link } from "react-router-dom";
 import { programmes } from "@/content";
 import { icons, type IconName } from "@/assets/icons";
@@ -33,49 +36,55 @@ export function WhatWeDo() {
         </SectionHeader>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 pt-4">
-          {mainProgrammes.map((programme) => (
-            <Link key={programme.id} to={`/what-we-do/${programme.slug}`} className="group block">
-              <div className="glass-card-3d rounded-3xl p-7 h-full flex flex-col justify-between border border-neutral-200/80 shadow-soft card-3d-hover">
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <IconWrapper
-                      variant={programme.iconVariant as "primary" | "accent" | "warm" | "neutral"}
-                      size="lg"
-                      className="group-hover:scale-115 transition-transform duration-300 shadow-sm"
-                    >
-                      {icons[programme.icon as IconName] || icons.book}
-                    </IconWrapper>
-                    <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200 uppercase tracking-wider">
-                      {programme.status || "ACTIVE"}
-                    </span>
+          {mainProgrammes.map((programme, index) => (
+            <ScrollReveal key={programme.id} delay={index * 0.07} direction="up">
+              <TiltCard rotationIntensity={8} glareOpacity={0.08} className="h-full">
+                <Link to={`/what-we-do/${programme.slug}`} className="group block h-full">
+                  <div className="glass-card-3d rounded-3xl p-7 h-full flex flex-col justify-between border border-neutral-200/80 shadow-soft card-3d-hover">
+                    <div>
+                      <div className="flex items-center justify-between mb-5">
+                        <IconWrapper
+                          variant={programme.iconVariant as "primary" | "accent" | "warm" | "neutral"}
+                          size="lg"
+                          className="group-hover:scale-115 transition-transform duration-300 shadow-sm"
+                        >
+                          {icons[programme.icon as IconName] || icons.book}
+                        </IconWrapper>
+                        <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200 uppercase tracking-wider">
+                          {programme.status || "ACTIVE"}
+                        </span>
+                      </div>
+
+                      <h3 className="text-lg sm:text-xl font-bold text-neutral-950 mb-2.5 group-hover:text-primary-700 transition-colors font-heading">
+                        {programme.title}
+                      </h3>
+                      
+                      <p className="text-sm text-neutral-600 leading-relaxed line-clamp-3">
+                        {programme.shortDescription}
+                      </p>
+                    </div>
+
+                    <div className="pt-6 mt-6 border-t border-neutral-100 flex items-center justify-between text-xs font-bold text-primary-800 group-hover:text-primary-600">
+                      <span>{t("Explore Programme", "उपक्रम माहिती")}</span>
+                      <span className="w-7 h-7 rounded-full bg-primary-50 group-hover:bg-primary-600 group-hover:text-white flex items-center justify-center transition-all duration-300 transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </div>
                   </div>
-
-                  <h3 className="text-lg sm:text-xl font-bold text-neutral-950 mb-2.5 group-hover:text-primary-700 transition-colors font-heading">
-                    {programme.title}
-                  </h3>
-                  
-                  <p className="text-sm text-neutral-600 leading-relaxed line-clamp-3">
-                    {programme.shortDescription}
-                  </p>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-neutral-100 flex items-center justify-between text-xs font-bold text-primary-800 group-hover:text-primary-600">
-                  <span>{t("Explore Programme", "उपक्रम माहिती")}</span>
-                  <span className="w-7 h-7 rounded-full bg-primary-50 group-hover:bg-primary-600 group-hover:text-white flex items-center justify-center transition-all duration-300 transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </div>
-              </div>
-            </Link>
+                </Link>
+              </TiltCard>
+            </ScrollReveal>
           ))}
         </div>
 
         <div className="text-center mt-14">
-          <Link to="/what-we-do">
-            <Button size="lg" className="px-8 py-3.5 shadow-lg card-3d-hover">
-              {t("View All 14 Programme Areas →", "सर्व १४ उपक्रम पहा →")}
-            </Button>
-          </Link>
+          <MagneticButton strength={0.25}>
+            <Link to="/what-we-do">
+              <Button size="lg" className="px-8 py-3.5 shadow-lg card-3d-hover bg-gradient-to-r from-primary-700 to-sky-700 text-white font-bold rounded-xl">
+                {t("View All 14 Programme Areas →", "सर्व १४ उपक्रम पहा →")}
+              </Button>
+            </Link>
+          </MagneticButton>
         </div>
       </Container>
     </Section>

@@ -73,7 +73,7 @@ export function ApplicationInquiryForm({
 
   const handleWhatsAppSend = () => {
     const formatted = 
-`*🇮🇳 ONLINE APPLICATION: VORTEXSOFT VIKASDHARA FOUNDATION*
+`*🇮🇳 ONLINE APPLICATION: VIKASDHARA FOUNDATION*
 ----------------------------------------
 📌 *Application ID:* ${submittedId || "NEW-PORTAL-APP"}
 📋 *Type:* ${type.toUpperCase()}

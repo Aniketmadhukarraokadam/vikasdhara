@@ -1,7 +1,7 @@
 {
   "brand": {
-    "name": "VORTEXSOFT VIKASDHARA FOUNDATION",
-    "shortName": "VVF",
+    "name": "VIKASDHARA FOUNDATION",
+    "shortName": "VF",
     "tagline": "Empowering People. Strengthening Communities. Building a Better India.",
     "supportingLine": "We work with communities, institutions, companies, volunteers and public partners to create practical opportunities in education, skills, employment, care, rural development, humanitarian support, animal welfare and sustainable community development.",
     "alternativeTaglines": [
@@ -15,7 +15,7 @@
     "trustLine": "People • Opportunity • Dignity • Development"
   },
   "hero": {
-    "eyebrow": "VORTEXSOFT VIKASDHARA FOUNDATION",
+    "eyebrow": "VIKASDHARA FOUNDATION",
     "headline": "Empowering People. Strengthening Communities. Building a Better India.",
     "paragraph": "From education and skill development to employment, humanitarian support, community development, elderly care, environment and animal welfare — we work to turn genuine needs into practical opportunities.",
     "primaryCTA": { "text": "Explore Our Work", "href": "/what-we-do" },
@@ -23,7 +23,7 @@
     "tertiaryCTA": { "text": "Volunteer With Us", "href": "/get-involved/volunteer" }
   },
   "registeredOffice": {
-    "name": "VORTEXSOFT VIKASDHARA FOUNDATION",
+    "name": "VIKASDHARA FOUNDATION",
     "address": "Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot, Taluka Dharmabad, District Nanded – 431808, Maharashtra, India."
   }
 }

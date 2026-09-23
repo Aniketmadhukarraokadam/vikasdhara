@@ -135,13 +135,13 @@ export function Header() {
             <Link 
               to="/" 
               className="flex items-center gap-3 sm:gap-3.5 flex-shrink-0 group" 
-              aria-label="VORTEXSOFT VIKASDHARA FOUNDATION Home"
+              aria-label="VIKASDHARA FOUNDATION Home"
             >
               {/* Emblem Container with Glass Highlight */}
               <div className="relative p-1.5 sm:p-2 rounded-2xl bg-gradient-to-br from-white via-primary-50/50 to-primary-100/40 border border-primary-200/80 shadow-soft group-hover:shadow-md group-hover:border-primary-400 transition-all duration-300 flex items-center justify-center shrink-0">
                 <img
                   src="/logo-icon.png"
-                  alt="Vortexsoft Vikasdhara Foundation Emblem"
+                  alt="Vikasdhara Foundation Emblem"
                   className="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-transform duration-300 group-hover:scale-108"
                 />
               </div>
@@ -149,14 +149,14 @@ export function Header() {
               {/* Company Title Typography */}
               <div className="flex flex-col justify-center leading-none">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-black text-[17px] sm:text-[20px] tracking-[0.04em] text-neutral-950 font-heading group-hover:text-primary-800 transition-colors">
-                    VORTEXSOFT
+                  <span className="font-black text-[18px] sm:text-[21px] tracking-tight text-neutral-950 font-heading group-hover:text-primary-700 transition-colors">
+                    VIKASDHARA
                   </span>
-                  <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 </div>
-                <div className="flex items-center gap-1.5 mt-1">
-                  <span className="text-[10px] sm:text-[11.5px] font-extrabold tracking-[0.16em] text-primary-700 uppercase">
-                    VIKASDHARA FOUNDATION
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  <span className="text-[10px] sm:text-[11.5px] font-extrabold tracking-[0.2em] text-primary-700 uppercase">
+                    FOUNDATION
                   </span>
                 </div>
                 <span className="hidden lg:block text-[9px] font-bold tracking-wider text-neutral-500 uppercase mt-0.5">
@@ -219,7 +219,7 @@ export function Header() {
             <Container className="py-6 space-y-5">
               <div className="p-3.5 bg-gradient-to-r from-primary-50 to-sky-50 rounded-2xl border border-primary-200/70 text-xs text-primary-950 flex items-center justify-between">
                 <div>
-                  <span className="font-bold block">VORTEXSOFT VIKASDHARA</span>
+                  <span className="font-bold block">VIKASDHARA FOUNDATION</span>
                   <span className="text-[11px] text-neutral-600">Regd. Office: Chondi, Nanded, Maharashtra</span>
                 </div>
                 <span className="text-base">📍</span>

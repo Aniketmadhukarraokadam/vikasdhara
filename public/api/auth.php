@@ -73,7 +73,7 @@ if ($action === 'send_otp') {
 <body style='font-family: Arial, sans-serif; background-color: #f4f7f9; padding: 20px;'>
   <div style='max-width: 500px; margin: auto; background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0;'>
     <div style='text-align: center; margin-bottom: 20px;'>
-      <h2 style='color: #075985; margin: 0;'>VORTEXSOFT VIKASDHARA FOUNDATION</h2>
+      <h2 style='color: #075985; margin: 0;'>VIKASDHARA FOUNDATION</h2>
       <p style='color: #64748b; font-size: 12px; margin: 5px 0 0;'>Administrative Portal • One-Time Password</p>
     </div>
     <div style='background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 20px; text-align: center; margin: 20px 0;'>

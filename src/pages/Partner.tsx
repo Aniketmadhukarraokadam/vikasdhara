@@ -14,8 +14,8 @@ export function PartnerPage() {
   return (
     <>
       <SEO
-        title="Corporate CSR & Institutional Partnerships (Pune & Maharashtra) | VORTEXSOFT VIKASDHARA FOUNDATION"
-        description="Partner with VORTEXSOFT VIKASDHARA FOUNDATION for certified CSR projects in Pune and Maharashtra. Transparent project execution in youth skills, women empowerment, digital education, and rural development."
+        title="Corporate CSR & Institutional Partnerships (Pune & Maharashtra) | VIKASDHARA FOUNDATION"
+        description="Partner with VIKASDHARA FOUNDATION for certified CSR projects in Pune and Maharashtra. Transparent project execution in youth skills, women empowerment, digital education, and rural development."
         keywords={[
           "Corporate CSR Partner Pune",
           "CSR implementation agency Pune",
@@ -33,7 +33,7 @@ export function PartnerPage() {
         ]}
         faqs={[
           {
-            question: "What makes Vortexsoft Vikasdhara Foundation a preferred CSR partner in Pune?",
+            question: "What makes Vikasdhara Foundation a preferred CSR partner in Pune?",
             answer: "We offer complete end-to-end statutory CSR compliance, transparent bank escrow utilization, real-time photo-documented project updates, and independent third-party impact assessments."
           },
           {

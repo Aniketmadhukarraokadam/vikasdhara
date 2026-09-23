@@ -14,8 +14,8 @@ export function VolunteerPage() {
   return (
     <>
       <SEO
-        title="Volunteer in Pune & Maharashtra | Community Action & Mentorship | VORTEXSOFT VIKASDHARA FOUNDATION"
-        description="Join VORTEXSOFT VIKASDHARA FOUNDATION as a volunteer or mentor in Pune, Nanded, and across Maharashtra. Teach digital skills, mentor youth, support women empowerment, and participate in tree plantations."
+        title="Volunteer in Pune & Maharashtra | Community Action & Mentorship | VIKASDHARA FOUNDATION"
+        description="Join VIKASDHARA FOUNDATION as a volunteer or mentor in Pune, Nanded, and across Maharashtra. Teach digital skills, mentor youth, support women empowerment, and participate in tree plantations."
         keywords={[
           "Volunteer NGO Pune",
           "Volunteer opportunities Maharashtra",
@@ -37,7 +37,7 @@ export function VolunteerPage() {
           },
           {
             question: "Do volunteers receive an official certificate?",
-            answer: "Yes, all verified volunteers receive an official Certificate of Contribution acknowledging their hours and social impact from VORTEXSOFT VIKASDHARA FOUNDATION."
+            answer: "Yes, all verified volunteers receive an official Certificate of Contribution acknowledging their hours and social impact from VIKASDHARA FOUNDATION."
           }
         ]}
       />

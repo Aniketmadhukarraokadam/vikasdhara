@@ -94,7 +94,7 @@ export function AdminSettings() {
   });
 
   const [settings, setSettings] = useState({
-    foundationName: "VORTEXSOFT VIKASDHARA FOUNDATION",
+    foundationName: "VIKASDHARA FOUNDATION",
     regNumber: "MAH/NDD/TRUST/2026/0121",
     csrNumber: "CSR00098765 (Ministry of Corporate Affairs)",
     panNumber: "AAATV1234F",

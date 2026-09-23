@@ -22,6 +22,10 @@ const categories = [
   { id: "environment", title: "Protecting the Environment Around Us", slug: "environment", description: "Encouraging environmental responsibility through community participation." },
   { id: "animal-welfare", title: "Compassion Beyond People", slug: "animal-welfare", description: "Supporting responsible animal welfare and community initiatives." },
   { id: "gau-shala", title: "Gau Seva & Animal Care", slug: "gau-shala", description: "Supporting responsible cattle-care and Gau Shala initiatives." },
+  { id: "stem-digital-labs", title: "Digital Bharat & STEM Innovation Labs", slug: "stem-digital-labs", description: "Equipping rural schools with digital learning tablets and STEM resources." },
+  { id: "agritech-farming", title: "Farmer Producer & Sustainable Agritech", slug: "agritech-farming", description: "Supporting farmers with natural farming, soil health and market links." },
+  { id: "maternal-child-health", title: "Mother & Child Nutrition & Rural Health", slug: "maternal-child-health", description: "Preventive healthcare, nutrition support and menstrual health kits." },
+  { id: "solar-clean-energy", title: "Renewable Solar Power & Green Villages", slug: "solar-clean-energy", description: "Promoting solar street lighting and clean community energy." }
 ];
 
 import { SEO } from "@/components/seo/SEO";
@@ -30,8 +34,8 @@ export function WhatWeDoPage() {
   return (
     <>
       <SEO
-        title="Social Development Initiatives & Programmes | VORTEXSOFT VIKASDHARA FOUNDATION"
-        description="Explore VORTEXSOFT VIKASDHARA FOUNDATION's 14+ integrated community initiatives across youth skill training, women empowerment, digital learning, CSR partnerships, rural infrastructure, and animal welfare in Pune & Maharashtra."
+        title="Social Development Initiatives & Programmes | VIKASDHARA FOUNDATION"
+        description="Explore VIKASDHARA FOUNDATION's 14+ integrated community initiatives across youth skill training, women empowerment, digital learning, CSR partnerships, rural infrastructure, and animal welfare in Pune & Maharashtra."
         keywords={[
           "Social Development Programmes Maharashtra",
           "Skill Development Initiatives Pune",

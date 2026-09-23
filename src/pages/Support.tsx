@@ -13,8 +13,8 @@ export function SupportPage() {
   return (
     <>
       <SEO
-        title="Support the Mission & Transparent Contributions | VORTEXSOFT VIKASDHARA FOUNDATION"
-        description="Support VORTEXSOFT VIKASDHARA FOUNDATION's social development initiatives across Pune and Maharashtra. Transparent financial accounting, ethical compliance, and direct impact for communities."
+        title="Support the Mission & Transparent Contributions | VIKASDHARA FOUNDATION"
+        description="Support VIKASDHARA FOUNDATION's social development initiatives across Pune and Maharashtra. Transparent financial accounting, ethical compliance, and direct impact for communities."
         keywords={[
           "Support NGO Maharashtra",
           "Donate to NGO Pune",

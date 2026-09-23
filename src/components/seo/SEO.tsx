@@ -12,10 +12,11 @@ interface SEOProps {
 }
 
 const defaultKeywords = [
-  "VORTEXSOFT VIKASDHARA FOUNDATION",
+  "VIKASDHARA FOUNDATION",
   "Vikasdhara Foundation",
   "Public Charitable Trust Maharashtra",
   "NGO in Nanded",
+  "NGO in Pune",
   "NGO in Maharashtra",
   "Dharmabad public trust",
   "Education charitable trust India",
@@ -31,8 +32,8 @@ const defaultKeywords = [
 
 const defaultFaqs = [
   {
-    question: "What is VORTEXSOFT VIKASDHARA FOUNDATION?",
-    answer: "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, working across India in charitable and social-development areas including education, skill development, employment, livelihood, women’s empowerment, humanitarian support, community development, environment and animal welfare."
+    question: "What is VIKASDHARA FOUNDATION?",
+    answer: "VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, working across India in charitable and social-development areas including education, skill development, employment, livelihood, women’s empowerment, humanitarian support, community development, environment and animal welfare."
   },
   {
     question: "Where is Vikasdhara Foundation based?",
@@ -57,8 +58,8 @@ const defaultFaqs = [
 ];
 
 export function SEO({
-  title = "VORTEXSOFT VIKASDHARA FOUNDATION | Education, Skills, Employment & Community Development",
-  description = "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, working across India in education, skill development, employment, women’s empowerment, livelihood, humanitarian support, community development, environment and animal welfare.",
+  title = "VIKASDHARA FOUNDATION | Education, Skills, Employment & Community Development",
+  description = "VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, working across India in education, skill development, employment, women’s empowerment, livelihood, humanitarian support, community development, environment and animal welfare.",
   keywords = defaultKeywords,
   image = "https://www.vikasdharafoundation.org/logo.png",
   type = "website",
@@ -70,9 +71,9 @@ export function SEO({
 
   useEffect(() => {
     // 1. Update Title
-    const formattedTitle = title.includes("VORTEXSOFT") || title.includes("Vikasdhara")
+    const formattedTitle = title.includes("Vikasdhara")
       ? title
-      : `${title} | VORTEXSOFT VIKASDHARA FOUNDATION`;
+      : `${title} | VIKASDHARA FOUNDATION`;
     document.title = formattedTitle;
 
     // 2. Helper to set/update meta tag
@@ -103,13 +104,13 @@ export function SEO({
     setMeta("name", "robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
     setLink("canonical", canonicalUrl);
 
-    // OpenGraph (§50)
+    // OpenGraph
     setMeta("property", "og:title", formattedTitle);
     setMeta("property", "og:description", description);
     setMeta("property", "og:url", canonicalUrl);
     setMeta("property", "og:type", type);
     setMeta("property", "og:image", image);
-    setMeta("property", "og:site_name", "VORTEXSOFT VIKASDHARA FOUNDATION");
+    setMeta("property", "og:site_name", "VIKASDHARA FOUNDATION");
     setMeta("property", "og:locale", "en_IN");
 
     // Twitter Card
@@ -123,9 +124,9 @@ export function SEO({
     setMeta("name", "geo.placename", "Dharmabad, Nanded, Maharashtra, India");
     setMeta("name", "geo.position", "18.8977;77.8504");
     setMeta("name", "ICBM", "18.8977, 77.8504");
-    setMeta("name", "author", "VORTEXSOFT VIKASDHARA FOUNDATION");
+    setMeta("name", "author", "VIKASDHARA FOUNDATION");
 
-    // 4. Inject Unified JSON-LD Structured Data (§37)
+    // 4. Inject Unified JSON-LD Structured Data
     const existingScript = document.getElementById("json-ld-structured-data");
     if (existingScript) {
       existingScript.remove();
@@ -134,20 +135,19 @@ export function SEO({
     const structuredData = {
       "@context": "https://schema.org",
       "@graph": [
-        // Organization Schema (§37)
+        // Organization Schema
         {
           "@type": ["Organization", "NGO"],
           "@id": "https://www.vikasdharafoundation.org/#organization",
-          "name": "VORTEXSOFT VIKASDHARA FOUNDATION",
+          "name": "VIKASDHARA FOUNDATION",
           "alternateName": [
             "Vikasdhara Foundation",
-            "VVF",
-            "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन"
+            "विकासधारा फाउंडेशन"
           ],
           "url": "https://www.vikasdharafoundation.org/",
           "logo": "https://www.vikasdharafoundation.org/logo.png",
           "image": "https://www.vikasdharafoundation.org/images/hero_campus.jpg",
-          "description": "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, India, working across India in education, skill development, employment, livelihood, women’s empowerment, humanitarian support, community development, environment and animal welfare.",
+          "description": "VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, India, working across India in education, skill development, employment, livelihood, women’s empowerment, humanitarian support, community development, environment and animal welfare.",
           "slogan": "Empowering People. Strengthening Communities. Building a Better India.",
           "email": "info@vikasdharafoundation.org",
           "foundingDate": "2026-09-11",
@@ -193,7 +193,7 @@ export function SEO({
           "@type": "WebSite",
           "@id": "https://www.vikasdharafoundation.org/#website",
           "url": "https://www.vikasdharafoundation.org/",
-          "name": "VORTEXSOFT VIKASDHARA FOUNDATION",
+          "name": "VIKASDHARA FOUNDATION",
           "publisher": { "@id": "https://www.vikasdharafoundation.org/#organization" },
           "inLanguage": ["en-IN", "mr-IN"]
         },
@@ -208,7 +208,7 @@ export function SEO({
             "item": `https://www.vikasdharafoundation.org${crumb.item}`
           }))
         },
-        // FAQPage Schema (§34, §70)
+        // FAQPage Schema
         faqs && faqs.length > 0 && {
           "@type": "FAQPage",
           "@id": `${canonicalUrl}#faq`,

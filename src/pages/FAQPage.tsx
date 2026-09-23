@@ -18,10 +18,10 @@ const masterFaqs: FAQItem[] = [
   // Organisation
   {
     category: "Organisation",
-    q: "What is VORTEXSOFT VIKASDHARA FOUNDATION?",
-    qMr: "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन काय आहे?",
-    a: "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, working across India in charitable and social-development areas.",
-    aMr: "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन हा नांदेड, महाराष्ट्र येथे आधारित सार्वजनिक धर्मादाय न्यास असून शिक्षण, कौशल्यविकास, रोजगार, उपजीविका, महिला शिक्षण व सक्षमीकरण, मानवतावादी मदत, समुदाय विकास, पर्यावरण आणि प्राणी कल्याण या क्षेत्रांत संपूर्ण भारतात कार्य करण्याचा उद्देश आहे."
+    q: "What is VIKASDHARA FOUNDATION?",
+    qMr: "विकासधारा फाउंडेशन काय आहे?",
+    a: "VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, working across India in charitable and social-development areas.",
+    aMr: "विकासधारा फाउंडेशन हा नांदेड, महाराष्ट्र येथे आधारित सार्वजनिक धर्मादाय न्यास असून शिक्षण, कौशल्यविकास, रोजगार, उपजीविका, महिला शिक्षण व सक्षमीकरण, मानवतावादी मदत, समुदाय विकास, पर्यावरण आणि प्राणी कल्याण या क्षेत्रांत संपूर्ण भारतात कार्य करण्याचा उद्देश आहे."
   },
   {
     category: "Organisation",
@@ -137,8 +137,8 @@ export function FAQPage() {
   return (
     <>
       <SEO
-        title="Frequently Asked Questions (FAQ) | VORTEXSOFT VIKASDHARA FOUNDATION"
-        description="Verified answers about VORTEXSOFT VIKASDHARA FOUNDATION, our public charitable mission in Nanded, Maharashtra, education, skill development, employment facilitation, and partnership guidelines."
+        title="Frequently Asked Questions (FAQ) | VIKASDHARA FOUNDATION"
+        description="Verified answers about VIKASDHARA FOUNDATION, our public charitable mission in Nanded, Maharashtra, education, skill development, employment facilitation, and partnership guidelines."
         breadcrumbs={[
           { name: "Home", item: "/" },
           { name: "Frequently Asked Questions", item: "/frequently-asked-questions" }
@@ -155,8 +155,8 @@ export function FAQPage() {
             </SectionTitle>
             <SectionSubtitle className="max-w-3xl mx-auto">
               {t(
-                "Clear, verified answers about VORTEXSOFT VIKASDHARA FOUNDATION, our charitable objectives, programmes, partnerships, and governance.",
-                "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन, आमची उद्दिष्टे, उपक्रम, भागीदारी आणि प्रशासनाविषयी अधिकृत आणि अचूक माहिती."
+                "Clear, verified answers about VIKASDHARA FOUNDATION, our charitable objectives, programmes, partnerships, and governance.",
+                "विकासधारा फाउंडेशन, आमची उद्दिष्टे, उपक्रम, भागीदारी आणि प्रशासनाविषयी अधिकृत आणि अचूक माहिती."
               )}
             </SectionSubtitle>
           </SectionHeader>

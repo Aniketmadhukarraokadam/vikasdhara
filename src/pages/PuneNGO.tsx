@@ -47,8 +47,8 @@ const puneFocusAreas = [
 
 const puneFaqs = [
   {
-    question: "Why is Vortexsoft Vikasdhara Foundation recognized as a top NGO in Pune?",
-    answer: "Vortexsoft Vikasdhara Foundation stands out in Pune due to its transparent governance, institutional CSR partnerships with major tech corridors (Hinjewadi, Kharadi, Magarpatta), and outcome-driven programs in youth employment, digital skilling, women's empowerment, and animal welfare."
+    question: "Why is Vikasdhara Foundation recognized as a top NGO in Pune?",
+    answer: "Vikasdhara Foundation stands out in Pune due to its transparent governance, institutional CSR partnerships with major tech corridors (Hinjewadi, Kharadi, Magarpatta), and outcome-driven programs in youth employment, digital skilling, women's empowerment, and animal welfare."
   },
   {
     question: "What corporate CSR services does the Foundation provide in Pune?",
@@ -68,8 +68,8 @@ export function PuneNGO() {
   return (
     <>
       <SEO
-        title="Top NGO in Pune | VORTEXSOFT VIKASDHARA FOUNDATION | CSR & Skill Development Hub"
-        description="VORTEXSOFT VIKASDHARA FOUNDATION is a premier registered public charitable trust and NGO in Pune, Maharashtra. Partnering with Pune corporates for CSR, youth digital skills, women empowerment, and community development across Western Maharashtra."
+        title="Top NGO in Pune | VIKASDHARA FOUNDATION | CSR & Skill Development Hub"
+        description="VIKASDHARA FOUNDATION is a premier registered public charitable trust and NGO in Pune, Maharashtra. Partnering with Pune corporates for CSR, youth digital skills, women empowerment, and community development across Western Maharashtra."
         keywords={[
           "NGO in Pune",
           "Top NGO in Pune",
@@ -81,7 +81,7 @@ export function PuneNGO() {
           "Pune NGO list",
           "NGO in Hinjewadi",
           "NGO in Pune Maharashtra",
-          "Vortexsoft Vikasdhara Foundation Pune",
+          "Vikasdhara Foundation Pune",
           "80G 12A NGO Pune",
           "Corporate CSR Partner Pune",
           "Volunteer NGO Pune"
@@ -109,7 +109,7 @@ export function PuneNGO() {
             </h1>
             
             <p className="text-base sm:text-lg lg:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed">
-              <strong>VORTEXSOFT VIKASDHARA FOUNDATION</strong> drives scalable social impact by bridging Pune’s thriving technology and corporate ecosystem with grassroots community transformation across Maharashtra.
+              <strong>VIKASDHARA FOUNDATION</strong> drives scalable social impact by bridging Pune’s thriving technology and corporate ecosystem with grassroots community transformation across Maharashtra.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -275,7 +275,7 @@ export function PuneNGO() {
             <SectionEyebrow>Frequently Answered Questions</SectionEyebrow>
             <SectionTitle>About Our Pune Operations & Non-Profit Mission</SectionTitle>
             <SectionSubtitle className="max-w-3xl mx-auto">
-              Direct, verified factual answers about Vortexsoft Vikasdhara Foundation's work in Pune and Maharashtra.
+              Direct, verified factual answers about Vikasdhara Foundation's work in Pune and Maharashtra.
             </SectionSubtitle>
           </SectionHeader>
 

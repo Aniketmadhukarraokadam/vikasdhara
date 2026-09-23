@@ -27,7 +27,7 @@ export function AdminDashboard() {
             Executive Admin Dashboard
           </h1>
           <p className="text-neutral-600 text-sm mt-1">
-            Real-time management for VORTEXSOFT VIKASDHARA FOUNDATION (Pune & Nanded Hubs).
+            Real-time management for VIKASDHARA FOUNDATION (Pune & Nanded Hubs).
           </p>
         </div>
 

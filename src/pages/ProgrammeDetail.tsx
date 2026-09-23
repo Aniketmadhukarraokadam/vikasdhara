@@ -50,7 +50,7 @@ export function ProgrammeDetail() {
     `${programme.title} NGO Maharashtra`,
     `${programme.title} Nanded`,
     `${programme.title} Pune`,
-    "VORTEXSOFT VIKASDHARA FOUNDATION",
+    "VIKASDHARA FOUNDATION",
     "Public Charitable Trust Maharashtra",
     "CSR Programmes India",
     "Community Development India"
@@ -86,8 +86,8 @@ export function ProgrammeDetail() {
   return (
     <>
       <SEO
-        title={`${programme.title} | VORTEXSOFT VIKASDHARA FOUNDATION`}
-        description={`${programme.description} Verified information on VORTEXSOFT VIKASDHARA FOUNDATION's ${programme.title} initiatives across Maharashtra and India.`}
+        title={`${programme.title} | VIKASDHARA FOUNDATION`}
+        description={`${programme.description} Verified information on VIKASDHARA FOUNDATION's ${programme.title} initiatives across Maharashtra and India.`}
         keywords={programmeKeywords}
         breadcrumbs={[
           { name: "Home", item: "/" },
@@ -129,8 +129,8 @@ export function ProgrammeDetail() {
                 </p>
                 <p className="text-sm text-neutral-700 mt-2 leading-relaxed">
                   {t(
-                    "VORTEXSOFT VIKASDHARA FOUNDATION designs and delivers structured community initiatives grounded in genuine needs, lawful governance, and verifiable social outcomes.",
-                    "वॉर्टेक्ससॉफ्ट विकासधारा फाउंडेशन वास्तविक गरजा, कायदेशीर प्रशासन आणि मोजता येण्याजोग्या सामाजिक परिणामांवर आधारित उपक्रम राबवते."
+                    "VIKASDHARA FOUNDATION designs and delivers structured community initiatives grounded in genuine needs, lawful governance, and verifiable social outcomes.",
+                    "विकासधारा फाउंडेशन वास्तविक गरजा, कायदेशीर प्रशासन आणि मोजता येण्याजोग्या सामाजिक परिणामांवर आधारित उपक्रम राबवते."
                   )}
                 </p>
               </div>

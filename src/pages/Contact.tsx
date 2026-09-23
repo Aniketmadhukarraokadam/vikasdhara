@@ -71,8 +71,8 @@ export function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact Us | VORTEXSOFT VIKASDHARA FOUNDATION (Pune & Nanded)"
-        description="Connect with VORTEXSOFT VIKASDHARA FOUNDATION in Pune and Nanded, Maharashtra. Inquiries for CSR partnerships, volunteer opportunities, training, and community initiatives."
+        title="Contact Us | VIKASDHARA FOUNDATION (Pune & Nanded)"
+        description="Connect with VIKASDHARA FOUNDATION in Pune and Nanded, Maharashtra. Inquiries for CSR partnerships, volunteer opportunities, training, and community initiatives."
         breadcrumbs={[
           { name: "Home", item: "/" },
           { name: "Contact", item: "/contact" }
@@ -210,7 +210,7 @@ export function ContactPage() {
                         className="mt-1 w-4 h-4 text-primary-700 border-neutral-300 rounded focus:ring-primary-500"
                       />
                       <Label htmlFor="consent" className="text-xs sm:text-sm text-neutral-600 mb-0 cursor-pointer">
-                        I consent to VORTEXSOFT VIKASDHARA FOUNDATION contacting me regarding this enquiry in accordance with its Privacy Policy.
+                        I consent to VIKASDHARA FOUNDATION contacting me regarding this enquiry in accordance with its Privacy Policy.
                       </Label>
                     </div>
 
@@ -244,7 +244,7 @@ export function ContactPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-neutral-600">
-                  <p className="font-semibold text-neutral-900">VORTEXSOFT VIKASDHARA FOUNDATION — Pune</p>
+                  <p className="font-semibold text-neutral-900">VIKASDHARA FOUNDATION — Pune</p>
                   <p>Pune, Maharashtra, India.</p>
                   <p className="text-xs text-neutral-500 leading-relaxed">
                     Statewide CSR Partnerships, Corporate Alliances, Technical Education & Urban Outreach.
@@ -270,7 +270,7 @@ export function ContactPage() {
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-neutral-600">
                   <address className="not-italic leading-relaxed">
-                    <p className="font-semibold text-neutral-900">VORTEXSOFT VIKASDHARA FOUNDATION</p>
+                    <p className="font-semibold text-neutral-900">VIKASDHARA FOUNDATION</p>
                     <p>Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot,</p>
                     <p>Taluka Dharmabad, District Nanded – 431808,</p>
                     <p>Maharashtra, India.</p>

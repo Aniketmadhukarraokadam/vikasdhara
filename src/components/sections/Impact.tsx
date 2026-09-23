@@ -1,22 +1,23 @@
 import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionEyebrow } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
-import { Card, CardContent } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
 import { IconWrapper } from "@/components/ui/IconWrapper";
 import { Button } from "@/components/ui/Button";
+import { SkiperSpotlightCard } from "@/components/ui/SkiperSpotlightCard";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Link } from "react-router-dom";
 import { icons, type IconName } from "@/assets/icons";
 import { useLanguage } from "@/context/LanguageContext";
 
 const verifiedMetrics = [
-  { value: "1,250+", labelEn: "Youth & Adults Trained", labelMr: "प्रशिक्षित युवक व नागरिक", icon: "graduation-cap", desc: "Vocational & digital skills certification" },
-  { value: "4,500+", labelEn: "Students Supported", labelMr: "शिक्षण साहाय्य मिळालेली मुले", icon: "book", desc: "Smart classroom e-learning & study kits" },
-  { value: "680+", labelEn: "Jobs & Livelihoods Facilitated", labelMr: "रोजगार व उपजीविका जोडणी", icon: "briefcase", desc: "Placements, micro-enterprises & apprenticeship" },
-  { value: "850+", labelEn: "Women Reached in SHGs", labelMr: "सक्षम महिला बचत गट सदस्य", icon: "users", desc: "Self-help group agro-processing & micro-credit" },
-  { value: "15,000+", labelEn: "Community Meals & Care", labelMr: "पोषण व मानवतावादी सेवा", icon: "heart", desc: "Nutrition support for elderly & vulnerable" },
-  { value: "150+", labelEn: "Cows & Cattle in Gau Shala", labelMr: "गोशाळा संरक्षित देशी गोवंश", icon: "cow", desc: "Lifetime shelter, nutrition & veterinary care" },
-  { value: "42+", labelEn: "Villages & Wards Reached", labelMr: "पोहोचलेली गावे व वस्त्या", icon: "map-pin", desc: "Field footprint across Nanded & Pune" },
-  { value: "5,000+", labelEn: "Trees & Water Watersheds", labelMr: "वृक्ष लागवड व जलसंधारण", icon: "tree-pine", desc: "Community check dams & green corridors" }
+  { valueNum: 1250, suffix: "+", labelEn: "Youth & Adults Trained", labelMr: "प्रशिक्षित युवक व नागरिक", icon: "graduation-cap", desc: "Vocational & digital skills certification" },
+  { valueNum: 4500, suffix: "+", labelEn: "Students Supported", labelMr: "शिक्षण साहाय्य मिळालेली मुले", icon: "book", desc: "Smart classroom e-learning & study kits" },
+  { valueNum: 680, suffix: "+", labelEn: "Jobs & Livelihoods Facilitated", labelMr: "रोजगार व उपजीविका जोडणी", icon: "briefcase", desc: "Placements, micro-enterprises & apprenticeship" },
+  { valueNum: 850, suffix: "+", labelEn: "Women Reached in SHGs", labelMr: "सक्षम महिला बचत गट सदस्य", icon: "users", desc: "Self-help group agro-processing & micro-credit" },
+  { valueNum: 15000, suffix: "+", labelEn: "Community Meals & Care", labelMr: "पोषण व मानवतावादी सेवा", icon: "heart", desc: "Nutrition support for elderly & vulnerable" },
+  { valueNum: 150, suffix: "+", labelEn: "Cows & Cattle in Gau Shala", labelMr: "गोशाळा संरक्षित देशी गोवंश", icon: "cow", desc: "Lifetime shelter, nutrition & veterinary care" },
+  { valueNum: 42, suffix: "+", labelEn: "Villages & Wards Reached", labelMr: "पोहोचलेली गावे व वस्त्या", icon: "map-pin", desc: "Field footprint across Nanded & Pune" },
+  { valueNum: 5000, suffix: "+", labelEn: "Trees & Water Watersheds", labelMr: "वृक्ष लागवड व जलसंधारण", icon: "tree-pine", desc: "Community check dams & green corridors" }
 ];
 
 const featuredStories = [
@@ -72,19 +73,21 @@ export function Impact() {
           </SectionSubtitle>
         </SectionHeader>
 
-        {/* 8 Impact Stat Cards Grid */}
+        {/* 8 Skiper UI Spotlight Impact Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {verifiedMetrics.map((metric, index) => (
-            <div
+            <SkiperSpotlightCard
               key={index}
-              className="glass-card-3d rounded-3xl p-6 text-center border border-neutral-200/90 shadow-soft card-3d-hover flex flex-col justify-between"
+              className="text-center flex flex-col justify-between"
+              spotlightColor="rgba(2, 132, 199, 0.12)"
+              borderColor="rgba(56, 189, 248, 0.35)"
             >
               <div>
-                <IconWrapper variant="primary" size="lg" className="mx-auto mb-4 group-hover:scale-110 shadow-sm">
+                <IconWrapper variant="primary" size="lg" className="mx-auto mb-4 group-hover:scale-110 shadow-sm transition-transform duration-300">
                   {icons[metric.icon as IconName] || icons.book}
                 </IconWrapper>
                 <div className="text-3xl sm:text-4xl font-extrabold text-primary-900 mb-1.5 font-heading">
-                  {metric.value}
+                  <AnimatedCounter value={metric.valueNum} suffix={metric.suffix} />
                 </div>
                 <h4 className="text-sm font-bold text-neutral-900 leading-snug">
                   {isMarathi ? metric.labelMr : metric.labelEn}
@@ -93,7 +96,7 @@ export function Impact() {
               <p className="text-xs text-neutral-500 mt-3 pt-3 border-t border-neutral-100">
                 {metric.desc}
               </p>
-            </div>
+            </SkiperSpotlightCard>
           ))}
         </div>
 
@@ -147,13 +150,15 @@ export function Impact() {
           ))}
         </div>
 
-        {/* Action Button */}
+        {/* Animmaster Lib Magnetic Action Button */}
         <div className="text-center pt-4">
-          <Link to="/impact">
-            <Button size="lg" className="px-8 py-3.5 shadow-lg">
-              {t("Explore Comprehensive Impact Framework →", "सर्व सामाजिक परिणाम व अहवाल पहा →")}
-            </Button>
-          </Link>
+          <MagneticButton strength={0.3}>
+            <Link to="/impact">
+              <Button size="lg" className="px-8 py-3.5 shadow-lg bg-gradient-to-r from-primary-700 to-sky-700 hover:from-primary-800 hover:to-sky-800 text-white font-bold rounded-xl">
+                {t("Explore Comprehensive Impact Framework →", "सर्व सामाजिक परिणाम व अहवाल पहा →")}
+              </Button>
+            </Link>
+          </MagneticButton>
         </div>
       </Container>
     </Section>

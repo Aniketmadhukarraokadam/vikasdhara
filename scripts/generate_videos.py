@@ -48,7 +48,7 @@ def create_pan_zoom_video(image_path, output_path, title, subtitle, duration_sec
             draw.line([(0, y), (width, y)], fill=(5, 10, 15, alpha))
             
         # Brand text top left
-        draw.text((36, 20), "VORTEXSOFT VIKASDHARA FOUNDATION", fill=(255, 255, 255, 240))
+        draw.text((36, 20), "VIKASDHARA FOUNDATION", fill=(255, 255, 255, 240))
         draw.text((width - 240, 20), "• OFFICIAL FIELD FOOTAGE", fill=(52, 211, 153, 240))
         
         # Bottom title & subtitle

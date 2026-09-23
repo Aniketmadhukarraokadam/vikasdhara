@@ -197,7 +197,7 @@ export function VideoPlayerModal({
               </span>
               <span>📍 Nanded & Pune, Maharashtra, India</span>
               <span>•</span>
-              <span>VORTEXSOFT VIKASDHARA FOUNDATION</span>
+              <span>VIKASDHARA FOUNDATION</span>
             </div>
             <p className="text-neutral-400 text-xs line-clamp-2">
               {language === "mr" ? descriptionMr || description : description}

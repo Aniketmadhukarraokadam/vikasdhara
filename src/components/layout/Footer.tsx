@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "./Container";
 import { useLanguage } from "@/context/LanguageContext";
+import { HaikeiWave } from "@/components/ui/HaikeiBackgrounds";
 
 const departmentContacts = [
   {
@@ -57,7 +58,7 @@ const departmentContacts = [
 ];
 
 export function Footer() {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const isMarathi = language === "mr";
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
@@ -74,6 +75,9 @@ export function Footer() {
 
   return (
     <footer className="bg-neutral-950 text-neutral-300 font-sans border-t border-neutral-800 relative overflow-hidden" role="contentinfo">
+      {/* Haikei Top Wave Transition */}
+      <HaikeiWave fillColor="#0a0a0a" className="-mt-1 opacity-90" />
+
       {/* Background Decorative Mesh */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary-900/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-emerald-900/10 rounded-full blur-3xl pointer-events-none" />
@@ -159,15 +163,15 @@ export function Footer() {
           
           {/* Brand & Address Column */}
           <div className="lg:col-span-6 space-y-6">
-            <Link to="/" className="inline-block group" aria-label="Vortexsoft Vikasdhara Foundation Home">
+            <Link to="/" className="inline-block group" aria-label="Vikasdhara Foundation Home">
               <div className="bg-white px-5 py-3 rounded-2xl inline-flex items-center shadow-lg transition-transform group-hover:scale-[1.02]">
-                <img src="/logo.png" alt="Vortexsoft Vikasdhara Foundation" className="h-14 sm:h-16 w-auto object-contain" />
+                <img src="/logo.png" alt="Vikasdhara Foundation" className="h-14 sm:h-16 w-auto object-contain" />
               </div>
             </Link>
 
             <div>
               <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight font-heading">
-                VORTEXSOFT VIKASDHARA FOUNDATION
+                VIKASDHARA FOUNDATION
               </h2>
               <p className="text-emerald-400 font-bold text-sm sm:text-base mt-1.5">
                 Empowering People. Strengthening Communities. Building a Better India.
@@ -179,7 +183,7 @@ export function Footer() {
 
             {/* Primary Entity Statement */}
             <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed bg-neutral-900/90 p-4 rounded-2xl border border-neutral-800">
-              VORTEXSOFT VIKASDHARA FOUNDATION is an authorized public charitable trust headquartered in Nanded with regional liaison operations in Pune, Maharashtra. We drive grassroots interventions in Gau Shala animal protection, smart rural education, women self-help micro-enterprises, solar village infrastructure, and youth employment facilitation.
+              VIKASDHARA FOUNDATION is an authorized public charitable trust headquartered in Nanded with regional liaison operations in Pune, Maharashtra. We drive grassroots interventions in Gau Shala animal protection, smart rural education, women self-help micro-enterprises, solar village infrastructure, and youth employment facilitation.
             </p>
 
             {/* Dual Campus & Regional Office Locations */}
@@ -406,7 +410,7 @@ export function Footer() {
         <div className="pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-xs text-neutral-400">
           <div className="space-y-1">
             <p className="font-extrabold text-neutral-200">
-              © 2026 VORTEXSOFT VIKASDHARA FOUNDATION. All Rights Reserved.
+              © 2026 VIKASDHARA FOUNDATION. All Rights Reserved.
             </p>
             <p className="text-neutral-500 text-[11px]">
               Registered Public Charitable Trust under Maharashtra Public Trusts Act, 1950 • Established 11 September 2026 • Headquarters: Dharmabad, Nanded | Regional Office: Pune, Maharashtra, India.

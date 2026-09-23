@@ -1,40 +1,138 @@
 {
   "about": {
-    "heading": "About VORTEXSOFT VIKASDHARA FOUNDATION",
-    "copy": "VORTEXSOFT VIKASDHARA FOUNDATION is a public charitable trust established with a vision of contributing to education, skills, employment, humanitarian support, care and sustainable community development.\n\nThe Foundation aims to build practical programmes and partnerships that respond to community needs while maintaining accountability, dignity and responsible use of resources.\n\nOur long-term vision is to grow from local initiatives into a broader platform for opportunity and social development across India."
+    "heading": "About VIKASDHARA FOUNDATION",
+    "copy": "VIKASDHARA FOUNDATION is a public charitable trust established with a vision of contributing to education, skills, employment, humanitarian support, care and sustainable community development.\n\nThe Foundation aims to build practical programmes and partnerships that respond to community needs while maintaining accountability, dignity and responsible use of resources.\n\nOur long-term vision is to grow from local initiatives into a broader platform for opportunity and social development across India."
   },
   "vision": {
     "heading": "Our Vision",
-    "statement": "To contribute to an India where people have greater access to education, skills, livelihood opportunities, care, dignity and community development resources."
+    "statement": "To contribute to a stronger, more inclusive and self-reliant India where people have fair opportunities to learn, develop future-ready skills, earn with dignity, live safely and contribute to the flourishing of their communities and environment.",
+    "statementMr": "एका सक्षम, सर्वसमावेशक आणि आत्मनिर्भर भारताच्या उभारणीत योगदान देणे, जिथे प्रत्येक व्यक्तीला शिकण्याची, कौशल्ये विकसित करण्याची, सन्मानाने उपजीविका मिळवण्याची आणि समाजाच्या विकासात सहभागी होण्याची समान संधी मिळेल.",
+    "pillars": [
+      {
+        "id": "education",
+        "title": "Inclusive & Future-Ready Education",
+        "titleMr": "समावेशक व आधुनिक शिक्षण",
+        "icon": "book",
+        "desc": "Ensuring every child and youth has access to foundational learning, digital literacy, and STEM resources regardless of socio-economic background."
+      },
+      {
+        "id": "livelihoods",
+        "title": "Dignified Livelihoods & Decent Work",
+        "titleMr": "सन्मानजनक उपजीविका व रोजगार",
+        "icon": "briefcase",
+        "desc": "Empowering youth and jobseekers with market-aligned vocational certifications, apprenticeship linkages, and sustainable self-employment pathways."
+      },
+      {
+        "id": "women",
+        "title": "Women-Led Rural Transformation",
+        "titleMr": "महिला सक्षमीकरण व स्वावलंबन",
+        "icon": "users",
+        "desc": "Fostering economic independence and leadership among rural women through self-help groups (SHGs), micro-enterprises, and financial literacy."
+      },
+      {
+        "id": "health",
+        "title": "Grassroots Health & Nutritional Dignity",
+        "titleMr": "आरोग्य जनजागृती व पोषण सुरक्षा",
+        "icon": "heart-pulse",
+        "desc": "Promoting preventive healthcare, maternal-child nutrition, menstrual hygiene, and compassionate elder care across underserved villages."
+      },
+      {
+        "id": "ecology",
+        "title": "Ecological Care & Cow Sanctuaries",
+        "titleMr": "पर्यावरण संवर्धन व गोशाळा संरक्षण",
+        "icon": "cow",
+        "desc": "Preserving indigenous cattle through cruelty-free Gau Shalas while revitalizing rural ecosystems via afforestation and water conservation."
+      }
+    ],
+    "milestones2030": [
+      { "target": "50,000+", "label": "Students & Youth Educated", "labelMr": "शिक्षण व डिजिटल साक्षरता मिळालेली मुले", "icon": "graduation-cap" },
+      { "target": "10,000+", "label": "Women Micro-Entrepreneurs", "labelMr": "स्वावलंबी महिला व्यावसायिक", "icon": "users" },
+      { "target": "5,000+", "label": "Formal Job & Livelihood Placements", "labelMr": "नोकरी व उपजीविका जोडणी", "icon": "briefcase" },
+      { "target": "2,500+", "label": "Indigenous Cattle Protected", "labelMr": "गोशाळेत संरक्षित देशी गोवंश", "icon": "cow" },
+      { "target": "100+", "label": "Model Solar & Water-Secure Villages", "labelMr": "आदर्श सौर व जलसमृद्ध गावे", "icon": "tree-pine" }
+    ]
   },
   "mission": {
     "heading": "Our Mission",
-    "statement": "To develop and support practical charitable programmes that create education, skill, employment, livelihood, humanitarian, environmental, animal-welfare and community-development opportunities for people and communities in need."
+    "statement": "To develop, implement, and support scalable charitable programmes that create practical education, skill, employment, livelihood, humanitarian, environmental, animal-welfare, and community-development opportunities for people and communities in need across India.",
+    "statementMr": "गरजू व्यक्ती आणि समुदायांसाठी शिक्षण, कौशल्य, रोजगार, उपजीविका, मानवतावादी मदत, पर्यावरण, प्राणी कल्याण आणि समुदाय विकासाच्या संधी निर्माण करणारे व्यावहारिक धर्मादाय उपक्रम विकसित करणे आणि पारदर्शकतेने राबवणे.",
+    "actionVectors": [
+      {
+        "step": "01",
+        "title": "Grassroots Needs Assessment",
+        "titleMr": "वास्तविक गरजांचे मूल्यमापन",
+        "desc": "Conducting empirical field surveys with local panchayats, schools, and families to identify critical intervention areas."
+      },
+      {
+        "step": "02",
+        "title": "Technology & Skill Bootcamps",
+        "titleMr": "कौशल्य प्रशिक्षण कार्यशाळा",
+        "desc": "Deploying modular skill labs, vernacular digital tablets, and IT curricula to make rural youth employment-ready."
+      },
+      {
+        "step": "03",
+        "title": "Women SHG Enterprise Incubation",
+        "titleMr": "महिला बचत गट उद्योग निर्मिती",
+        "desc": "Providing training in agro-processing, food packaging, quality control, and direct marketplace linkages for rural women."
+      },
+      {
+        "step": "04",
+        "title": "Sanctuary-Grade Animal Welfare",
+        "titleMr": "गोशाळा व प्राणी संरक्षण",
+        "desc": "Operating safe shelter facilities with 24/7 veterinary healthcare, organic green fodder, and humane care standards."
+      },
+      {
+        "step": "05",
+        "title": "Watershed & Afforestation Action",
+        "titleMr": "जलसंधारण व वृक्षारोपण",
+        "desc": "Constructing check dams, rainwater harvesting systems, and planting indigenous drought-tolerant trees."
+      },
+      {
+        "step": "06",
+        "title": "Transparent CSR Partnerships",
+        "titleMr": "पारदर्शक सीएसआर भागीदारी",
+        "desc": "Collaborating with corporations and institutions under MCA CSR-1 Schedule VII with 100% auditable documentation."
+      }
+    ],
+    "guidingPrinciples": [
+      "Zero private profit distribution; 100% reinvestment into charitable purposes",
+      "Statutory compliance under the Maharashtra Public Trusts Act and MCA guidelines",
+      "Empirical field record-keeping and verifiable beneficiary reporting",
+      "Preservation of beneficiary human dignity and respectful representation"
+    ]
   },
   "values": [
     {
       "title": "Dignity",
-      "description": "Every person deserves respect."
+      "description": "Every person deserves respect, empathy, and fair treatment."
     },
     {
       "title": "Opportunity",
-      "description": "We focus on creating pathways rather than only temporary assistance."
+      "description": "We focus on creating sustainable pathways rather than only temporary relief."
     },
     {
       "title": "Inclusion",
-      "description": "Our programmes should serve people without discrimination."
+      "description": "Our programmes serve communities lawfully, equally, and without discrimination."
     },
     {
       "title": "Integrity",
-      "description": "Resources should be handled responsibly and transparently."
+      "description": "All public resources and grants are managed with impeccable moral uprightness."
+    },
+    {
+      "title": "Accountability",
+      "description": "Every project maintains auditable financial and beneficiary records."
     },
     {
       "title": "Collaboration",
-      "description": "Meaningful social change requires partnerships."
+      "description": "Transformational social change requires partnerships with communities, government, and industry."
     },
     {
       "title": "Sustainability",
-      "description": "We seek solutions that create lasting value."
+      "description": "We engineer solutions that create enduring social, economic, and ecological value."
+    },
+    {
+      "title": "Transparency",
+      "description": "Public disclosures, project milestones, and statutory reporting are clear and verifiable."
     }
   ],
   "leadership": [

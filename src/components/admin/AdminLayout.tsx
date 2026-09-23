@@ -111,7 +111,7 @@ export function AdminLayout() {
             </div>
             <div className="hidden sm:flex flex-col leading-none">
               <span className="font-extrabold text-sm tracking-wide text-white font-heading">
-                VORTEXSOFT VIKASDHARA
+                VIKASDHARA FOUNDATION
               </span>
               <span className="text-[10px] font-bold tracking-widest text-primary-400 uppercase">
                 ADMINISTRATION & ATS PORTAL
