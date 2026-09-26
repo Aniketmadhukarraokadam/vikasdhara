@@ -1,93 +1,82 @@
 import {
   Hero,
-  Introduction,
-  WhatWeDo,
-  VillageSanctuaryShowcase,
-  VideoShowcase,
-  Approach,
-  Ecosystem,
-  CorporatePartnerships,
-  Impact,
-  FutureVision,
-  CTASection,
-  TransparencySection,
+  ImpactStrip,
+  FocusAreas,
+  EducationFeature,
+  WomenSkillsSection,
+  CommunityCareSection,
+  AnimalWelfareSection,
+  HowWeWork,
+  GetInvolvedSection,
+  CSRSection,
+  StoryImpactVisual,
+  DonationCTA,
   RegisteredOffice,
-  IndiaIdentity,
 } from "@/components/sections";
-import { InfiniteMarquee } from "@/components/ui/InfiniteMarquee";
 import { SEO } from "@/components/seo/SEO";
-
-const marqueeItems = [
-  { icon: "🏛️", title: "Public Charitable Trust", sub: "Govt. of Maharashtra Regd." },
-  { icon: "📜", title: "MCA CSR-1 Certified", sub: "Schedule VII Compliant" },
-  { icon: "🎓", title: "1,250+ Youth Certified", sub: "IT & Digital Skills" },
-  { icon: "📍", title: "Nanded HQ & Pune Hub", sub: "Western Maharashtra Footprint" },
-  { icon: "🐄", title: "Gau Shala Sanctuary", sub: "Indigenous Cow Care" },
-  { icon: "🤝", title: "Corporate Partnerships", sub: "Outcome-Driven Impact" },
-  { icon: "🌿", title: "Rural Village Infrastructure", sub: "Solar & Watersheds" },
-  { icon: "✨", title: "100% Transparent Audits", sub: "Public Disclosures" },
-];
 
 export function Home() {
   return (
     <>
       <SEO
-        title="VIKASDHARA FOUNDATION | Education, Skills, Employment & Community Development"
-        description="VIKASDHARA FOUNDATION is a public charitable trust based in Nanded, Maharashtra, working across India in education, skill development, employment, women’s empowerment, livelihood, humanitarian support, community development, environment and animal welfare."
+        title="Vikasdhara Foundation | Education, Skills & Community Development"
+        description="Vikasdhara Foundation works to create opportunities through education, skill development, livelihoods, social awareness, community care, women empowerment and animal welfare initiatives."
         keywords={[
-          "VIKASDHARA FOUNDATION",
           "Vikasdhara Foundation",
-          "Public Charitable Trust Maharashtra",
-          "NGO in Nanded",
-          "NGO in Maharashtra",
+          "VIKASDHARA FOUNDATION",
           "Education NGO India",
           "Skill development NGO Maharashtra",
           "Women education and empowerment",
           "Youth employment support",
-          "Livelihood development",
-          "Rural development Maharashtra",
-          "Community development trust",
-          "Gau Shala charitable trust Nanded",
-          "Dharmabad public trust"
+          "Community care Maharashtra",
+          "Senior citizen care",
+          "Animal welfare NGO",
+          "Gaushala charitable trust Nanded",
+          "Dharmabad public trust",
+          "CSR partner Maharashtra",
+          "Pune NGO",
+          "Nanded NGO"
         ]}
       />
+
+      {/* 1. Full Viewport Hero with Human-Centered Collage */}
       <Hero />
 
-      {/* Skiper UI Infinite Interactive Marquee Ticker */}
-      <div className="bg-gradient-to-r from-neutral-900 via-primary-950 to-neutral-900 py-4.5 border-y border-neutral-800 text-white shadow-inner relative z-20">
-        <InfiniteMarquee speed={28} pauseOnHover={true}>
-          {marqueeItems.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 hover:border-primary-400/50 hover:bg-white/10 transition-all duration-300"
-            >
-              <span className="text-xl">{item.icon}</span>
-              <div className="leading-tight">
-                <span className="text-xs sm:text-sm font-extrabold text-white block">
-                  {item.title}
-                </span>
-                <span className="text-[10px] text-neutral-400 font-medium">
-                  {item.sub}
-                </span>
-              </div>
-            </div>
-          ))}
-        </InfiniteMarquee>
-      </div>
+      {/* 2. Qualitative Impact Strip */}
+      <ImpactStrip />
 
-      <Introduction />
-      <WhatWeDo />
-      <VillageSanctuaryShowcase />
-      <VideoShowcase />
-      <Approach />
-      <Ecosystem />
-      <CorporatePartnerships />
-      <Impact />
-      <FutureVision />
-      <CTASection />
-      <TransparencySection />
+      {/* 3. Where We Create Impact: 8 Interactive Focus Cards */}
+      <FocusAreas />
+
+      {/* 4. Editorial Education Feature Section */}
+      <EducationFeature />
+
+      {/* 5. Women & Skills Section (LEARN -> BUILD -> GROW) */}
+      <WomenSkillsSection />
+
+      {/* 6. Community Care Section (Warmer Cream Theme) */}
+      <CommunityCareSection />
+
+      {/* 7. Animal Welfare & Gaushala Section (Soft Natural Green) */}
+      <AnimalWelfareSection />
+
+      {/* 8. How We Work: 5-Step Process with Flowing Green Line */}
+      <HowWeWork />
+
+      {/* 9. Interactive Visual Storytelling: From Support to Opportunity */}
+      <StoryImpactVisual />
+
+      {/* 10. CSR Partnership: Enterprise-Facing & Schedule VII Aligned */}
+      <CSRSection />
+
+      {/* 11. Volunteer / Get Involved: You Can Be Part of the Change */}
+      <GetInvolvedSection />
+
+      {/* 12. Registered Office & Geographic Roots (Nanded & Pune) */}
       <RegisteredOffice />
-      <IndiaIdentity />
+
+      {/* 13. Large Final Donation CTA (Deep Green with Ambient Light Points) */}
+      <DonationCTA />
     </>
   );
 }

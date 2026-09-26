@@ -1,80 +1,99 @@
-import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/Button";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function RegisteredOffice() {
   const { t } = useLanguage();
 
   return (
-    <Section variant="default" background="sky" id="office">
+    <section className="py-20 lg:py-24 bg-[#FFF9F0]" id="office" aria-labelledby="office-heading">
       <Container>
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block text-xs font-bold text-primary-800 uppercase tracking-widest bg-primary-100/80 px-3.5 py-1.5 rounded-full mb-3">
-            {t("Registered Office", "नोंदणीकृत कार्यालय")}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-block text-xs font-bold text-[#1F4D34] uppercase tracking-widest bg-[#EAF4EC] border border-[#2F6B45]/20 px-3.5 py-1.5 rounded-full mb-3 shadow-warm-sm">
+            {t("Geographic Roots & Governance", "स्थानिक मुळे व प्रशासन")}
           </span>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-neutral-900 tracking-tight font-heading">
+          <h2 id="office-heading" className="text-3xl lg:text-4xl font-extrabold text-[#17251D] tracking-tight font-sans">
             {t("Our Base in Maharashtra", "महाराष्ट्रातील मुख्य केंद्र")}
           </h2>
-          <p className="text-neutral-600 mt-3 text-base sm:text-lg">
+          <p className="text-[#68736C] mt-3 text-base sm:text-lg leading-relaxed">
             {t(
-              "VIKASDHARA FOUNDATION is based in Chondi, Dharmabad Taluka, Nanded District, Maharashtra, India. The Foundation aims to develop local initiatives while building programmes and partnerships that can grow across India.",
-              "विकासधारा फाउंडेशन चोंडी, तालुका धर्माबाद, जिल्हा नांदेड, महाराष्ट्र येथे स्थित असून स्थानिक उपक्रमांसोबत संपूर्ण भारतात सामाजिक कार्य विस्तारण्याचे उद्दिष्ट ठेवते."
+              "VIKASDHARA FOUNDATION is based in Chondi, Dharmabad Taluka, Nanded District, Maharashtra, with statewide coordination and institutional CSR liaisons in Pune.",
+              "विकासधारा फाउंडेशन चोंडी, तालुका धर्माबाद, जिल्हा नांदेड, महाराष्ट्र येथे स्थित असून पुणे येथून राज्यस्तरीय समन्वय साधला जातो."
             )}
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          {/* Registered Office Card */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-neutral-200/90 shadow-soft relative overflow-hidden flex flex-col justify-between space-y-6">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-bl-full -z-0 opacity-70" />
-            
-            <div className="relative z-10 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-primary-100 text-primary-800 font-bold text-xs uppercase tracking-wider">
-                <svg className="w-4 h-4 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-                {t("Registered Public Charitable Trust Office", "नोंदणीकृत धर्मादाय न्यास कार्यालय")}
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+          {/* Nanded Registered Office Card */}
+          <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#2F6B45]/15 shadow-warm-card relative overflow-hidden flex flex-col justify-between space-y-5">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF4EC] text-[#1F4D34] font-bold text-xs uppercase tracking-wider">
+                <span>📍</span>
+                <span>Registered Headquarters</span>
               </div>
 
-              <div>
-                <h3 className="text-2xl font-bold text-neutral-900 font-heading">
-                  Chondi, Dharmabad Taluka, Nanded District
-                </h3>
-                <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mt-1">
-                  Maharashtra, India • PIN: 431808
-                </p>
-              </div>
+              <h3 className="text-xl font-bold text-[#17251D] font-sans">
+                Chondi, Dharmabad, Nanded
+              </h3>
 
-              <address className="not-italic text-sm sm:text-base text-neutral-700 leading-relaxed bg-neutral-50 p-5 rounded-2xl border border-neutral-200/80 space-y-1">
-                <p className="font-bold text-neutral-900">VIKASDHARA FOUNDATION</p>
+              <address className="not-italic text-xs sm:text-sm text-[#68736C] leading-relaxed bg-[#F6F0E7]/60 p-4 rounded-2xl border border-[#2F6B45]/10 space-y-1">
+                <p className="font-bold text-[#17251D]">VIKASDHARA FOUNDATION</p>
                 <p>Near Chhatrapati Shivaji Putla, Chondi, Post Jarikot,</p>
                 <p>Taluka Dharmabad, District Nanded – 431808,</p>
                 <p>Maharashtra, India.</p>
               </address>
             </div>
 
-            <div className="pt-4 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-4 relative z-10">
-              <div className="flex items-center gap-2 text-sm text-neutral-600">
-                <span className="font-semibold text-neutral-800">Email:</span>
-                <a
-                  href="mailto:info@vikasdharafoundation.org"
-                  className="font-bold text-primary-700 hover:text-primary-900 hover:underline"
-                >
-                  info@vikasdharafoundation.org
-                </a>
+            <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-xs">
+              <span className="text-[#68736C]">Public Charitable Trust</span>
+              <a
+                href="mailto:info@vikasdharafoundation.org"
+                className="font-bold text-[#2F6B45] hover:underline"
+              >
+                info@vikasdharafoundation.org
+              </a>
+            </div>
+          </div>
+
+          {/* Pune Coordination Hub Card */}
+          <div className="bg-white rounded-3xl p-7 sm:p-8 border border-[#F39A3F]/25 shadow-warm-card relative overflow-hidden flex flex-col justify-between space-y-5">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF9F0] text-[#F39A3F] font-bold text-xs uppercase tracking-wider">
+                <span>🏢</span>
+                <span>Regional Coordination & CSR Hub</span>
               </div>
 
-              <Link to="/contact">
-                <Button size="sm" className="font-bold shadow-md">
-                  {t("Contact the Foundation →", "संस्थेशी संपर्क साधा →")}
-                </Button>
+              <h3 className="text-xl font-bold text-[#17251D] font-sans">
+                Pune Operations & CSR Desk
+              </h3>
+
+              <div className="text-xs sm:text-sm text-[#68736C] leading-relaxed bg-[#FFF9F0] p-4 rounded-2xl border border-[#F39A3F]/20 space-y-1">
+                <p className="font-bold text-[#17251D]">Pune Coordination Office</p>
+                <p>Pune, Maharashtra, India.</p>
+                <p className="text-[11px] text-[#68736C] pt-1">
+                  Institutional CSR partnerships, corporate grants, state-level youth skilling and donor relations.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-xs">
+              <a
+                href="mailto:partnerships@vikasdharafoundation.org"
+                className="font-bold text-[#2F6B45] hover:underline"
+              >
+                partnerships@vikasdharafoundation.org
+              </a>
+              <Link
+                to="/contact"
+                className="font-bold text-[#1F4D34] hover:text-[#2F6B45] flex items-center gap-1"
+              >
+                <span>{t("Contact Us", "संपर्क")}</span>
+                <span>→</span>
               </Link>
             </div>
           </div>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

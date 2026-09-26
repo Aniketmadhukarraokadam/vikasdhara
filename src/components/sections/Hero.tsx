@@ -1,282 +1,219 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/ui/Button";
-import { MotionCanvas } from "@/components/ui/MotionCanvas";
-import { VideoPlayerModal } from "@/components/ui/VideoPlayerModal";
-import { HaikeiWave, HaikeiBlobBackdrop } from "@/components/ui/HaikeiBackgrounds";
-import { VengeanceBadge } from "@/components/ui/VengeanceBadge";
-import { MagneticButton } from "@/components/ui/MagneticButton";
-import { BorderBeam } from "@/components/ui/BorderBeam";
-import { ConfettiButton } from "@/components/ui/ConfettiButton";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
-  const { language, t } = useLanguage();
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
-    <section 
-      className="relative min-h-[96vh] lg:min-h-screen flex items-center pt-24 pb-20 lg:py-24 overflow-hidden bg-neutral-950 text-white" 
-      aria-labelledby="hero-heading"
+    <section
+      className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#FFF9F0] via-[#FFFFFF] to-[#F6F0E7]"
+      aria-label="Vikasdhara Foundation Introduction"
     >
-      {/* Interactive 3D Luminous Particle Motion Canvas */}
-      <MotionCanvas />
+      {/* Subtle organic background elements - River / Dhara flowing curve */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <svg
+          className="absolute -top-10 -right-20 w-[600px] h-[600px] lg:w-[900px] lg:h-[900px] opacity-[0.07] text-[#2F6B45]"
+          viewBox="0 0 100 100"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="0.8"
+        >
+          <path d="M0,50 Q25,20 50,50 T100,50" />
+          <path d="M0,60 Q25,30 50,60 T100,60" />
+          <path d="M0,40 Q25,10 50,40 T100,40" />
+        </svg>
 
-      {/* Haikei Generative Organic Ambient Blob Backdrop */}
-      <HaikeiBlobBackdrop />
-
-      {/* Background 4K Hero Media with Cinematic Ambient Glow */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <img
-          src="/images/hero_campus.jpg"
-          alt="Vikasdhara Foundation Community Development in Maharashtra India"
-          className="w-full h-full object-cover object-center lg:object-right opacity-85 scale-105 transition-transform duration-[10000ms] hover:scale-100"
-        />
-        {/* Layered Cinematic Contrast & Mesh Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/90 to-neutral-950/40 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950/60 z-10" />
-        
-        {/* 3D Glowing Ambient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-600/20 rounded-full blur-[120px] animate-pulse-glow z-10" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/20 rounded-full blur-[100px] animate-float-slow z-10" />
-        <div className="absolute top-1/3 right-10 w-72 h-72 bg-warm-500/15 rounded-full blur-[90px] animate-float-reverse z-10" />
+        {/* Soft Warm Ambient Diffusions */}
+        <div className="absolute top-1/4 left-10 w-80 h-80 rounded-full bg-[#EAF4EC]/80 blur-3xl" />
+        <div className="absolute bottom-10 right-1/4 w-96 h-96 rounded-full bg-[#FFF9F0] blur-2xl" />
       </div>
 
-      <Container size="full" className="relative z-20 w-full">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Core Entity Headline & Actions (7 cols) */}
-          <div className="lg:col-span-7 space-y-7 animate-slide-in-left">
+          {/* LEFT: Core Brand Headline, Eyebrow & Actions (7 cols on lg) */}
+          <div className="lg:col-span-6 space-y-6 sm:space-y-8 animate-calm-fade">
             
-            {/* Vengeance UI Glowing Cyber-Beam Trust Badge */}
-            <VengeanceBadge glowColor="emerald" pulsing={true}>
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-emerald-300">
-                {t("Public Charitable Trust • Nanded HQ & Pune Hub, Maharashtra", "सार्वजनिक धर्मादाय न्यास • नांदेड मुख्यालय व पुणे केंद्र, महाराष्ट्र")}
+            {/* Small Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF4EC] border border-[#2F6B45]/20 text-[#1F4D34]">
+              <span className="w-2 h-2 rounded-full bg-[#2F6B45] animate-pulse" />
+              <span className="text-xs sm:text-[13px] font-extrabold uppercase tracking-widest">
+                VIKASDHARA FOUNDATION
               </span>
-            </VengeanceBadge>
-
-            {/* Main H1 Title */}
-            <h1 id="hero-heading" className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white tracking-tight leading-[1.08] font-heading text-balance">
-              {language === "mr" ? (
-                <>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-warm-400 via-white to-primary-300">
-                    समर्थ लोक • सक्षम समाज
-                  </span>
-                  <br />
-                  <span className="text-emerald-400">समृद्ध भारत</span>
-                </>
-              ) : (
-                <>
-                  Empowering People.{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-primary-200 to-warm-400">
-                    Strengthening Communities.
-                  </span>{" "}
-                  <span className="text-emerald-400">Building a Better India.</span>
-                </>
-              )}
-            </h1>
-
-            {/* Core Entity Description & Supporting Line */}
-            <div className="space-y-3 max-w-2xl">
-              <p className="text-base sm:text-lg lg:text-xl text-neutral-200 leading-relaxed font-normal text-balance">
-                {t(
-                  "VIKASDHARA FOUNDATION works to create meaningful opportunities through education, skill development, employment, livelihood support, humanitarian service and community development.",
-                  "विकासधारा फाउंडेशन शिक्षण, कौशल्यविकास, रोजगार, उपजीविका साहाय्य, मानवतावादी सेवा आणि समुदाय विकासाच्या माध्यमातून अर्थपूर्ण संधी निर्माण करण्याचे कार्य करते."
-                )}
-              </p>
-              <div className="flex items-center gap-2 text-sm sm:text-base text-warm-400 font-bold tracking-wide">
-                <span className="w-6 h-0.5 bg-warm-400 rounded-full inline-block" />
-                <span>{t("From Need to Opportunity.", "गरजेकडून संधीकडे.")}</span>
-              </div>
             </div>
 
-            {/* Animmaster Lib Magnetic & Confetti Interactive Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <ConfettiButton strength={0.25}>
-                <Link to="/what-we-do">
-                  <Button size="lg" className="px-6 py-3.5 bg-gradient-to-r from-primary-600 via-sky-600 to-primary-700 hover:from-primary-500 hover:to-sky-500 text-white font-bold text-sm sm:text-base rounded-xl shadow-xl shadow-primary-950/60 card-3d-hover border border-primary-400/30">
-                    {t("Explore Our Work", "आमचे उपक्रम पहा")} ↗
-                  </Button>
-                </Link>
-              </ConfettiButton>
+            {/* Large Headline */}
+            <div className="space-y-1 sm:space-y-2">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#17251D] tracking-tight leading-[1.08] font-sans">
+                Building Lives.
+              </h1>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#2F6B45] tracking-tight leading-[1.08] font-serif italic">
+                Creating Opportunities.
+              </h2>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#17251D] tracking-tight leading-[1.08] font-sans">
+                Growing Communities.
+              </h2>
+            </div>
 
-              <MagneticButton strength={0.25}>
-                <button
-                  onClick={() => setIsVideoOpen(true)}
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base rounded-xl border border-white/30 backdrop-blur-md card-3d-hover transition-all"
-                >
-                  <span className="w-6 h-6 rounded-full bg-warm-500 text-neutral-950 flex items-center justify-center text-xs">▶</span>
-                  <span>{t("Watch Film (3 Min)", "व्हिडिओ पहा (३ मिनिटे)")}</span>
-                </button>
-              </MagneticButton>
+            {/* Supporting Paragraph */}
+            <p className="text-base sm:text-lg lg:text-xl text-[#68736C] leading-relaxed max-w-xl font-normal">
+              {t(
+                "We work to create meaningful opportunities through education, skills, livelihoods, care and community development.",
+                "शिक्षण, कौशल्यविकास, उपजीविका, समाजकल्याण आणि समुदाय विकासाच्या माध्यमातून शाश्वत संधींची निर्मिती."
+              )}
+            </p>
+
+            {/* CTA Group */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link
+                to="/get-involved/support"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#2F6B45] hover:bg-[#1F4D34] text-white font-bold text-sm sm:text-base tracking-wide shadow-warm-card hover:shadow-warm-elevated transition-all duration-300 group"
+              >
+                <span>{t("Support Our Mission", "आमच्या कार्यात सहभागी व्हा")}</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
 
               <Link
-                to="/frequently-asked-questions"
-                className="text-sm font-bold text-neutral-300 hover:text-white transition-colors underline-offset-8 hover:underline py-2"
+                to="/what-we-do"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#EAF4EC] text-[#1F4D34] font-bold text-sm sm:text-base tracking-wide border-2 border-[#2F6B45]/25 hover:border-[#2F6B45] shadow-warm-sm transition-all duration-300"
               >
-                {t("Master FAQ Hub 💡", "माहिती व प्रश्नोत्तरे 💡")}
+                <span>{t("Explore Our Work", "आमचे उपक्रम पहा")}</span>
               </Link>
             </div>
 
-            {/* Trust Badges Bar */}
-            <div className="pt-6 border-t border-white/15 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm font-semibold text-neutral-300">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
-                  ✓
-                </div>
-                <span>{t("Registered Trust", "नोंदणीकृत न्यास")}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-sky-500/20 border border-sky-500/40 flex items-center justify-center text-sky-400 shrink-0">
-                  🎯
-                </div>
-                <span>{t("14 Active Domains", "१४ कार्यक्षेत्रे")}</span>
-              </div>
-              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
-                <div className="w-7 h-7 rounded-lg bg-warm-500/20 border border-warm-500/40 flex items-center justify-center text-warm-400 shrink-0">
-                  🤝
-                </div>
-                <span>{t("CSR / Partner Ready", "सीएसआर भागीदारी")}</span>
-              </div>
+            {/* Small Trust Line */}
+            <div className="pt-4 border-t border-[#17251D]/10 flex flex-wrap items-center gap-2 text-xs sm:text-sm font-semibold text-[#1F4D34]">
+              <span className="text-[#F39A3F]">✦</span>
+              <span>Education</span>
+              <span className="text-neutral-300">•</span>
+              <span>Skills</span>
+              <span className="text-neutral-300">•</span>
+              <span>Livelihoods</span>
+              <span className="text-neutral-300">•</span>
+              <span>Community Care</span>
             </div>
           </div>
 
-          {/* Right Column: 3D Glassmorphic Floating Showcase (5 cols) */}
-          <div className="lg:col-span-5 relative perspective-1000 preserve-3d animate-slide-in-right hidden md:block">
+          {/* RIGHT: Beautiful Editorial Collage of Real Human Life (6 cols on lg) */}
+          <div className="lg:col-span-6 relative w-full flex items-center justify-center">
             
-            {/* Top Floating 3D Badge */}
-            <div className="absolute -top-6 -left-6 z-30 animate-float-slow">
-              <div className="glass-dark-3d p-3.5 rounded-2xl flex items-center gap-3 border border-primary-400/40 shadow-2xl">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-primary-600 flex items-center justify-center text-lg shadow-md">
-                  🎓
-                </div>
-                <div>
-                  <div className="text-[10px] font-bold text-sky-300 uppercase tracking-widest">
-                    {t("Education & Skills", "शिक्षण व कौशल्ये")}
-                  </div>
-                  <div className="text-xs font-extrabold text-white">
-                    {t("Practical Opportunities", "व्यावहारिक संधी")}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Floating 3D Badge */}
-            <div className="absolute -bottom-6 -right-4 z-30 animate-float-reverse">
-              <div className="glass-dark-3d p-3.5 rounded-2xl flex items-center gap-3 border border-emerald-400/40 shadow-2xl">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-accent-600 flex items-center justify-center text-lg shadow-md">
-                  🏢
-                </div>
-                <div>
-                  <div className="text-[10px] font-bold text-emerald-300 uppercase tracking-widest">
-                    {t("Corporate CSR Pathway", "सीएसआर प्रकल्प मॉडेल")}
-                  </div>
-                  <div className="text-xs font-extrabold text-white">
-                    {t("5-Stage Implementation", "५ टप्प्यांचे नियोजन")}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Central 3D Glassmorphic Card with Vengeance Border Beam */}
-            <div className="relative glass-dark-3d rounded-3xl p-7 border border-white/20 shadow-2xl space-y-6 card-3d-hover overflow-hidden">
-              <BorderBeam size={280} duration={8} colorFrom="#38bdf8" colorTo="#10b981" borderWidth={2} />
+            {/* Collage Canvas with Organic Balanced Arrangement */}
+            <div className="relative w-full max-w-[540px] aspect-[4/4] sm:aspect-[5/4] lg:aspect-square flex items-center justify-center">
               
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-300">
-                    {t("Mission Ecosystem", "कार्यप्रणाली")}
-                  </span>
-                </div>
-                <span className="text-[11px] font-bold text-primary-300 bg-primary-900/60 px-2.5 py-1 rounded-full border border-primary-700">
-                  {t("Maharashtra & India", "महाराष्ट्र व भारत")}
-                </span>
-              </div>
-
-              {/* Ecosystem Interactive Progress Items */}
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between text-xs font-bold mb-1.5">
-                    <span className="text-neutral-200">📚 {t("Education & Digital Learning", "शिक्षण व डिजिटल साक्षरता")}</span>
-                    <span className="text-sky-400">ACTIVE</span>
-                  </div>
-                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                    <div className="bg-gradient-to-r from-sky-400 to-primary-500 h-full rounded-full w-[90%] animate-pulse" />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between text-xs font-bold mb-1.5">
-                    <span className="text-neutral-200">⚡ {t("Skill Development & Vocational", "कौशल्यविकास व प्रशिक्षण")}</span>
-                    <span className="text-emerald-400">ACTIVE</span>
-                  </div>
-                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                    <div className="bg-gradient-to-r from-emerald-400 to-accent-500 h-full rounded-full w-[85%]" />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between text-xs font-bold mb-1.5">
-                    <span className="text-neutral-200">💼 {t("Employment Facilitation", "रोजगार व प्लेसमेंट साहाय्य")}</span>
-                    <span className="text-warm-400">ACTIVE</span>
-                  </div>
-                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                    <div className="bg-gradient-to-r from-warm-400 to-warm-600 h-full rounded-full w-[80%]" />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between text-xs font-bold mb-1.5">
-                    <span className="text-neutral-200">🌿 {t("Community & Animal Welfare", "समुदाय विकास व गोशाळा")}</span>
-                    <span className="text-primary-300">CONTINUING</span>
-                  </div>
-                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                    <div className="bg-gradient-to-r from-primary-400 to-emerald-400 h-full rounded-full w-[95%]" />
-                  </div>
+              {/* Card 1: Top-Left - Child Studying (Education) */}
+              <div 
+                className="absolute top-2 left-2 sm:left-4 w-44 sm:w-56 aspect-[4/3] rounded-3xl overflow-hidden shadow-warm-card border-4 border-white transform -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 z-20 group"
+                style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
+              >
+                <img
+                  src="/images/rural_smart_classroom.jpg"
+                  alt="Rural children studying with digital education tools in classroom"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                  <span className="text-white text-xs font-bold drop-shadow">Education & Learning</span>
                 </div>
               </div>
 
-              {/* Trust Deed Verification Callout */}
-              <div className="p-3.5 bg-primary-950/60 rounded-2xl border border-primary-500/30 text-xs text-neutral-300 flex items-center gap-3">
-                <span className="text-xl">📜</span>
-                <div className="leading-snug">
-                  <span className="font-bold text-white block">
-                    {t("Statutory Public Trust Standards", "धर्मादाय न्यास वैधानिक मानके")}
+              {/* Card 2: Top-Right - Young Woman Participating in Skills Training */}
+              <div 
+                className="absolute top-6 right-2 sm:right-4 w-40 sm:w-52 aspect-square rounded-3xl overflow-hidden shadow-warm-card border-4 border-white transform rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 z-10 group"
+                style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
+              >
+                <img
+                  src="/images/womens_skills.jpg"
+                  alt="Women participating in livelihood and skill training program"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                  <span className="text-white text-xs font-bold drop-shadow">Skills & Dignity</span>
+                </div>
+              </div>
+
+              {/* Card 3: Bottom-Left - Elderly Person Receiving Care & Community Care */}
+              <div 
+                className="absolute bottom-4 left-4 sm:left-8 w-44 sm:w-52 aspect-square rounded-3xl overflow-hidden shadow-warm-card border-4 border-white transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 z-20 group"
+                style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
+              >
+                <img
+                  src="/images/humanitarian_care.jpg"
+                  alt="Elderly community member receiving compassionate support and care"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                  <span className="text-white text-xs font-bold drop-shadow">Compassionate Care</span>
+                </div>
+              </div>
+
+              {/* Card 4: Bottom-Right - Gaushala & Animal Welfare Care */}
+              <div 
+                className="absolute bottom-6 right-2 sm:right-6 w-40 sm:w-52 aspect-[4/3] rounded-3xl overflow-hidden shadow-warm-card border-4 border-white transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 z-10 group"
+                style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
+              >
+                <img
+                  src="/images/gaushala.jpg"
+                  alt="Indigenous cow care and humane gaushala animal sanctuary"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                  <span className="text-white text-xs font-bold drop-shadow">Animal Welfare</span>
+                </div>
+              </div>
+
+              {/* Central Circular Element: VIKASDHARA with a subtle flowing line around it */}
+              <div className="relative z-30 flex items-center justify-center p-3">
+                
+                {/* Flowing SVG Line Ring (Dhara metaphor) */}
+                <div className="absolute -inset-4 sm:-inset-6 pointer-events-none animate-spin" style={{ animationDuration: "35s" }}>
+                  <svg className="w-full h-full text-[#2F6B45]" viewBox="0 0 100 100" fill="none">
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="46"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeDasharray="8 6 18 4"
+                      className="opacity-40"
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="40"
+                      stroke="#F39A3F"
+                      strokeWidth="1.2"
+                      strokeDasharray="14 10"
+                      className="opacity-60"
+                    />
+                  </svg>
+                </div>
+
+                {/* Central Emblem Badge */}
+                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-white/95 backdrop-blur-md border-2 border-[#2F6B45]/30 shadow-warm-elevated flex flex-col items-center justify-center text-center p-2 transform hover:scale-105 transition-transform duration-300">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#EAF4EC] p-1 flex items-center justify-center mb-1">
+                    <img src="/logo-icon.png" alt="Emblem" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-[11px] sm:text-xs font-extrabold tracking-widest text-[#1F4D34] uppercase font-sans">
+                    VIKASDHARA
                   </span>
-                  <span className="text-[11px] text-neutral-400">
-                    {t("Near Chhatrapati Shivaji Putla, Chondi, Nanded", "छत्रपती शिवाजी पुतळ्याजवळ, चोंडी, नांदेड")}
+                  <span className="text-[8px] sm:text-[9px] font-bold text-[#F39A3F] tracking-wider uppercase mt-0.5">
+                    FOUNDATION
+                  </span>
+                  <span className="text-[7.5px] text-[#68736C] font-serif italic mt-0.5">
+                    Flow of Impact
                   </span>
                 </div>
               </div>
+
             </div>
+
           </div>
 
         </div>
-      </Container>
-
-      {/* Haikei Bottom Wave Transition */}
-      <div className="absolute bottom-0 left-0 right-0 z-20">
-        <HaikeiWave fillColor="#f8fafc" />
       </div>
-
-      {/* Hero Foundation Film Video Modal */}
-      <VideoPlayerModal
-        isOpen={isVideoOpen}
-        onClose={() => setIsVideoOpen(false)}
-        title="VIKASDHARA FOUNDATION — The Journey of Opportunity"
-        titleMr="विकासधारा फाउंडेशन — गरजेकडून संधीकडे प्रवास"
-        category="Foundation Film"
-        categoryMr="संस्था परिचय"
-        duration="3:20 MIN"
-        tag="CINEMATIC HD"
-        description="An overview of our public charitable trust in Maharashtra, combining education, skill development, employment facilitation, and community dignity."
-        descriptionMr="महाराष्ट्र आणि भारतातील शिक्षण, कौशल्यविकास, रोजगार आणि ग्रामीण सक्षमीकरणाचा सर्वसमावेशक परिचय."
-        videoUrl="https://www.youtube-nocookie.com/embed/jfKfPfyJRdk?autoplay=1"
-        mp4Url="/videos/foundation_journey.mp4"
-        thumbnail="/images/hero_campus.jpg"
-      />
     </section>
   );
 }
